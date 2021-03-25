@@ -1,10 +1,15 @@
 import warnings
 import os
 import sys
-sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/niwa_soi/lib')
-sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/plot-style')
-from niwa_soi_funcs import *
-from plot_style import *
+#sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/niwa_soi/lib')
+#sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/plot-style')
+sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/lib')
+from soi_funcs import *
+from figure_styles import *
+from iod_funcs import *
+from data_processing_funcs import *
+from cei_funcs import *
+
 
 # Load all neccessary functions from home directory
 years, months, mFMT, yFMT = load_plotting_config__()
@@ -22,6 +27,7 @@ soi_cls = ComputeSOI(tahitidf, darwindf, clim_start = clim_start, clim_end = cli
 soi_ = soi_cls.soi_ts
 
 soi_.to_excel('/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/niwa_soi/data/niwa-soi-latest.xlsx')
+print("loading file")
 # Check if new data has been recently added, run the script if new data has been added
 time_lag = check_soi_values(soi_)
 if notify_user(time_lag):
@@ -31,9 +37,10 @@ if notify_user(time_lag):
 
     dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=soi_.iloc[-48:], col1='SOI', col2='SOIRM')
     output_dirs = r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/niwa_soi'
-    fig, ax, output_dirs, new_fig_created, textBm, textBs = plot_data(dates, soi, widths,
-                                                                      soim, months, years,
-                                                                      mFMT, yFMT,
+    
+    
+    fig, ax, ___, new_fig_created, textBm, textBs = plot_data(dates, soi, widths,
+                                                                      soim,  months,
                                                                       output_path=f'{output_dirs}/figures',
                                                                       cei=True, var_name='NIWA Southern Oscillation Index (NIWA SOI)',
                                                                       var_2='SOI 3-month', title=False, label_bool=None)
