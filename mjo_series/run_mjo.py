@@ -67,6 +67,7 @@ ax21= add_reference(ax2, 8, [], top_corner=0.97, separation=0.03,
 ax2 = create_watermark(f2,
                       imagePath='./lib/NIWA_CMYK_Hor.png',
                       label=' ', ax=ax2, alpha=1, loc="lower right")
-ax2.text(0.01, 1.02, f"MJO", fontsize=24, fontweight='bold', transform=ax.transAxes)
+ax2.text(0.01, 1.02, f"MJO", fontsize=24, fontweight='bold', transform=ax2.transAxes)
+print("saving file")
 f2.savefig(f'{output_dirs}/MJO_realtime_plot.png', dpi=200)
 #f.savefig(f'{output_dirs}/MJO_realtime_plot_recent.png', dpi=200)
