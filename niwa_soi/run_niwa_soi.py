@@ -4,6 +4,7 @@ import sys
 #sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/niwa_soi/lib')
 #sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/plot-style')
 sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/lib')
+os.chdir(r'/scale_wlg_persistent/filesets/project/niwa00004/rampaln/CAOA2101/cpp-indices')
 from soi_funcs import *
 from figure_styles import *
 from iod_funcs import *
@@ -18,6 +19,7 @@ warnings.filterwarnings('ignore', category=FutureWarning)
 # Define the climatological period to calculate the soi
 clim_start = 1941
 clim_end = 2010
+output_path_fig ="/scale_wlg_persistent/filesets/project/niwa00004/rampaln/CAOA2101/cpp-indices/niwa_soi/figures/"
 
 # Define the climatological period
 tahitidf = get_BOM_MSLP(station='tahiti')
@@ -43,7 +45,7 @@ if notify_user(time_lag):
                                                                       soim,  months,
                                                                       output_path=f'{output_dirs}/figures',
                                                                       cei=True, var_name='NIWA Southern Oscillation Index (NIWA SOI)',
-                                                                      var_2='SOI 3-month', title=False, label_bool=None)
+                                                                      var_2='SOI 3-month', title=False, label_bool=None, period2 =3, period1 = 1, periodicity ='M')
     #ax = add_categories(ax)
     separation = 0.03
     top_corner = 0.97

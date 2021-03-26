@@ -1,0 +1,21 @@
+qt.qpa.screen: QXcbConnection: Could not connect to display :0.0
+Could not connect to any X display.
+[master 8151715] updated the cpp series mjo
+ Committer: Neelesh Rampal Neelesh.Rampal@niwa.co.nz <rampaln@w-nwp01.maui.niwa.co.nz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+)
+ create mode 100644 mjo_series/data/nohup.out
+fatal: unable to get credential storage lock: Disk quota exceeded
+fatal: unable to get credential storage lock: Disk quota exceeded
+To https://git.niwa.local/rampaln/cpp-indices.git
+   4ae0cbd..8151715  master -> master

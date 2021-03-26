@@ -1,0 +1,73 @@
+#rrowed from anacron
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+#End borrowed from anacron
+
+#*/1 * * * * module load OCI
+
+#0 */6 * * * /home/mooresa/.conda/envs/nzens_risk_reports/bin/python /home/rampaln/risk-reports/forecast_heatmap_with_edits.py >> out_test.txt 2>&1
+
+#*/20 * * * * /usr/bin/bash  /nesi/project/niwa00004/rampaln/test_risk_app_/bash_auto.sh >> out_bash 2>&1
+
+#30 */6 * * * /home/mooresa/.conda/envs/nzens_risk_reports/bin/python /nesi/nobackup/niwa00004/rampaln/test_app_interactivate/Automatically_transfer_files.py >> output_test_interactive.txt 2>&1
+
+#0 */6 * * * /usr/bin/bash /nesi/nobackup/niwa00004/rampaln/test_app_interactivate/bash_auto_inter.sh >> checkout.txt 2>&1
+
+#0 17 1 * *  /home/rampaln/python_clidb/bash_vcsn.sh >> vcsb.txt 2>&1
+
+
+#0 6 * * SUN /nesi/project/niwa00004/rampaln/bin/python3 /scale_wlg_persistent/filesets/project/niwa00004/rampaln/water-rainfall-repository/GEFS_forecast/Test_ensemble_cumuluative_good_version.py >> /nesi/project/niwa00004/rampaln/water-rainfall-repository/test_watercare.txt 2>&1
+
+#*/1 * * * * /nesi/project/niwa00004/rampaln/bin/python3 /scale_wlg_persistent/filesets/project/niwa00004/rampaln/water-rainfall-repository/GEFS_forecast/Test_ensemble_cumuluative_good_version.py >> /nesi/project/niwa00004/rampaln/water-rainfall-repository/test_watercare.txt
+
+#*/1 * * * * /nesi/project/niwa00004/rampaln/bin/python3 /scale_wlg_persistent/filesets/project/niwa00004/rampaln/water-rainfall-repository/GEFS_forecast/Test_ensemble_cumuluative_good_version.py >> /nesi/project/niwa00004/rampaln/water-rainfall-repository/test_watercare.txt
+
+0 22 * * * sh /nesi/project/niwa00004/rampaln/CACV2101/wmo-data-retrieval/execute.sh 2>&1
+0 8 * * * sh /nesi/project/niwa00004/rampaln/CACV2101/wmo-data-retrieval/execute.sh 2>&1
+
+0 */6 * * * /nesi/project/niwa00004/rampaln/bin/python3 /nesi/project/niwa00004/rampaln/lightning/lightning_model_outputs/copy_files.py >> /nesi/nobackup/niwa00004/rampaln/model_copy_of_lightning.log
+
+
+5 */5 * * * /nesi/project/niwa00004/rampaln/bin/python3 /nesi/project/niwa00004/rampaln/lightning/Observations/get_observation_feed.py >> /nesi/nobackup/niwa00004/rampaln/observations_of_lightning.log
+
+# Watercare sutie of scripts.
+0 0 2 * * sh /nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/bash_7_station_series.sh >> seven_station_series_log2.log
+
+0 21 * * SUN /nesi/project/niwa00004/rampaln/bin/python3 /scale_wlg_persistent/filesets/project/niwa00004/rampaln/water-rainfall-repository/GEFS_forecast/seamless_forecast.py >> /nesi/project/niwa00004/rampaln/water-rainfall-repository/test_watercare.txt 2>&1
+
+# Watercare suite of scripts
+0 0 2 * * sh /nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/bash_7_station_series.sh >> seven_station_series.log
+0 20 2 * * sh /nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/bash_7_station_series.sh >> seven_station_series.log
+
+# Seven Station series crontab scripts
+
+10 0 2 * * /nesi/project/niwa00004/rampaln/bin/python3 /scale_wlg_persistent/filesets/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/send_annual_series_sjs.py
+0 22 2 * * /nesi/project/niwa00004/rampaln/bin/python3 /scale_wlg_persistent/filesets/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/send_annual_series_sjs.py
+
+# Scripts for running the GEFS ensemble
+0 */12 * * * sh /scale_wlg_nobackup/filesets/nobackup/niwa00004/rampaln/GEFS_forecast/bash_ensemble_run.sh >> /scale_wlg_nobackup/filesets/nobackup/niwa00004/rampaln/GEFS_forecast/ensemble.log
+
+
+0 3 */3 * * /nesi/project/niwa00004/rampaln/bin/python3 /scale_wlg_nobackup/filesets/nobackup/niwa00004/rampaln/GEFS_forecast/gefs_ensemble/delete_files.py >> /scale_wlg_nobackup/filesets/nobackup/niwa00004/rampaln/GEFS_forecast/output_delete.log
+
+
+
+#0 */3 * * * /nesi/project/niwa00004/rampaln/bin/python3 "/scale_wlg_nobackup/filesets/nobackup/niwa00004/rampaln/GEFS_forecast/gefs_ensemble/get_gefs_data_feed.py" >> /scale_wlg_nobackup/filesets/nobackup/niwa00004/rampaln/GEFS_forecast/ensemble_testfeed.log
+
+
+0 18 * * * sh /scale_wlg_nobackup/filesets/nobackup/niwa00004/rampaln/GEFS_forecast/bash_send.sh >> /scale_wlg_nobackup/filesets/nobackup/niwa00004/rampaln/GEFS_forecast/ensemble_test.log
+
+
+## CPP Suite:
+
+
+
+0 0 2 * * sh /nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/niwa_soi/soi_suite.sh 
+0 0 3 * * sh /nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/niwa_soi/soi_suite.sh
+
+
+# Copying the t7_files
+0 0 4 * * sh /nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/seven_station_series_output/copy_t7_files.sh
+
+
+
