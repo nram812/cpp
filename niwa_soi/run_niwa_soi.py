@@ -59,6 +59,7 @@ if notify_user(time_lag):
     ax.text(0.01, top_corner - 3 * separation, "{}".format(textBs), fontweight='bold', fontsize=12,
             transform=ax.transAxes)
     ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
+    fig.savefig(f'{output_dirs}/figures/NIWA_SOI.png')
 
     # Handle the updates and the send an email out
     handle_figure_update_mssg(output_path_fig, new_fig_created)
