@@ -110,7 +110,7 @@ if __name__ == "__main__":
                           ref=f"Ref: Troup, 1965; DOI:10.1002/qj.49709139009")
             output_dirs = r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/indices'
             fig.savefig(f'{output_dirs}/figures/NINO{nino}_realtime_plot.png', dpi=200)
-            fig.show()
+            #fig.show()
 
 
 
