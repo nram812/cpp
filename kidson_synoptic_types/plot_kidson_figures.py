@@ -107,7 +107,7 @@ ax4.set_xticks(np.arange(len(dset_output.index)))
 ax4.set_yticks([])
 ax4.set_yticklabels([])
 ax4.set_xlim(0, len(dset_output.index))
-ax4.set_xticklabels([str(i) for i in dset_output.index.strftime('%Y-%m-%d')], rotation='90', fontsize=10)
+ax4.set_xticklabels([str(i) for i in dset_output.index], rotation='90', fontsize=10)
 fig.tight_layout()
 fig.show()
 
@@ -136,7 +136,7 @@ for i in range(NUM_COLORS):
     lines[0].set_linewidth(i%3 + 1)
 
 fig.savefig('moreColors.png')
-plt.show()
+fig.show()
 
 fig.tight_layout()
 fig.show()

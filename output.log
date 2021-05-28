@@ -1,0 +1,195 @@
+loading file
+[datetime.datetime(2017, 5, 1, 0, 0) datetime.datetime(2017, 6, 1, 0, 0)
+ datetime.datetime(2017, 7, 1, 0, 0) datetime.datetime(2017, 8, 1, 0, 0)
+ datetime.datetime(2017, 9, 1, 0, 0) datetime.datetime(2017, 10, 1, 0, 0)
+ datetime.datetime(2017, 11, 1, 0, 0) datetime.datetime(2017, 12, 1, 0, 0)
+ datetime.datetime(2018, 1, 1, 0, 0) datetime.datetime(2018, 2, 1, 0, 0)
+ datetime.datetime(2018, 3, 1, 0, 0) datetime.datetime(2018, 4, 1, 0, 0)
+ datetime.datetime(2018, 5, 1, 0, 0) datetime.datetime(2018, 6, 1, 0, 0)
+ datetime.datetime(2018, 7, 1, 0, 0) datetime.datetime(2018, 8, 1, 0, 0)
+ datetime.datetime(2018, 9, 1, 0, 0) datetime.datetime(2018, 10, 1, 0, 0)
+ datetime.datetime(2018, 11, 1, 0, 0) datetime.datetime(2018, 12, 1, 0, 0)
+ datetime.datetime(2019, 1, 1, 0, 0) datetime.datetime(2019, 2, 1, 0, 0)
+ datetime.datetime(2019, 3, 1, 0, 0) datetime.datetime(2019, 4, 1, 0, 0)
+ datetime.datetime(2019, 5, 1, 0, 0) datetime.datetime(2019, 6, 1, 0, 0)
+ datetime.datetime(2019, 7, 1, 0, 0) datetime.datetime(2019, 8, 1, 0, 0)
+ datetime.datetime(2019, 9, 1, 0, 0) datetime.datetime(2019, 10, 1, 0, 0)
+ datetime.datetime(2019, 11, 1, 0, 0) datetime.datetime(2019, 12, 1, 0, 0)
+ datetime.datetime(2020, 1, 1, 0, 0) datetime.datetime(2020, 2, 1, 0, 0)
+ datetime.datetime(2020, 3, 1, 0, 0) datetime.datetime(2020, 4, 1, 0, 0)
+ datetime.datetime(2020, 5, 1, 0, 0) datetime.datetime(2020, 6, 1, 0, 0)
+ datetime.datetime(2020, 7, 1, 0, 0) datetime.datetime(2020, 8, 1, 0, 0)
+ datetime.datetime(2020, 9, 1, 0, 0) datetime.datetime(2020, 10, 1, 0, 0)
+ datetime.datetime(2020, 11, 1, 0, 0) datetime.datetime(2020, 12, 1, 0, 0)
+ datetime.datetime(2021, 1, 1, 0, 0) datetime.datetime(2021, 2, 1, 0, 0)
+ datetime.datetime(2021, 3, 1, 0, 0) datetime.datetime(2021, 4, 1, 0, 0)] 2021-04-01 00:00:00 2021-02-01 00:00:00
+None
+completed script
+[datetime.datetime(2017, 4, 1, 0, 0) datetime.datetime(2017, 5, 1, 0, 0)
+ datetime.datetime(2017, 6, 1, 0, 0) datetime.datetime(2017, 7, 1, 0, 0)
+ datetime.datetime(2017, 8, 1, 0, 0) datetime.datetime(2017, 9, 1, 0, 0)
+ datetime.datetime(2017, 10, 1, 0, 0) datetime.datetime(2017, 11, 1, 0, 0)
+ datetime.datetime(2017, 12, 1, 0, 0) datetime.datetime(2018, 1, 1, 0, 0)
+ datetime.datetime(2018, 2, 1, 0, 0) datetime.datetime(2018, 3, 1, 0, 0)
+ datetime.datetime(2018, 4, 1, 0, 0) datetime.datetime(2018, 5, 1, 0, 0)
+ datetime.datetime(2018, 6, 1, 0, 0) datetime.datetime(2018, 7, 1, 0, 0)
+ datetime.datetime(2018, 8, 1, 0, 0) datetime.datetime(2018, 9, 1, 0, 0)
+ datetime.datetime(2018, 10, 1, 0, 0) datetime.datetime(2018, 11, 1, 0, 0)
+ datetime.datetime(2018, 12, 1, 0, 0) datetime.datetime(2019, 1, 1, 0, 0)
+ datetime.datetime(2019, 2, 1, 0, 0) datetime.datetime(2019, 3, 1, 0, 0)
+ datetime.datetime(2019, 4, 1, 0, 0) datetime.datetime(2019, 5, 1, 0, 0)
+ datetime.datetime(2019, 6, 1, 0, 0) datetime.datetime(2019, 7, 1, 0, 0)
+ datetime.datetime(2019, 8, 1, 0, 0) datetime.datetime(2019, 9, 1, 0, 0)
+ datetime.datetime(2019, 10, 1, 0, 0) datetime.datetime(2019, 11, 1, 0, 0)
+ datetime.datetime(2019, 12, 1, 0, 0) datetime.datetime(2020, 1, 1, 0, 0)
+ datetime.datetime(2020, 2, 1, 0, 0) datetime.datetime(2020, 3, 1, 0, 0)
+ datetime.datetime(2020, 4, 1, 0, 0) datetime.datetime(2020, 5, 1, 0, 0)
+ datetime.datetime(2020, 6, 1, 0, 0) datetime.datetime(2020, 7, 1, 0, 0)
+ datetime.datetime(2020, 8, 1, 0, 0) datetime.datetime(2020, 9, 1, 0, 0)
+ datetime.datetime(2020, 10, 1, 0, 0) datetime.datetime(2020, 11, 1, 0, 0)
+ datetime.datetime(2020, 12, 1, 0, 0) datetime.datetime(2021, 1, 1, 0, 0)
+ datetime.datetime(2021, 2, 1, 0, 0) datetime.datetime(2021, 3, 1, 0, 0)] 2017-07-01 00:00:00 2017-05-01 00:00:00
+[datetime.datetime(2021, 2, 1, 0, 0) datetime.datetime(2021, 2, 2, 0, 0)
+ datetime.datetime(2021, 2, 3, 0, 0) datetime.datetime(2021, 2, 4, 0, 0)
+ datetime.datetime(2021, 2, 5, 0, 0) datetime.datetime(2021, 2, 6, 0, 0)
+ datetime.datetime(2021, 2, 7, 0, 0) datetime.datetime(2021, 2, 8, 0, 0)
+ datetime.datetime(2021, 2, 9, 0, 0) datetime.datetime(2021, 2, 10, 0, 0)
+ datetime.datetime(2021, 2, 11, 0, 0) datetime.datetime(2021, 2, 12, 0, 0)
+ datetime.datetime(2021, 2, 13, 0, 0) datetime.datetime(2021, 2, 14, 0, 0)
+ datetime.datetime(2021, 2, 15, 0, 0) datetime.datetime(2021, 2, 16, 0, 0)
+ datetime.datetime(2021, 2, 17, 0, 0) datetime.datetime(2021, 2, 18, 0, 0)
+ datetime.datetime(2021, 2, 19, 0, 0) datetime.datetime(2021, 2, 20, 0, 0)
+ datetime.datetime(2021, 2, 21, 0, 0) datetime.datetime(2021, 2, 22, 0, 0)
+ datetime.datetime(2021, 2, 23, 0, 0) datetime.datetime(2021, 2, 24, 0, 0)
+ datetime.datetime(2021, 2, 25, 0, 0) datetime.datetime(2021, 2, 26, 0, 0)
+ datetime.datetime(2021, 2, 27, 0, 0) datetime.datetime(2021, 2, 28, 0, 0)
+ datetime.datetime(2021, 3, 1, 0, 0) datetime.datetime(2021, 3, 2, 0, 0)
+ datetime.datetime(2021, 3, 3, 0, 0) datetime.datetime(2021, 3, 4, 0, 0)
+ datetime.datetime(2021, 3, 5, 0, 0) datetime.datetime(2021, 3, 6, 0, 0)
+ datetime.datetime(2021, 3, 7, 0, 0) datetime.datetime(2021, 3, 8, 0, 0)
+ datetime.datetime(2021, 3, 9, 0, 0) datetime.datetime(2021, 3, 10, 0, 0)
+ datetime.datetime(2021, 3, 11, 0, 0) datetime.datetime(2021, 3, 12, 0, 0)
+ datetime.datetime(2021, 3, 13, 0, 0) datetime.datetime(2021, 3, 14, 0, 0)
+ datetime.datetime(2021, 3, 15, 0, 0) datetime.datetime(2021, 3, 16, 0, 0)
+ datetime.datetime(2021, 3, 17, 0, 0) datetime.datetime(2021, 3, 18, 0, 0)
+ datetime.datetime(2021, 3, 19, 0, 0) datetime.datetime(2021, 3, 20, 0, 0)
+ datetime.datetime(2021, 3, 21, 0, 0) datetime.datetime(2021, 3, 22, 0, 0)
+ datetime.datetime(2021, 3, 23, 0, 0) datetime.datetime(2021, 3, 24, 0, 0)
+ datetime.datetime(2021, 3, 25, 0, 0) datetime.datetime(2021, 3, 26, 0, 0)
+ datetime.datetime(2021, 3, 27, 0, 0) datetime.datetime(2021, 3, 28, 0, 0)
+ datetime.datetime(2021, 3, 29, 0, 0) datetime.datetime(2021, 3, 30, 0, 0)
+ datetime.datetime(2021, 3, 31, 0, 0) datetime.datetime(2021, 4, 1, 0, 0)
+ datetime.datetime(2021, 4, 2, 0, 0) datetime.datetime(2021, 4, 3, 0, 0)
+ datetime.datetime(2021, 4, 4, 0, 0) datetime.datetime(2021, 4, 5, 0, 0)
+ datetime.datetime(2021, 4, 6, 0, 0) datetime.datetime(2021, 4, 7, 0, 0)
+ datetime.datetime(2021, 4, 8, 0, 0) datetime.datetime(2021, 4, 9, 0, 0)
+ datetime.datetime(2021, 4, 10, 0, 0) datetime.datetime(2021, 4, 11, 0, 0)
+ datetime.datetime(2021, 4, 12, 0, 0) datetime.datetime(2021, 4, 13, 0, 0)
+ datetime.datetime(2021, 4, 14, 0, 0) datetime.datetime(2021, 4, 15, 0, 0)
+ datetime.datetime(2021, 4, 16, 0, 0) datetime.datetime(2021, 4, 17, 0, 0)
+ datetime.datetime(2021, 4, 18, 0, 0) datetime.datetime(2021, 4, 19, 0, 0)
+ datetime.datetime(2021, 4, 20, 0, 0) datetime.datetime(2021, 4, 21, 0, 0)
+ datetime.datetime(2021, 4, 22, 0, 0) datetime.datetime(2021, 4, 23, 0, 0)
+ datetime.datetime(2021, 4, 24, 0, 0) datetime.datetime(2021, 4, 25, 0, 0)
+ datetime.datetime(2021, 4, 26, 0, 0) datetime.datetime(2021, 4, 27, 0, 0)
+ datetime.datetime(2021, 4, 28, 0, 0) datetime.datetime(2021, 4, 29, 0, 0)
+ datetime.datetime(2021, 4, 30, 0, 0) datetime.datetime(2021, 5, 1, 0, 0)] 2021-05-01 00:00:00 2021-04-02 00:00:00
+None
+processing NINO3.4
+something went wrong with accessing the URL http://www.bom.gov.au/climate/enso/nino_3.4.txt
+processing NINO3
+something went wrong with accessing the URL http://www.bom.gov.au/climate/enso/nino_3.txt
+processing NINO4
+something went wrong with accessing the URL http://www.bom.gov.au/climate/enso/nino_4.txt
+processing NINO1
+something went wrong with accessing the URL http://www.bom.gov.au/climate/enso/nino_1.txt
+processing NINO2
+something went wrong with accessing the URL http://www.bom.gov.au/climate/enso/nino_2.txt
+checking for new data
+downloading data
+Warning, the last available date on the NOAA server ({last_avail:%Y-%m}) is more than 70 days old ({lag} days ...)
+not downloading
+None
+[datetime.datetime(2017, 4, 1, 0, 0) datetime.datetime(2017, 5, 1, 0, 0)
+ datetime.datetime(2017, 6, 1, 0, 0) datetime.datetime(2017, 7, 1, 0, 0)
+ datetime.datetime(2017, 8, 1, 0, 0) datetime.datetime(2017, 9, 1, 0, 0)
+ datetime.datetime(2017, 10, 1, 0, 0) datetime.datetime(2017, 11, 1, 0, 0)
+ datetime.datetime(2017, 12, 1, 0, 0) datetime.datetime(2018, 1, 1, 0, 0)
+ datetime.datetime(2018, 2, 1, 0, 0) datetime.datetime(2018, 3, 1, 0, 0)
+ datetime.datetime(2018, 4, 1, 0, 0) datetime.datetime(2018, 5, 1, 0, 0)
+ datetime.datetime(2018, 6, 1, 0, 0) datetime.datetime(2018, 7, 1, 0, 0)
+ datetime.datetime(2018, 8, 1, 0, 0) datetime.datetime(2018, 9, 1, 0, 0)
+ datetime.datetime(2018, 10, 1, 0, 0) datetime.datetime(2018, 11, 1, 0, 0)
+ datetime.datetime(2018, 12, 1, 0, 0) datetime.datetime(2019, 1, 1, 0, 0)
+ datetime.datetime(2019, 2, 1, 0, 0) datetime.datetime(2019, 3, 1, 0, 0)
+ datetime.datetime(2019, 4, 1, 0, 0) datetime.datetime(2019, 5, 1, 0, 0)
+ datetime.datetime(2019, 6, 1, 0, 0) datetime.datetime(2019, 7, 1, 0, 0)
+ datetime.datetime(2019, 8, 1, 0, 0) datetime.datetime(2019, 9, 1, 0, 0)
+ datetime.datetime(2019, 10, 1, 0, 0) datetime.datetime(2019, 11, 1, 0, 0)
+ datetime.datetime(2019, 12, 1, 0, 0) datetime.datetime(2020, 1, 1, 0, 0)
+ datetime.datetime(2020, 2, 1, 0, 0) datetime.datetime(2020, 3, 1, 0, 0)
+ datetime.datetime(2020, 4, 1, 0, 0) datetime.datetime(2020, 5, 1, 0, 0)
+ datetime.datetime(2020, 6, 1, 0, 0) datetime.datetime(2020, 7, 1, 0, 0)
+ datetime.datetime(2020, 8, 1, 0, 0) datetime.datetime(2020, 9, 1, 0, 0)
+ datetime.datetime(2020, 10, 1, 0, 0) datetime.datetime(2020, 11, 1, 0, 0)
+ datetime.datetime(2020, 12, 1, 0, 0) datetime.datetime(2021, 1, 1, 0, 0)
+ datetime.datetime(2021, 2, 1, 0, 0) datetime.datetime(2021, 3, 1, 0, 0)] 2021-03-01 00:00:00 2021-01-01 00:00:00
+None
+finished creating script
+None
+None
+None
+None
+[datetime.datetime(2016, 1, 1, 0, 0) datetime.datetime(2016, 2, 1, 0, 0)
+ datetime.datetime(2016, 3, 1, 0, 0) datetime.datetime(2016, 4, 1, 0, 0)
+ datetime.datetime(2016, 5, 1, 0, 0) datetime.datetime(2016, 6, 1, 0, 0)
+ datetime.datetime(2016, 7, 1, 0, 0) datetime.datetime(2016, 8, 1, 0, 0)
+ datetime.datetime(2016, 9, 1, 0, 0) datetime.datetime(2016, 10, 1, 0, 0)
+ datetime.datetime(2016, 11, 1, 0, 0) datetime.datetime(2016, 12, 1, 0, 0)
+ datetime.datetime(2017, 1, 1, 0, 0) datetime.datetime(2017, 2, 1, 0, 0)
+ datetime.datetime(2017, 3, 1, 0, 0) datetime.datetime(2017, 4, 1, 0, 0)
+ datetime.datetime(2017, 5, 1, 0, 0) datetime.datetime(2017, 6, 1, 0, 0)
+ datetime.datetime(2017, 7, 1, 0, 0) datetime.datetime(2017, 8, 1, 0, 0)
+ datetime.datetime(2017, 9, 1, 0, 0) datetime.datetime(2017, 10, 1, 0, 0)
+ datetime.datetime(2017, 11, 1, 0, 0) datetime.datetime(2017, 12, 1, 0, 0)
+ datetime.datetime(2018, 1, 1, 0, 0) datetime.datetime(2018, 2, 1, 0, 0)
+ datetime.datetime(2018, 3, 1, 0, 0) datetime.datetime(2018, 4, 1, 0, 0)
+ datetime.datetime(2018, 5, 1, 0, 0) datetime.datetime(2018, 6, 1, 0, 0)
+ datetime.datetime(2018, 7, 1, 0, 0) datetime.datetime(2018, 8, 1, 0, 0)
+ datetime.datetime(2018, 9, 1, 0, 0) datetime.datetime(2018, 10, 1, 0, 0)
+ datetime.datetime(2018, 11, 1, 0, 0) datetime.datetime(2018, 12, 1, 0, 0)
+ datetime.datetime(2019, 1, 1, 0, 0) datetime.datetime(2019, 2, 1, 0, 0)
+ datetime.datetime(2019, 3, 1, 0, 0) datetime.datetime(2019, 4, 1, 0, 0)
+ datetime.datetime(2019, 5, 1, 0, 0) datetime.datetime(2019, 6, 1, 0, 0)
+ datetime.datetime(2019, 7, 1, 0, 0) datetime.datetime(2019, 8, 1, 0, 0)
+ datetime.datetime(2019, 9, 1, 0, 0) datetime.datetime(2019, 10, 1, 0, 0)
+ datetime.datetime(2019, 11, 1, 0, 0) datetime.datetime(2019, 12, 1, 0, 0)
+ datetime.datetime(2020, 1, 1, 0, 0) datetime.datetime(2020, 2, 1, 0, 0)
+ datetime.datetime(2020, 3, 1, 0, 0) datetime.datetime(2020, 4, 1, 0, 0)
+ datetime.datetime(2020, 5, 1, 0, 0) datetime.datetime(2020, 6, 1, 0, 0)
+ datetime.datetime(2020, 7, 1, 0, 0) datetime.datetime(2020, 8, 1, 0, 0)
+ datetime.datetime(2020, 9, 1, 0, 0) datetime.datetime(2020, 10, 1, 0, 0)
+ datetime.datetime(2020, 11, 1, 0, 0) datetime.datetime(2020, 12, 1, 0, 0)
+ datetime.datetime(2021, 1, 1, 0, 0) datetime.datetime(2021, 2, 1, 0, 0)
+ datetime.datetime(2021, 3, 1, 0, 0)] 2021-03-01 00:00:00 2021-01-01 00:00:00
+None
+created the IPO
+ 
+saving file
+[main e393eea] Auto updated
+ Committer: Neelesh Rampal neelesh.rampal@niwa.co.nz <rampaln@w-nwp01.maui.niwa.co.nz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 8 files changed, 43 insertions(+), 3 deletions(-)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (72%)
+ rewrite mjo_series/data/MJO_realtime_plot.png (95%)
+ rewrite niwa_soi/figures/NIWA_SOI.png (80%)

@@ -1,26 +1,123 @@
 # CPP-Indices
 ## Things to Do 
-1. To increase the spacing of the watermark (bigger whitespace in the png / border)
-2. Remove the NIWA Ltd
-3. Consistent upper left for the watermark.
-4. Remove the black lines from the plot. 
-5. Remove NIWA in front of the logos - Nino indices. 
-6. Daily soi - last three months, ensure that the soi is also three years + remove niwa.ltd 
-7. Take out NIWA - and write Coupled Enso index (CEI).
-8. The key needs to go in the lower left corner - CEI. 
-9. Beneath the NIWA CEI , have the december value, and the three month average.
-10. shift the sevenstation series- latest value goes underneath the title.
-11. Shift the axes from +4 to -4 in the plots. 
-12. Mullan, et.al - add the metadata. - methodology description. 
-13. MJO - title and change the key for these plots. 
-14. I will add the metadata in a separate text file to the top of each plot
-15. Position of the values (e.g. December: bottom left )
-16. Titles go top right - make sure this is consistent with the plot height. 
-17. Key goes in the top left. 
-18. Remove the lines from the cei plots. 
-19. CC-BY-NC needs to be hardwired into everything
-20. Remove the whitespace in the plots (CEI for the left side. - use 36 months from present data)
-21. Add other regions to the seven-station-series. 
+# Forecasting Products
+<!--
+To update TOC, please run:
+> doctoc ./README.md --github
+ -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+  - [Live MJO](#live-mjo)
+  - [Live SOI](#live-soi)
+  - [Seven Station Series](#seven-station-series)
+  - [Trenberth Index](#trenberth-index)
+  - [IOD](#iod)
+  - [IPO](#ipo)
+  - [MonthlySOI](#monthlysoi)
+  - [CEI](#cei)
+
+
+# GEFS_ENSEMBLE
+A live repository for extended weather forecasts and climate outlooks. The GEFS Ensemble is updated here daily, and extends out to 35 days. Please note after about 20 days only 24 ensemble members exist, and often there are delays in the data feed. 
+
+For more information regarding the pipeline please contact either Tristan.Meyers.niwa.co.nz, Neelesh.Rampal@niwa.co.nz or Ben.Noll@niwa.co.nz.
+
+## Live MJO:
+![Forecast](mjo_series/data/MJO_real_time_plot.png)
+To access the data please download the following [link](data/mjo_data/phase_historical.csv)
+
+## Live SOI:
+![Monthly_Forecast](indices/figures/SOI_LP_realtime_plot.png)
+To access the data please download the following [link](indices/data/daily_soi.csv)
+
+# Seven Station Series
+![Monthly_Forecast](seven_station_series_output/figures/NZT7_Apr2021.png)
+To access the data please download the following [link](seven_station_series_output/data/AllStationMonthly_Anomalies.csv)
+
+
+# Trenberth Index
+![lightning_outlook](trenberth_figures/figures/M1_index.png)
+![lightning_outlook1](trenberth_figures/figures/Z1_index.png)
+To download the indices please use the following [link](trenberth_figures/data/updated_trenberth_index.csv)
+
+# IOD
+![lightning_outlook2](IOD/figures/IOD_series_plot_recent1.png)
+![lightning_outlook3](IOD/figures/IOD_spatial_plot_recent1.png)
+
+To download the indices please use the following [link](IOD/figures/Monthly_IOD.csv)
+
+# IPO
+![lightning_outlook3](IPO/figures/All_IPO.png)
+To download the indices please use the following [link](IPO/data/IPO_monthly.csv)
+
+# MonthlySOI
+![lightning_outlook3](niwa_soi/figures/NIWA_SOI.png)
+To download the indices please use the following [link](niwa_soi/data/niwa-soi-latest.xlsx)
+
+
+# CEI
+![lightning_outlook3](CEI/figures/CEI_series_2018_present.png)
+To download the indices please use the following [link](CEI/data/CEI.csv)
+
+
+
+
+
+# Methodology:
+The aim of this project is to use data-driven techniques to post process the outputs of the GEFS.
+The current methodology is based on a relatively simple statistical downscaling technique which is adapted from Kidson, 2000 and Lee et.al., 2019. See the following link for more information: https://simonleewx.com/gefs-35-day-north-american-regimes/.
+
+![synoptic_types](FiveClusterNZ_scheme.png)
+
+### Data Source:
+The data is downloaded from "https://nomads.ncep.noaa.gov/pub/data/nccf/com/gens/prod/" daily.
+
+ ### Observational Clustering:
+ NCEP geopotential heights (2.5 degree) are subjected to dimensionality reduction (Empirical Orthogonal Analysis), and Clustered into 5 synoptic regimes. These regimes are Trough, Northeasterly, Northerly High, Ridge and Westerly. These patterns aim to simplify and increase the signal to noise ratio in the extended forecast.
+
+## Pipeline:
+ 1. Observations (1950 - present) of geopotential height have been subjected to 7 EOFs (95% of explained variance) and clustered using KMeans.
+ 2. The rainfall anomalies for each synoptic type is computed for each month of the year.
+ 3. NCEP GEFS data is regridded onto the same resolution as the NCEP geopotential heights, and projected onto the principal components of observational NCEP geopotential anomalies. These projected outputs are then further classified into one of 5 synoptic types. 
+ 4. The monthly outlook is calculated by weighting the rainfall anomalies for each synoptic type with the cluster frequency for each given day. 
+
+
+
+The following "test" architecture is implemented to predict a synoptic type from the observations.
+
+Research:
+├── create_clustering
+│   └── process_kidson_types_from_....
+│   └── apply_predictions.py
+
+
+
+## Running the Pipeline:
+1. Login to the hpc (w-nwp01.maui.niwa.co.nz)
+2. navigate to: /nesi/nobackup/niwa00004/rampaln/GEFS_forecast
+3. Execute the bash script (bash_ensemble_run.sh)
+
+Pipeline:
+```
+├── bash_scripts_auto
+│   └── bash_ensemble_run.sh
+```
+
+```
+├── download_gefs_data.py - Use multiprocessing downloads to speed up download speed.
+├── process_gefs.py - Processes the outputs in the desired formats
+├── send_gefs.py - Produces pretty images that are updated here. 
+├── delete_files.py - periodically cleans up the directory.
+```
+
+
+```
+console
+    $w-nwp01 sh "/scale_wlg_nobackup/filesets/nobackup/niwa00004/rampaln/GEFS_forecast/bash_ensemble_run.sh"
+```
+
 
 
 
