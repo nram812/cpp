@@ -114,14 +114,14 @@ if __name__ == "__main__":
 
 
 
-    files_list = glob.glob(f'{output_dirs}/figures/*.png')
-    base_string = 'export LC_CTYPE="en_US.UTF-8" && mail'
-    for file in files_list:
-        base_string+=f' -a {file}'
-    email_title = "Nino Indices"
-    text = "Automation Sent"
-    base_string+= ' -s "{}" Neelesh.Rampal@niwa.co.nz,Ben.Noll@niwa.co.nz,Tristan.Meyers@niwa.co.nz'.format(email_title)
-    rcode = os.popen(base_string,'w').write(text)
+    # files_list = glob.glob(f'{output_dirs}/figures/*.png')
+    # base_string = 'export LC_CTYPE="en_US.UTF-8" && mail'
+    # for file in files_list:
+    #     base_string+=f' -a {file}'
+    # email_title = "Nino Indices"
+    # text = "Automation Sent"
+    # base_string+= ' -s "{}" Neelesh.Rampal@niwa.co.nz,Ben.Noll@niwa.co.nz,Tristan.Meyers@niwa.co.nz'.format(email_title)
+    # rcode = os.popen(base_string,'w').write(text)
 print("code execute succesfully")
 
 

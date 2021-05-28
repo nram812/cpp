@@ -158,7 +158,7 @@ if __name__ == "__main__":
     fig.tight_layout()
     fig.show()
     fig.savefig(out_file, dpi=300)
-    handle_figure_update_mssg(out_file, True)
+    #handle_figure_update_mssg(out_file, True)
 
 
 

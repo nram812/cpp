@@ -45,7 +45,8 @@ if notify_user(time_lag):
                                                                       soim,  months,
                                                                       output_path=f'{output_dirs}/figures',
                                                                       cei=True, var_name='NIWA Southern Oscillation Index (NIWA SOI)',
-                                                                      var_2='SOI 3-month', title=False, label_bool=None, period2 =3, period1 = 1, periodicity ='M')
+                                                                      var_2='SOI 3-month', title=False, label_bool=None, period2 =3, period1 = 1, periodicity ='M',
+                                                              ylim = (-2,2))
     #ax = add_categories(ax)
     separation = 0.03
     top_corner = 0.97
@@ -62,4 +63,4 @@ if notify_user(time_lag):
     fig.savefig(f'{output_dirs}/figures/NIWA_SOI.png')
 
     # Handle the updates and the send an email out
-    handle_figure_update_mssg(output_path_fig, new_fig_created)
+    #handle_figure_update_mssg(output_path_fig, new_fig_created)

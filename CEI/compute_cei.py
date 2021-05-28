@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 import subprocess
 from datetime import datetime
 import os
+
 #os.chdir(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/')
 sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/lib')
 from soi_funcs import *
@@ -62,7 +63,7 @@ if __name__ == "__main__":
                                          soim, months,
                                          output_path=f'./CEI/figures',
                                          cei=True, var_name='Coupled ENSO Index (CEI)', var_2='SOI 3-month', title = False, label_bool = None,
-                                                            period1 =-3, period2 =-1, periodicity = 'M')
+                                                            period1 =1, period2 =3, periodicity = 'M')
     
     ax, data = add_categories(ax, data)
     add_reference(ax,12,[textBm, textBs], top_corner=0.97, separation = 0.03,
@@ -70,8 +71,8 @@ if __name__ == "__main__":
                   ref="Ref: Gergis & Fowler, 2005; DOI: 10.1002/joc.1202")
     ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
     fig.tight_layout()
-    fig.show()
+    #fig.show()
 
     fig.savefig(output_file_dirs,dpi =300)
 
-    handle_figure_update_mssg(output_file_dirs, True)
+    #handle_figure_update_mssg(output_file_dirs, True)
