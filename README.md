@@ -1,6 +1,4 @@
 # CPP-Indices
-## Things to Do 
-# Forecasting Products
 <!--
 To update TOC, please run:
 > doctoc ./README.md --github
@@ -18,14 +16,8 @@ To update TOC, please run:
   - [MonthlySOI](#monthlysoi)
   - [CEI](#cei)
 
-
-# GEFS_ENSEMBLE
-A live repository for extended weather forecasts and climate outlooks. The GEFS Ensemble is updated here daily, and extends out to 35 days. Please note after about 20 days only 24 ensemble members exist, and often there are delays in the data feed. 
-
-For more information regarding the pipeline please contact either Tristan.Meyers.niwa.co.nz, Neelesh.Rampal@niwa.co.nz or Ben.Noll@niwa.co.nz.
-
 ## Live MJO:
-![Forecast](mjo_series/data/MJO_real_time_plot.png)
+![Forecast](mjo_series/data/MJO_realtime_plot.png)
 To access the data please download the following [link](data/mjo_data/phase_historical.csv)
 
 ## Live SOI:
