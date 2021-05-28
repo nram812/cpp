@@ -44,17 +44,13 @@ month_before_s = parse('2 months ago')
 current_month = current_month_s.strftime("%B")
 previous_month = previous_month_s.strftime("%B")
 month_before = month_before_s.strftime("%B")
-output_dirs = '/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/mjo_series/data'
+output_dirs = './mjo_series/data'
 # ### this is where the Wheeler and Hendon (2004) realtime RMM index lives, and what it looks like
 
-data, data_pol = read_url(month_before_s = month_before_s)
-# f, axes = plot_mjo_cycle(month_before =month_before, current_month = current_month,
-#                    previous_month = previous_month,start_month=month_before_s,
-#                    middle_month=previous_month_s,
-#                    end_month=current_month_s, data_pol=data_pol,
-#                    most_recent_month=True)
-
-#f.show()
+data, data_pol = pd.read_csv(r'./data/mjo_data/phase_historical.csv',
+                             index_col =0, parse_dates = True),\
+                 pd.read_csv(r'./data/mjo_data/phase_recent.csv',
+                             index_col =0, parse_dates = True)
 f2,ax2 = plot_mjo_cycle(month_before =month_before, current_month = current_month,
                    previous_month = previous_month,
                     start_month=month_before_s, middle_month=previous_month_s,

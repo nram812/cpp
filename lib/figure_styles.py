@@ -45,7 +45,9 @@ def load_plotting_config__():
 
 def plot_data(dates, soi, widths, soim, months, output_path ="/nesi/project/niwa00004/rampaln/CPP_indices/SOI/figures/",
               cei = True, var_name = 'SOI', var_2 ='3-mth mean', title = True, label_bool = None,
-              loc = "lower right", ylim = (-3,3), period1 = -3, period2 =-1, periodicity = 'D'):
+              loc = "lower right", ylim = (-100,100), period1 = -3, period2 =-1, periodicity = 'D',subplot_kwargs = dict(),
+              figsize = (14,10)
+              ):
     """
     
     :param dates: 
@@ -65,7 +67,7 @@ def plot_data(dates, soi, widths, soim, months, output_path ="/nesi/project/niwa
     :param period2: the second period to compute an average over.
     :return: 
     """
-    fig, ax = plt.subplots(figsize=(14, 10))
+    fig, ax = plt.subplots(figsize=figsize,subplot_kw=subplot_kwargs)
     fig.subplots_adjust(bottom=0.15)
     if cei:
         ax.bar(dates[soi >= 0], soi[soi >= 0], width=widths[soi >= 0], facecolor='coral', alpha=.5, edgecolor='k',
@@ -103,7 +105,6 @@ def plot_data(dates, soi, widths, soim, months, output_path ="/nesi/project/niwa
 
     # Definitely the title
     ax.text(0.01, 1.02, f"{var_name}", fontsize=24, fontweight='bold', transform=ax.transAxes)
-    print(dates, dates[-period1], dates[-period2])
     ax.set_xlim(dates[0] - monthdelta(1), dates[-1] + monthdelta(1))
     if periodicity == 'M':
         textBm = "{:%b %Y} = {:+3.1f}".format(dates[-period1], soi[-period1])
