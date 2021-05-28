@@ -14,4 +14,11 @@ echo | git status
 #git add *
 #git commit -a -m "Auto updated"
 #git push
+git add ./mjo_series/*
+git add ./indices/figures/*
+git commit -a -m "auto commit"
+git push
+
+
+echo "logged" > log.log
 
