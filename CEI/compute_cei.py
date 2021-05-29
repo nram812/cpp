@@ -10,8 +10,6 @@ from datetime import datetime, timedelta
 import subprocess
 from datetime import datetime
 import os
-
-#os.chdir(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/')
 sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/lib')
 from soi_funcs import *
 from figure_styles import *

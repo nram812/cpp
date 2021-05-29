@@ -85,6 +85,7 @@ if __name__ == "__main__":
         local_path = os.getcwd()
     
         filenames = [f for f in filenames if download_variable in f]
+        print(filenames)
         filenames = subset_filenames(filenames, start_date)
         agents = 2
         chunksize = 1
