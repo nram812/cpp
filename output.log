@@ -5,19 +5,14 @@ saving file
 None
 code execute succesfully
 # On branch main
-# Your branch is ahead of 'origin/main' by 1 commit.
-#   (use "git push" to publish your local commits)
-#
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   CEI/compute_cei.py
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi.csv
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
-#	modified:   kidson_synoptic_types/download_kidson.py
 #	modified:   mjo_series/data/MJO_realtime_plot.png
 #	modified:   output.log
 #
