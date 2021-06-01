@@ -33,7 +33,7 @@ To access the data please download the following [link](seven_station_series_out
 ![lightning_outlook](trenberth_figures/figures/M1_index.png)
 ![lightning_outlook1](trenberth_figures/figures/Z1_index.png)
 To download the indices please use the following [link](trenberth_figures/data/updated_trenberth_index.csv)
-
+Notes: This is the new Trenberth Index correlates very well to Brett Mullan's maintained index. 
 # IOD
 ![lightning_outlook2](IOD/figures/IOD_series_plot_recent1.png)
 ![lightning_outlook3](IOD/figures/IOD_spatial_plot_recent1.png)
