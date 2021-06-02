@@ -3,6 +3,8 @@ from dask.diagnostics import ProgressBar
 import matplotlib.pyplot as plt
 import pandas as pd
 # M1 = HOBA - CHAT
+
+# Adding the BZ1 stations, and so on.
 import numpy as np
 import sys
 import pandas as pd
@@ -16,104 +18,173 @@ from datetime import datetime, timedelta
 import subprocess
 from datetime import datetime
 import os
-
-# Remove the grid and fix the axis labels
-
 os.chdir(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices')
-# os.chdir(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/')
 sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/lib')
+# defining the output data path
+path = r"/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/data/"
 from soi_funcs import *
 from figure_styles import *
 from iod_funcs import *
 from data_processing_funcs import *
 from cei_funcs import *
+# Adding the custom import statements to the code
 years, months, mFMT, yFMT = load_plotting_config__()
-# INDEX: Z1 = AUCK - CHCH
-hobart_coords = (-42.880554, 147.324997)
-auckland_coords = (-36.850109, 174.767700) #albert park
-chatham_coords = ( -43.8923, 176.5240)
-chch_coords = (-43.525650,172.639847)
-path = r"/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/data/"
-#os.chdir(path)
+# Load the coordinates for each of the sites
+# defining the coordinate list
+number_of_lagged_times_in_plot = 48
 
-# loading the historical trenberth monthly
-complete_dset = xr.open_dataset(f"{path}monthly_single_levels_era5_complete.nc", chunks={"time":1})
+coords_list ={}
+coords_list['hobart_coords'] = (-42.880554, 147.324997)
+coords_list['auckland_coords'] = (-36.850109, 174.767700)
+coords_list['chatham_coords'] = (-43.8923, -176.5240)
+coords_list['chch_coords'] = (-43.525650,172.639847)
+coords_list['cai_coords'] = (-52.55, 169.11 )
+coords_list['darwin_coords'] = (-12.433, 130.867)
+coords_list['adelaide_coords'] = (-34.93, 138.58)
+coords_list['syndey_coords'] = (-33.867, 151.2)
+coords_list['wellington_coords'] = (-41.28, 174.76)
+coords_list['hokita_coords'] = (-42.71, 170.95)
+coords_list['raoul_island'] = (-29.25, 177.916)
+coords_list['apia_coords'] = (-13.8333, -171.7667)
+coords_list['invercargill_coords'] = ( -46.4250 , 168.3100)
+coords_list['stanley_coords'] = (-52.0, -58)
+coords_list['new_plymouth_coords'] = (-39.05, 174.07)
+coords_list['gisborne_coords'] = (-38.66, 178.017)
 
+# Plotting limits these are the extents for the plots
+ylims ={}
+ylims['M1'] = (-130,130)
+ylims['M2'] = (-90,90)
+ylims['M3'] = (-30,30)
+ylims['Z1'] = (-80,80)
+ylims['Z2'] = (-80,80)
+ylims['Z3'] = (-130,130)
+ylims['Z4'] = (-130,130)
+ylims['Z5'] = (-80,80)
+ylims['ZN'] = (-60,60)
+ylims['ZS'] = (-60,60)
+ylims['SET'] = (-60,60)
+ylims['TPI'] = (-130,130)
+ylims['MZ1'] = (-50,50)
+ylims['MZ2'] = (-80,80)
+ylims['MZ3'] = (-80,80)
+ylims['MZ4'] = (-20,20)
+
+### Code begins
+# loading the downloaded dataset
+complete_dset = xr.open_dataset(f"{path}monthly_single_levels_era5_complete.nc", chunks={"time":30})
 complete_dset['longitude'] = np.arange(0,180, 0.25).tolist() + np.arange(-180,0, 0.25).tolist()
 complete_dset = complete_dset.reindex(longitude = np.arange(-180,180,0.25))
-
+# redefining the methodology
 # complete dset ends on 2021-04-1
 load_downloaded_dset = xr.open_mfdataset(f"{path}/single-levels/*/*.nc", parallel = True)
 resampled = load_downloaded_dset.resample(time = '1MS').mean()
-#resampled = bounds(resampled)
-# load daily dataset of trenberth
 
 
-# merge_with old dataset
 def subtract_clim(df, period = ["1961","1990"]):
+    """
+
+    :param df: a dataset with time dimension time
+    :param period: the climatological period to compute the mean over
+    :return:
+    """
     return df.groupby(df.time.dt.month).apply(lambda a: a- a.sel(time = slice(period[0], period[1])).mean("time"))
 
 
-def create_trenbert(df, auckland_coords, hobart_coords, chatham_coords, chch_coords):
-    hobart_pressure = (df['msl'].interp(latitude =hobart_coords[0], longitude = hobart_coords[1], method='linear'))
-    chatham_pressure = df['msl'].interp(latitude =chatham_coords[0], longitude = chatham_coords[1], method='linear')
-    auckland = df['msl'].interp(latitude =auckland_coords[0], longitude = auckland_coords[1], method='linear')
-    chch = df['msl'].interp(latitude =chch_coords[0], longitude = chch_coords[1], method='linear')
-    return subtract_clim(hobart_pressure), subtract_clim(chatham_pressure), subtract_clim(auckland), subtract_clim(chch)
+def create_trenbert(df,
+                    coords_list = {}):
+    output_clim = {}
+    for key, coords in coords_list.items():
+        pressure = (df['msl'].interp(latitude=coords[0], longitude=coords[1], method='linear'))
+        pressure = subtract_clim(pressure)
+        output_clim[key] = pressure
+    return output_clim
 
 
 # need to subtract the 1981 to 2021 normal period from
 
 with ProgressBar():
     merged = xr.merge([resampled, complete_dset.interp_like(resampled.isel(time=0), method='nearest')])
-    #merged = subtract_clim(merged)
-    hobart, chatham, auckland,chch = create_trenbert(merged,auckland_coords, hobart_coords, chatham_coords, chch_coords)
-    m11 = (hobart - chatham).compute()//10.0
-    z11 = (auckland - chch).compute()//10.0
+    climatologies = create_trenbert(merged, coords_list)
+    # lets now compute all the trenberth indices
+    z1 = (climatologies['auckland_coords'] - climatologies['chch_coords']).compute() // 10.0
+    z2 = (climatologies['chch_coords'] - climatologies['cai_coords']).compute() // 10.0
+    z3 = (climatologies['auckland_coords'] - climatologies['invercargill_coords']).compute() // 10.0
+    z4 = (climatologies['raoul_island'] - climatologies['chatham_coords']).compute() // 10.0
+    z5 = (climatologies['syndey_coords'] - climatologies['hobart_coords']).compute() // 10.0
+    #
+    m1 = (climatologies['hobart_coords'] - climatologies['chatham_coords']).compute() // 10.0
+    m2 = (climatologies['hokita_coords'] - climatologies['chatham_coords']).compute() // 10.0
+    m3 = (climatologies['hobart_coords'] - climatologies['hokita_coords']).compute() // 10.0
 
+    mz1 = (climatologies['gisborne_coords'] - climatologies['hokita_coords']).compute() // 10.0
+    mz2 = (climatologies['gisborne_coords'] - climatologies['invercargill_coords']).compute() // 10.0
+    mz3 = (climatologies['new_plymouth_coords'] - climatologies['chatham_coords']).compute() // 10.0
+    mz4 = (climatologies['auckland_coords'] - climatologies['new_plymouth_coords']).compute() // 10.0
+    set1 = (climatologies['raoul_island'] - climatologies['apia_coords']).compute() // 10.0
+    tpi = (climatologies['hobart_coords'] - climatologies['stanley_coords']).compute() // 10.0
+    zn = (climatologies['auckland_coords'] - climatologies['wellington_coords']).compute() // 10.0
+    zs = (climatologies['wellington_coords'] - climatologies['invercargill_coords']).compute() // 10.0
+
+
+def rename_index(index, name = ''):
+    """
+
+    :param index: an instance of an interpolated index as shown above
+    :param name:  the renaming name
+    :return:
+    """
+    return index.to_dataset().rename({"msl":name}).to_dataframe()
+# creating all the indices in one go
+
+
+merged_index = pd.concat([rename_index(z1, "Z1"),
+                          rename_index(z2, "Z2"),
+                          rename_index(z3, "Z3"),
+                          rename_index(z4, "Z4"),
+                          rename_index(z5, "Z5"),
+                          rename_index(m1, "M1"),
+                          rename_index(m2, "M2"),
+                          rename_index(m3, "M3"),
+                          rename_index(mz1, "MZ1"),
+                          rename_index(mz2, "MZ2"),
+                          rename_index(mz3, "MZ3"),
+                          rename_index(mz4, "MZ4"),
+                          rename_index(zn, "ZN"),
+                          rename_index(zs, "ZS"),
+                          rename_index(set1, "SET"),
+                          rename_index(tpi, "TPI")], axis=1)
 # Load the plotting configurations
 
 output_file_dirs = f'./trenberth_figures'
-merged_index = pd.concat([m11.to_dataset().rename({"msl":"M1"}).to_dataframe(), z11.to_dataset().rename({"msl":"Z1"}).to_dataframe(),], axis=1)
+merged_index.to_csv(f'./trenberth_figures/data/updated_trenberth_index.csv')
+# saving the index
 
-if __name__ == "__main__":
+for index in merged_index.columns:
+    dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=merged_index.iloc[-number_of_lagged_times_in_plot:],
+                                                            col1=index, col2='Z1')
 
-    dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=merged_index.iloc[-48:], col1='M1', col2='Z1')
-    merged_index.to_csv(f'./trenberth_figures/data/updated_trenberth_index.csv')
     fig, ax, __, new_fig_created, textBm, textBs = plot_data(dates, soi, widths,
                                                              soim, months,
                                                              output_path=f'./CEI/figures',
-                                                             cei=True, var_name='NIWA M1 Index',
+                                                             cei=True, var_name=f'NIWA {index} Index',
                                                              var_2='', title=False, label_bool=None,
-                                                             period1=1, period2=3, periodicity='M', ylim = (-130,130),
-                                                             figsize = (14,10))
+                                                             period1=1, period2=3, periodicity='M', ylim=ylims[index],
+                                                             figsize=(14, 10))
     add_reference(ax, 12, [textBm, textBs], top_corner=0.97, separation=0.03,
                   data_source="http://www.niwa.co.nz/CPPdata",
                   ref="Ref: Trenberth, Kevin E, 1976; DOI: 10.1002/qj.49710243106")
     ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
     ax.grid(False)
-    fig.savefig(f'{output_file_dirs}/figures/M1_index.png')
+    fig.show()
+    fig.savefig(f'{output_file_dirs}/figures/{index}_index.png')
 
-    dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=merged_index.iloc[-48:], col1='Z1', col2='M1')
-    fig2, ax2, __, new_fig_created, textBm, textBs = plot_data(dates, soi, widths,
-                                                             soim, months,
-                                                             output_path=f'./CEI/figures',
-                                                             cei=True, var_name='NIWA Z1 Index',
-                                                             var_2='', title=False, label_bool=None,
-                                                             period1=1, period2=3, periodicity='M', ylim = (-80,80),
-                                                             figsize = (14,10))
-    ax2.grid(False)
-    add_reference(ax2, 12, [textBm, textBs], top_corner=0.97, separation=0.03,
-                  data_source="http://www.niwa.co.nz/CPPdata",
-                  ref="Ref: Trenberth, Kevin E, 1976; DOI: 10.1002/qj.49710243106")
-    ax2.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
 
-    #fig2.tight_layout()
-    fig2.savefig(f'{output_file_dirs}/figures/Z1_index.png', dpi =300)
 
     #fig.savefig(output_file_dirs, dpi=300)
 
     #handle_figure_update_mssg(output_file_dirs, True)
 
 #m11['msl'] = np.int(m11['msl'])/10.0
-
+merged_index = pd.read_csv(f'./trenberth_figures/data/updated_trenberth_index.csv',
+                           index_col =0, parse_dates = True)
