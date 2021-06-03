@@ -1,5 +1,4 @@
-computing the mjo
-running plotting script
+computing thedownlrunning plotting script
  
 saving file
 None
@@ -11,6 +10,8 @@ code execute succesfully
 #
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
+#	modified:   indices/data/daily_soi.csv
+#	modified:   indices/figures/SOI_LP_realtime_plot.png
 #	modified:   mjo_series/data/MJO_realtime_plot.png
 #	modified:   output.log
 #
@@ -20,21 +21,5 @@ code execute succesfully
 #	.g
 #	.gitconfig
 #	.gitignore
-#	data/logs/2021-06-01.log
+#	500mb_scaler.sav
 no changes added to commit (use "git add" and/or "git commit -a")
-[main f9c27e3] auto commit
- Committer: Neelesh Rampal neelesh.rampal@niwa.co.nz <rampaln@w-nwp01.maui.niwa.co.nz>
-Your name and email address were configured automatically based
-on your username and hostname. Please check that they are accurate.
-You can suppress this message by setting them explicitly:
-
-    git config --global user.name "Your Name"
-    git config --global user.email you@example.com
-
-After doing this, you may fix the identity used for this commit with:
-
-    git commit --amend --reset-author
-
- 4 files changed, 30 insertions(+), 35 deletions(-)
- rewrite mjo_series/data/MJO_realtime_plot.png (94%)
- rewrite output.log (99%)
