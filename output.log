@@ -54,3 +54,35 @@ None
 None
 None
 None
+[main d086de0] added new plots
+ Committer: Neelesh Rampal neelesh.rampal@niwa.co.nz <rampaln@w-nwp01.maui.niwa.co.nz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 19 files changed, 56 insertions(+), 25 deletions(-)
+ rewrite niwa_soi/figures/NIWA_SOI.png (98%)
+ rewrite output.log (86%)
+ rewrite trenberth_figures/figures/M1_index.png (97%)
+ rewrite trenberth_figures/figures/M2_index.png (98%)
+ rewrite trenberth_figures/figures/M3_index.png (98%)
+ rewrite trenberth_figures/figures/MZ1_index.png (97%)
+ rewrite trenberth_figures/figures/MZ2_index.png (98%)
+ rewrite trenberth_figures/figures/MZ3_index.png (98%)
+ rewrite trenberth_figures/figures/MZ4_index.png (98%)
+ rewrite trenberth_figures/figures/SET_index.png (97%)
+ rewrite trenberth_figures/figures/TPI_index.png (98%)
+ rewrite trenberth_figures/figures/Z1_index.png (98%)
+ rewrite trenberth_figures/figures/Z2_index.png (98%)
+ rewrite trenberth_figures/figures/Z3_index.png (98%)
+ rewrite trenberth_figures/figures/Z4_index.png (98%)
+ rewrite trenberth_figures/figures/Z5_index.png (98%)
+ rewrite trenberth_figures/figures/ZN_index.png (98%)
+ rewrite trenberth_figures/figures/ZS_index.png (98%)

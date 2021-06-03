@@ -14,6 +14,9 @@ import numpy as np
 import pandas as pd
 from dask.diagnostics import ProgressBar
 import cartopy.crs as ccrs
+# avoid overwriting each monthly figure and put the history of months in the next update
+# check some instances of the methodology
+# e.g. do you first subtract the climatology and then the mean
 
 os.chdir(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/')
 sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/lib')
@@ -35,7 +38,7 @@ darwin_coords = (-12.43806, 130.84111)
 
 
 # loading the raw historical data
-complete_dset = xr.open_dataset(r"data/monthly_single_levels_era5_complete.nc", chunks={"time": 50})
+complete_dset = xr.open_dataset(r"data/monthly_single_levels_era5_complete.nc")#, chunks={"time": 50})
 
 # Reindexing the data appropriately
 complete_dset['longitude'] = np.arange(0, 180, 0.25).tolist() + np.arange(-180, 0, 0.25).tolist()
@@ -71,7 +74,7 @@ def standardize(x):
     :return: the zscore or normalized outputs
     """
     anomalies = (x - x.sel(time=slice("1981", "2010")).mean("time"))
-    return anomalies / anomalies.std("time")
+    return anomalies, x.sel(time=slice("1981", "2010"))
 
 
 def subtract_clim(df, period=None):
@@ -152,18 +155,25 @@ def plot_region(df_region, frequency='W',
 
 with ProgressBar():
     # select the common region,
-    merged = xr.merge([resampled, complete_dset.interp_like(resampled.isel(time=0), method='nearest')])
+    merged_dset = xr.merge([resampled, complete_dset.interp_like(resampled.isel(time=0), method='nearest')])
     daily_merged = xr.merge([load_downloaded_dset, complete_dset.interp_like(resampled.isel(time=0), method='nearest')])
-    merged = subtract_clim(merged)
+    merged = subtract_clim(merged_dset)
     daily_anoms = subtract_clim(daily_merged).sel(time=load_downloaded_dset.time.to_index())
-    # compute daily anomalies in real time
+    # compute daily anomalies in real
+    # assign whether there are too many values in the data
+    # this means something is wrong
     if count_sst_nans(merged):
-        tahiti = standardize(merged['msl'].interp(latitude=tahiti_coords[0], longitude=tahiti_coords[1]))
-        darwin = standardize(merged['msl'].interp(latitude=darwin_coords[0], longitude=darwin_coords[1]))
-        msd = np.sqrt(np.nanmean((tahiti - darwin) ** 2))
+        tahiti,t_clim = standardize(merged_dset['msl'].interp(latitude=tahiti_coords[0], longitude=tahiti_coords[1],
+                                    method='nearest'))
+        tahiti = tahit.compute()
+        darwin,d_clim = standardize(merged_dset['msl'].interp(latitude=darwin_coords[0], longitude=darwin_coords[1],
+                                                              method='nearest'))#.compute()
+        darwin = darwin.compute()
+        msd = (t_clim - d_clim).std("time")
         soi = (tahiti - darwin) / msd
         soi = soi.compute().to_dataset().rename({"msl":'SOI'})
-        soi.to.dataframe().to_csv(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/indices/data/soi.csv')
+        soi = soi.to_dataframe()#.
+        soi.to_csv(r'./indices/data/soi.csv')
         # saving the monthly southern oscillation index
         # compute the nino regions
         monthly_regions = extract_nino_regions(merged, regions)
@@ -172,7 +182,8 @@ with ProgressBar():
             monthly_index_list.append(region.mean(["latitude",
                                   "longitude"]).to_dataset().rename({"sst": name}).to_dataframe())
         monthly_index_list = pd.concat(monthly_index_list, axis=1)
-        monthly_index_list.to_csv('/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/indices/data/monthly_index.csv')
+        monthly_index_list = pd.concat([monthly_index_list, soi], axis =1)
+        monthly_index_list.to_csv('./indices/data/monthly_index.csv')
         # daily index list
         daily_regions = extract_nino_regions(daily_anoms, regions)
         daily_index_list = []
@@ -180,53 +191,46 @@ with ProgressBar():
             daily_index_list.append(region.mean(["latitude",
                                   "longitude"]).to_dataset().rename({"sst": name}).to_dataframe())
         daily_index_list = pd.concat(daily_index_list, axis=1)
-        daily_index_list.to_csv(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/indices/data/daily_index.csv')
-
+        daily_index_list.to_csv(r'./indices/data/daily_index.csv')
+        # three weekly enso figure
         pacific_fig, ax = plot_region(daily_anoms.sel(latitude=slice(-30, 30),
-                                                      longitude=slice(-180, -80))['sst'], frequency='W', n_periods=3,
+                                                      longitude=slice(-180, -80))['sst'],
+                                      frequency='W', n_periods=3,
                                       subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
                                       figsize=(20, 7))
+        pacific_fig.suptitle('Central Pacific OSTIA SST Anomalies')
         # monthly anomalies for monitoring
+        # last three months
         pacific_fig_monthly, ax = plot_region(merged.sel(latitude=slice(-30, 30),
                                                          longitude=slice(-180, -80))['sst'], frequency='M', n_periods=3,
                                               subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
                                               figsize=(20, 7))
+        pacific_fig_monthly.suptitle('Central Pacific OSTIA SST Anomalies')
         # most recent month
-        pacific_fig_monthly, ax = plot_region(merged.sel(latitude=slice(-30, 30),
+        pacific_fig_monthly_recent, ax = plot_region(merged.sel(latitude=slice(-30, 30),
                                                          longitude=slice(-180, -80))['sst'], frequency='M', n_periods=1,
                                               subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
                                               figsize=(8, 8))
-        fig.suptitle('Tropical Pacific SST Anomalies')
+        pacific_fig_monthly_recent.suptitle('Central Pacific OSTIA SST Anomalies')
 
         nz_daily_fig, ax = plot_region(daily_regions['New Zealand'], frequency='W', n_periods=3,
                                        subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
                                        figsize=(6, 12))
+        nz_daily_fig.suptitle('New Zealand OSTIA SST Anomalies')
+
         nz_monthly, ax = plot_region(monthly_regions['New Zealand'], frequency='M', n_periods=1,
                                      subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
                                      figsize=(6, 12))
+        nz_monthly.suptitle('New Zealand OSTIA SST Anomalies')
         nz_monthly3, ax = plot_region(monthly_regions['New Zealand'], frequency='M', n_periods=3,
                                       subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
                                       figsize=(15, 11))
-        nz_daily_fig.suptitle('New Zealand SST Anomalies')
-fig.show()
+        nz_monthly3.suptitle('New Zealand OSTIA SST Anomalies')
 
-# darwin coordinates
-soi_test = pd.read_excel(r"/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/niwa_soi/data/niwa-soi-latest.xlsx",
-                         index_col=0, parse_dates=True)
-soi_test2 = soi.to_dataframe()
 
-fig, ax = plt.subplots()
-soi_test['SOI'].plot(ax=ax)
-soi_test2['msl'].loc["2016":].plot(ax=ax)
-fig.show()
-
-fig, ax = plt.subplots(2)
-nino34 = merged['sst'].sel(latitude=slice(5, -5),
-                           longitude=slice(-170, -120)).mean(["latitude",
-                                                              "longitude"]).compute()
-merged['sst'].isel(time=-17).plot(ax=ax[0], vmin=-2, vmax=2, cmap='RdBu_r')
-# resampled['msl'].isel(time =-1).plot(ax = ax[1])
-fig.show()
-fig, ax = plt.subplots()
-nino34.rolling(time=5).mean().isel(time=slice(-55, None)).plot(ax=ax)
-fig.show()
+pacific_fig.savefig(r'./indices/figures/central_pacific_weekly.png', dpi =300)
+pacific_fig_monthly.savefig(r'./indices/figures/central_pacific_3_monthly.png', dpi =300)
+pacific_fig_monthly_recent.savefig(r'./indices/figures/central_pacific_last_month.png', dpi =300)
+nz_daily_fig.savefig(r'./indices/figures/nz_sst_weekly.png', dpi =300)
+nz_monthly.savefig(r'./indices/figures/nz_sst_monthly.png', dpi =300)
+nz_monthly3.savefig(r'./indices/figures/nz_sst_3_monthly.png', dpi =300)
