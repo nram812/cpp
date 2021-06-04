@@ -17,6 +17,9 @@ import cartopy.crs as ccrs
 # avoid overwriting each monthly figure and put the history of months in the next update
 # check some instances of the methodology
 # e.g. do you first subtract the climatology and then the mean
+# issues arise from a potential correct required to be made for these indices.
+# Trenberth indexes may have some adjustments that needs to be made so that the series
+# are homogenized.
 
 os.chdir(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/')
 sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/lib')
@@ -73,7 +76,7 @@ def standardize(x):
     :param x: an xarray dataset with time as a key dimension
     :return: the zscore or normalized outputs
     """
-    anomalies = (x - x.sel(time=slice("1981", "2010")).mean("time"))
+    anomalies = x#(x - x.sel(time=slice("1981", "2010")).mean("time"))
     return anomalies, x.sel(time=slice("1981", "2010"))
 
 
@@ -163,10 +166,13 @@ with ProgressBar():
     # assign whether there are too many values in the data
     # this means something is wrong
     if count_sst_nans(merged):
-        tahiti,t_clim = standardize(merged_dset['msl'].interp(latitude=tahiti_coords[0], longitude=tahiti_coords[1],
-                                    method='nearest'))
-        tahiti = tahit.compute()
-        darwin,d_clim = standardize(merged_dset['msl'].interp(latitude=darwin_coords[0], longitude=darwin_coords[1],
+        with ProgressBar():
+            tahiti,t_clim = standardize(merged_dset['msl'].interp(latitude=tahiti_coords[0],
+                                                                  longitude=tahiti_coords[1],
+                                        method='nearest'))
+            tahiti = tahiti.compute()
+        darwin,d_clim = standardize(merged_dset['msl'].interp(latitude=darwin_coords[0],
+                                                              longitude=darwin_coords[1],
                                                               method='nearest'))#.compute()
         darwin = darwin.compute()
         msd = (t_clim - d_clim).std("time")
