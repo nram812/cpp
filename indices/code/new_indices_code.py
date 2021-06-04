@@ -76,8 +76,8 @@ def standardize(x):
     :param x: an xarray dataset with time as a key dimension
     :return: the zscore or normalized outputs
     """
-    anomalies = x#(x - x.sel(time=slice("1981", "2010")).mean("time"))
-    return anomalies, x.sel(time=slice("1981", "2010"))
+    anomalies = x - x.sel(time=slice("1981", "2010")).mean("time")
+    return anomalies, x.sel(time=slice("1981", "2010")), x
 
 
 def subtract_clim(df, period=None):
@@ -167,11 +167,11 @@ with ProgressBar():
     # this means something is wrong
     if count_sst_nans(merged):
         with ProgressBar():
-            tahiti,t_clim = standardize(merged_dset['msl'].interp(latitude=tahiti_coords[0],
+            tahiti,t_clim, orig_t = standardize(merged_dset['msl'].interp(latitude=tahiti_coords[0],
                                                                   longitude=tahiti_coords[1],
                                         method='nearest'))
             tahiti = tahiti.compute()
-        darwin,d_clim = standardize(merged_dset['msl'].interp(latitude=darwin_coords[0],
+        darwin,d_clim, orig_d = standardize(merged_dset['msl'].interp(latitude=darwin_coords[0],
                                                               longitude=darwin_coords[1],
                                                               method='nearest'))#.compute()
         darwin = darwin.compute()
@@ -199,44 +199,44 @@ with ProgressBar():
         daily_index_list = pd.concat(daily_index_list, axis=1)
         daily_index_list.to_csv(r'./indices/data/daily_index.csv')
         # three weekly enso figure
-        pacific_fig, ax = plot_region(daily_anoms.sel(latitude=slice(-30, 30),
-                                                      longitude=slice(-180, -80))['sst'],
-                                      frequency='W', n_periods=3,
-                                      subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
-                                      figsize=(20, 7))
-        pacific_fig.suptitle('Central Pacific OSTIA SST Anomalies')
-        # monthly anomalies for monitoring
-        # last three months
-        pacific_fig_monthly, ax = plot_region(merged.sel(latitude=slice(-30, 30),
-                                                         longitude=slice(-180, -80))['sst'], frequency='M', n_periods=3,
-                                              subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
-                                              figsize=(20, 7))
-        pacific_fig_monthly.suptitle('Central Pacific OSTIA SST Anomalies')
-        # most recent month
-        pacific_fig_monthly_recent, ax = plot_region(merged.sel(latitude=slice(-30, 30),
-                                                         longitude=slice(-180, -80))['sst'], frequency='M', n_periods=1,
-                                              subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
-                                              figsize=(8, 8))
-        pacific_fig_monthly_recent.suptitle('Central Pacific OSTIA SST Anomalies')
+        # pacific_fig, ax = plot_region(daily_anoms.sel(latitude=slice(-30, 30),
+        #                                               longitude=slice(-180, -80))['sst'],
+        #                               frequency='W', n_periods=3,
+        #                               subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
+        #                               figsize=(20, 7))
+        # pacific_fig.suptitle('Central Pacific OSTIA SST Anomalies')
+        # # monthly anomalies for monitoring
+        # # last three months
+        # pacific_fig_monthly, ax = plot_region(merged.sel(latitude=slice(-30, 30),
+        #                                                  longitude=slice(-180, -80))['sst'], frequency='M', n_periods=3,
+        #                                       subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
+        #                                       figsize=(20, 7))
+        # pacific_fig_monthly.suptitle('Central Pacific OSTIA SST Anomalies')
+        # # most recent month
+        # pacific_fig_monthly_recent, ax = plot_region(merged.sel(latitude=slice(-30, 30),
+        #                                                  longitude=slice(-180, -80))['sst'], frequency='M', n_periods=1,
+        #                                       subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
+        #                                       figsize=(8, 8))
+        # pacific_fig_monthly_recent.suptitle('Central Pacific OSTIA SST Anomalies')
+        #
+        # nz_daily_fig, ax = plot_region(daily_regions['New Zealand'], frequency='W', n_periods=3,
+        #                                subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
+        #                                figsize=(6, 12))
+        # nz_daily_fig.suptitle('New Zealand OSTIA SST Anomalies')
+        #
+        # nz_monthly, ax = plot_region(monthly_regions['New Zealand'], frequency='M', n_periods=1,
+        #                              subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
+        #                              figsize=(6, 12))
+        # nz_monthly.suptitle('New Zealand OSTIA SST Anomalies')
+        # nz_monthly3, ax = plot_region(monthly_regions['New Zealand'], frequency='M', n_periods=3,
+        #                               subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
+        #                               figsize=(15, 11))
+        # nz_monthly3.suptitle('New Zealand OSTIA SST Anomalies')
 
-        nz_daily_fig, ax = plot_region(daily_regions['New Zealand'], frequency='W', n_periods=3,
-                                       subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
-                                       figsize=(6, 12))
-        nz_daily_fig.suptitle('New Zealand OSTIA SST Anomalies')
 
-        nz_monthly, ax = plot_region(monthly_regions['New Zealand'], frequency='M', n_periods=1,
-                                     subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
-                                     figsize=(6, 12))
-        nz_monthly.suptitle('New Zealand OSTIA SST Anomalies')
-        nz_monthly3, ax = plot_region(monthly_regions['New Zealand'], frequency='M', n_periods=3,
-                                      subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=171.77)),
-                                      figsize=(15, 11))
-        nz_monthly3.suptitle('New Zealand OSTIA SST Anomalies')
-
-
-pacific_fig.savefig(r'./indices/figures/central_pacific_weekly.png', dpi =300)
-pacific_fig_monthly.savefig(r'./indices/figures/central_pacific_3_monthly.png', dpi =300)
-pacific_fig_monthly_recent.savefig(r'./indices/figures/central_pacific_last_month.png', dpi =300)
-nz_daily_fig.savefig(r'./indices/figures/nz_sst_weekly.png', dpi =300)
-nz_monthly.savefig(r'./indices/figures/nz_sst_monthly.png', dpi =300)
-nz_monthly3.savefig(r'./indices/figures/nz_sst_3_monthly.png', dpi =300)
+# pacific_fig.savefig(r'./indices/figures/central_pacific_weekly.png', dpi =300)
+# pacific_fig_monthly.savefig(r'./indices/figures/central_pacific_3_monthly.png', dpi =300)
+# pacific_fig_monthly_recent.savefig(r'./indices/figures/central_pacific_last_month.png', dpi =300)
+# nz_daily_fig.savefig(r'./indices/figures/nz_sst_weekly.png', dpi =300)
+# nz_monthly.savefig(r'./indices/figures/nz_sst_monthly.png', dpi =300)
+# nz_monthly3.savefig(r'./indices/figures/nz_sst_3_monthly.png', dpi =300)
