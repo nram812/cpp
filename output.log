@@ -13,12 +13,6 @@ code execute succesfully
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi_bom.csv
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
-#	modified:   lib/__pycache__/cei_funcs.cpython-38.pyc
-#	modified:   lib/__pycache__/data_processing_funcs.cpython-38.pyc
-#	modified:   lib/__pycache__/figure_styles.cpython-38.pyc
-#	modified:   lib/__pycache__/iod_funcs.cpython-38.pyc
-#	modified:   lib/__pycache__/mjo_funcs.cpython-38.pyc
-#	modified:   lib/__pycache__/soi_funcs.cpython-38.pyc
 #	modified:   mjo_series/data/MJO_realtime_plot.png
 #	modified:   output.log
 #
