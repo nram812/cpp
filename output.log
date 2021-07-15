@@ -5,9 +5,19 @@ saving file
 None
 code execute succesfully
 # On branch main
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
+# Changes not staged for commit:None
+creating ipi plots
+None
+None
+None
+None
+None
+creating sio plots
+loading file
+None
+getting trenberth data
+creating trenberth plots
+ectory)
 #
 #	modified:   IOD/figures/IOD_series_plot.png
 #	modified:   IOD/figures/IOD_series_plot_recent1.png
@@ -46,3 +56,23 @@ code execute succesfully
 #	seven-station-series-python/
 #	test.sh
 no changes added to commit (use "git add" and/or "git commit -a")
+[main 28a375a] auto commit
+ Committer: Neelesh Rampal neelesh.rampal@niwa.co.nz <rampaln@w-nwp01.maui.niwa.co.nz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 10 files changed, 272 insertions(+), 264 deletions(-)
+ rewrite IOD/figures/IOD_series_plot.png (93%)
+ rewrite IOD/figures/IOD_series_plot_recent1.png (80%)
+ rewrite IOD/figures/IOD_spatial_plot_recent1.png (96%)
+ rewrite IOD/figures/Monthly_IOD.csv (98%)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (80%)
+ rewrite mjo_series/data/MJO_realtime_plot.png (94%)
