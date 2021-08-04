@@ -1,28 +1,18 @@
-computing thedownlrunning plotting script
+computing the mjo
+running plotting script
  
 saving file
 None
 code execute succesfully
 # On branch main
-# Changes not stNone
-creating ipi plots
-None
-None
-None
-None
-None
-creating sio plots
-loading file
-None
-getting trenberth data
-creating trenberth plots
-s in working directory)
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
 #
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi.csv
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
-#	modified:   kidson_synoptic_types/data_real_time/NCEP_NCAR/6-hourly/hgt.2021.nc
 #	modified:   mjo_series/data/MJO_realtime_plot.png
 #	modified:   output.log
 #
@@ -46,6 +36,7 @@ s in working directory)
 #	data/logs/2021-06-25.log
 #	data/logs/2021-07-03.log
 #	data/logs/2021-07-25.log
+#	data/logs/2021-08-03.log
 #	gitautocommit.sh
 #	ops/
 #	output/
@@ -53,8 +44,3 @@ s in working directory)
 #	seven-station-series-python/
 #	test.sh
 no changes added to commit (use "git add" and/or "git commit -a")
-[main 2c0fa51] auto commit
- 7 files changed, 65 insertions(+), 62 deletions(-)
- rewrite indices/figures/SOI_LP_realtime_plot.png (77%)
- rewrite kidson_synoptic_types/data_real_time/NCEP_NCAR/6-hourly/hgt.2021.nc (99%)
- rewrite mjo_series/data/MJO_realtime_plot.png (95%)
