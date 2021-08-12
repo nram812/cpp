@@ -62,7 +62,8 @@ if __name__ == "__main__":
                                          output_path=f'./CEI/figures',
                                          cei=True, var_name='Coupled ENSO Index (CEI)', var_2='SOI 3-month', title = False, label_bool = None,
                                                             period1 =1, period2 =3, periodicity = 'M')
-    
+
+
     ax, data = add_categories(ax, data)
     add_reference(ax,12,[textBm, textBs], top_corner=0.97, separation = 0.03,
                   data_source="http://www.niwa.co.nz/CPPdata",
@@ -70,6 +71,7 @@ if __name__ == "__main__":
     ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
     fig.tight_layout()
     #fig.show()
+    datas.to_csv(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/CEI/data/new_CEI.csv')
 
     fig.savefig(output_file_dirs,dpi =300)
 

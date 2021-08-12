@@ -9,6 +9,8 @@ code execute succesfully
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
+#	modified:   CEI/compute_cei.py
+#	modified:   CEI/figures/CEI_series_2018_present.png
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi.csv
@@ -22,6 +24,7 @@ code execute succesfully
 #	.g
 #	.gitconfig
 #	.gitignore
+#	CEI/data/new_CEI.csv
 #	GEFS_ensemble_accuracy_with_subsetting_ens_members_.png
 #	GEFS_ensemble_accuracy_with_subsetting_ens_members_40_prob.png
 #	GEFS_ensemble_accuracy_with_subsetting_ens_members_no_probs.png
