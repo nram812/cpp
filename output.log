@@ -1,28 +1,17 @@
-computing thedownlrunning plotting script
+computing the mjo
+running plotting script
  
 saving file
 None
 code execute succesfully
 # On branch main
-# Your branch is ahead of 'origiNone
-creating ipi plots
-None
-None
-None
-None
-None
-creating sio plots
-loading file
-None
-getting trenberth data
-creating trenberth plots
-" to update what will be committed)
+# Your branch is ahead of 'origin/main' by 3 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   IOD/figures/IOD_series_plot.png
-#	modified:   IOD/figures/IOD_series_plot_recent1.png
-#	modified:   IOD/figures/IOD_spatial_plot_recent1.png
-#	modified:   IOD/figures/Monthly_IOD.csv
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi.csv
@@ -36,7 +25,6 @@ creating trenberth plots
 #	.g
 #	.gitconfig
 #	.gitignore
-#	CEI/data/new_CEI.csv
 #	GEFS_ensemble_accuracy_with_subsetting_ens_members_.png
 #	GEFS_ensemble_accuracy_with_subsetting_ens_members_40_prob.png
 #	GEFS_ensemble_accuracy_with_subsetting_ens_members_no_probs.png
@@ -59,11 +47,3 @@ creating trenberth plots
 #	seven-station-series-python/
 #	test.sh
 no changes added to commit (use "git add" and/or "git commit -a")
-[main 97dab80] auto commit
- 10 files changed, 275 insertions(+), 265 deletions(-)
- rewrite IOD/figures/IOD_series_plot.png (93%)
- rewrite IOD/figures/IOD_series_plot_recent1.png (95%)
- rewrite IOD/figures/IOD_spatial_plot_recent1.png (98%)
- rewrite IOD/figures/Monthly_IOD.csv (99%)
- rewrite indices/figures/SOI_LP_realtime_plot.png (72%)
- rewrite mjo_series/data/MJO_realtime_plot.png (89%)
