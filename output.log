@@ -1,22 +1,15 @@
-computing thedownlrunning plotting script
+computing the mjo
+running plotting script
  
 saving file
 None
 code execute succesfully
 # On branch main
-# Your branch isNone
-creating ipi plots
-None
-None
-None
-None
-None
-creating sio plots
-loading file
-None
-getting trenberth data
-creating trenberth plots
-"git add <file>..." to update what will be committed)
+# Your branch is ahead of 'origin/main' by 14 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
 #	modified:   data/mjo_data/phase_historical.csv
@@ -47,6 +40,7 @@ creating trenberth plots
 #	data/logs/2021-07-03.log
 #	data/logs/2021-07-25.log
 #	data/logs/2021-08-03.log
+#	data/logs/2021-08-25.log
 #	gitautocommit.sh
 #	ops/
 #	output/
@@ -54,7 +48,3 @@ creating trenberth plots
 #	seven-station-series-python/
 #	test.sh
 no changes added to commit (use "git add" and/or "git commit -a")
-[main 9cba669] auto commit
- 6 files changed, 9 insertions(+), 7 deletions(-)
- rewrite indices/figures/SOI_LP_realtime_plot.png (86%)
- rewrite mjo_series/data/MJO_realtime_plot.png (90%)
