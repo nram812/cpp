@@ -5,18 +5,16 @@ saving file
 None
 code execute succesfully
 # On branch main
-# Your branch is ahead of 'origin/main' by 19 commits.
+# Your branch is ahead of 'origin/main' by 21 commits.
 #   (use "git push" to publish your local commits)
 #
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   data/mjo_data/phase_historical.csv
-#	modified:   data/mjo_data/phase_recent.csv
-#	modified:   indices/data/daily_soi.csv
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
 #	modified:   mjo_series/data/MJO_realtime_plot.png
+#	modified:   niwa_soi/data/niwa-soi-latest.xlsx
 #	modified:   output.log
 #
 # Untracked files:
@@ -48,7 +46,3 @@ code execute succesfully
 #	seven-station-series-python/
 #	test.sh
 no changes added to commit (use "git add" and/or "git commit -a")
-[main 7096008] auto commit
- 6 files changed, 8 insertions(+), 5 deletions(-)
- rewrite indices/figures/SOI_LP_realtime_plot.png (76%)
- rewrite mjo_series/data/MJO_realtime_plot.png (90%)
