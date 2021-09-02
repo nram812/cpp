@@ -5,16 +5,18 @@ saving file
 None
 code execute succesfully
 # On branch main
-# Your branch is ahead of 'origin/main' by 21 commits.
+# Your branch is ahead of 'origin/main' by 22 commits.
 #   (use "git push" to publish your local commits)
 #
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
+#	modified:   data/mjo_data/phase_historical.csv
+#	modified:   data/mjo_data/phase_recent.csv
+#	modified:   indices/data/daily_soi.csv
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
 #	modified:   mjo_series/data/MJO_realtime_plot.png
-#	modified:   niwa_soi/data/niwa-soi-latest.xlsx
 #	modified:   output.log
 #
 # Untracked files:
