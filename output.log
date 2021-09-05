@@ -48,3 +48,7 @@ code execute succesfully
 #	seven-station-series-python/
 #	test.sh
 no changes added to commit (use "git add" and/or "git commit -a")
+[main a6dfeae] auto commit
+ 6 files changed, 68 insertions(+), 65 deletions(-)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (78%)
+ rewrite mjo_series/data/MJO_realtime_plot.png (89%)

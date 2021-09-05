@@ -11,6 +11,7 @@ import subprocess
 from datetime import datetime
 import os
 sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/lib')
+os.chdir(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices')
 from soi_funcs import *
 from figure_styles import *
 from iod_funcs import *

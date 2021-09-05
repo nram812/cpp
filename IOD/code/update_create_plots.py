@@ -116,7 +116,7 @@ if __name__ == "__main__":
     f.suptitle(f'Indian Ocean Dipole (IOD) \n'
                f'{IOD.index[-1].strftime("%Y-%B")} value: {"%.2f" % IOD["IOD"].values[-1]}', fontsize=14);
     f.savefig(f'{output_f_dirs}/IOD_series_plot.png', dpi=300)
-    f.show()
+    #f.show()
     IOD.to_csv(f'{output_f_dirs}/Monthly_IOD.csv')
     dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=IOD1.iloc[-48:], col1='IOD', col2='IOD', weekly=False)
     # fig, ax, output_dirs, new_fig_created,textBm, textBs = plot_data(dates, soi, widths,
@@ -141,7 +141,7 @@ if __name__ == "__main__":
                   data_source="http://www.niwa.co.nz/CPPdata",
                   ref=f"Ref: Saji et al., 1999; DOI:10.1038/43854")
     ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
-    fig.show()
+    #fig.show()
     fig.savefig(f'{output_f_dirs}/IOD_series_plot_recent1.png', dpi=300)
 
     # files_list = glob.glob(f'{output_f_dirs}/IOD*.png')
