@@ -16,6 +16,11 @@ To update TOC, please run:
   - [MonthlySOI](#monthlysoi)
   - [CEI](#cei)
 
+## Updates:
+1. Fixing bug associated with downloading ERA5 data.
+2. Validated the Trenberth Indices from this catalogue
+3. Validated and tested the SST data that comes from this catalogue
+
 ## Live MJO:
 ![Forecast](mjo_series/data/MJO_realtime_plot.png)
 To access the data please download the following [link](data/mjo_data/phase_historical.csv)

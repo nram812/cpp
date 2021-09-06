@@ -22,6 +22,9 @@ os.chdir(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices')
 sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/lib')
 # defining the output data path
 path = r"/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/data/"
+
+# removed stanley as a coordinate
+# original data doesn't span that time peridd - will redownload reanlaysis
 from soi_funcs import *
 from figure_styles import *
 from iod_funcs import *
@@ -33,10 +36,11 @@ years, months, mFMT, yFMT = load_plotting_config__()
 # defining the coordinate list
 number_of_lagged_times_in_plot = 48
 
+# added 360 to coordinates
 coords_list ={}
 coords_list['hobart_coords'] = (-42.880554, 147.324997)
 coords_list['auckland_coords'] = (-36.850109, 174.767700)
-coords_list['chatham_coords'] = (-43.8923, -176.5240)
+coords_list['chatham_coords'] = (-43.8923, -176.5240 + 360 )
 coords_list['chch_coords'] = (-43.525650,172.639847)
 coords_list['cai_coords'] = (-52.55, 169.11 )
 coords_list['darwin_coords'] = (-12.433, 130.867)
@@ -45,9 +49,9 @@ coords_list['syndey_coords'] = (-33.867, 151.2)
 coords_list['wellington_coords'] = (-41.28, 174.76)
 coords_list['hokita_coords'] = (-42.71, 170.95)
 coords_list['raoul_island'] = (-29.25, 177.916)
-coords_list['apia_coords'] = (-13.8333, -171.7667)
+coords_list['apia_coords'] = (-13.8333, -171.7667 + 360)
 coords_list['invercargill_coords'] = ( -46.4250 , 168.3100)
-coords_list['stanley_coords'] = (-52.0, -58)
+#coords_list['stanley_coords'] = (-52.0, -58 + 360)
 coords_list['new_plymouth_coords'] = (-39.05, 174.07)
 coords_list['gisborne_coords'] = (-38.66, 178.017)
 
@@ -55,10 +59,10 @@ coords_list['gisborne_coords'] = (-38.66, 178.017)
 ylims ={}
 ylims['M1'] = (-130,130)
 ylims['M2'] = (-90,90)
-ylims['M3'] = (-30,30)
+ylims['M3'] = (-80,80)
 ylims['Z1'] = (-80,80)
 ylims['Z2'] = (-80,80)
-ylims['Z3'] = (-130,130)
+ylims['Z3'] = (-80,80)
 ylims['Z4'] = (-130,130)
 ylims['Z5'] = (-80,80)
 ylims['ZN'] = (-60,60)
@@ -71,15 +75,23 @@ ylims['MZ3'] = (-80,80)
 ylims['MZ4'] = (-20,20)
 
 ### Code begins
-# loading the downloaded dataset
-complete_dset = xr.open_dataset(f"{path}monthly_single_levels_era5_complete.nc", chunks={"time":30})
-complete_dset['longitude'] = np.arange(0,180, 0.25).tolist() + np.arange(-180,0, 0.25).tolist()
-complete_dset = complete_dset.reindex(longitude = np.arange(-180,180,0.25))
-# redefining the methodology
-# complete dset ends on 2021-04-1
-load_downloaded_dset = xr.open_mfdataset(f"{path}/single-levels/*/*.nc", parallel = True)
-resampled = load_downloaded_dset.resample(time = '1MS').mean()
 
+# loading the downloaded dataset
+# Points are directly on the boundary of the data
+complete_dset = xr.open_dataset(f'{path}/monthly_mean_mslp.nc', chunks={"time":1000})
+# complete_dset['longitude'] = complete_dset.longitude.where(complete_dset.longitude < 180.0
+load_downloaded_dset = xr.open_mfdataset(f"{path}/single-levels/*/*.nc", parallel = True)
+
+load_downloaded_dset['longitude'] = load_downloaded_dset.longitude.where(load_downloaded_dset.longitude > 0.0,
+                                                                         load_downloaded_dset.longitude  + 360)
+load_downloaded_dset = \
+    load_downloaded_dset.reindex(longitude=sorted(load_downloaded_dset.longitude.values))
+load_downloaded_dset = load_downloaded_dset.interp_like(complete_dset['msl'].isel(time =0))
+resampled = load_downloaded_dset.resample(time = '1MS').mean()
+with ProgressBar():
+    resampled = resampled.load()
+
+# I've checked that the data matches between the daily and the monthly
 
 def subtract_clim(df, period = ["1961","1990"]):
     """
@@ -104,7 +116,8 @@ def create_trenbert(df,
 # need to subtract the 1981 to 2021 normal period from
 
 with ProgressBar():
-    merged = xr.merge([resampled, complete_dset.interp_like(resampled.isel(time=0), method='nearest')])
+    merged = xr.merge([resampled['msl'],  complete_dset.sel(time = slice(None, "2021-04-01")).interp_like(resampled.isel(time=0), method='nearest')])
+    merged = merged.drop("expver")
     climatologies = create_trenbert(merged, coords_list)
     # lets now compute all the trenberth indices
     z1 = (climatologies['auckland_coords'] - climatologies['chch_coords']).compute() // 10.0
@@ -122,7 +135,7 @@ with ProgressBar():
     mz3 = (climatologies['new_plymouth_coords'] - climatologies['chatham_coords']).compute() // 10.0
     mz4 = (climatologies['auckland_coords'] - climatologies['new_plymouth_coords']).compute() // 10.0
     set1 = (climatologies['raoul_island'] - climatologies['apia_coords']).compute() // 10.0
-    tpi = (climatologies['hobart_coords'] - climatologies['stanley_coords']).compute() // 10.0
+    #tpi = (climatologies['hobart_coords'] - climatologies['stanley_coords']).compute() // 10.0
     zn = (climatologies['auckland_coords'] - climatologies['wellington_coords']).compute() // 10.0
     zs = (climatologies['wellington_coords'] - climatologies['invercargill_coords']).compute() // 10.0
 
@@ -136,7 +149,7 @@ def rename_index(index, name = ''):
     """
     return index.to_dataset().rename({"msl":name}).to_dataframe()
 # creating all the indices in one go
-
+# removed the TPI index from here
 
 merged_index = pd.concat([rename_index(z1, "Z1"),
                           rename_index(z2, "Z2"),
@@ -152,8 +165,7 @@ merged_index = pd.concat([rename_index(z1, "Z1"),
                           rename_index(mz4, "MZ4"),
                           rename_index(zn, "ZN"),
                           rename_index(zs, "ZS"),
-                          rename_index(set1, "SET"),
-                          rename_index(tpi, "TPI")], axis=1)
+                          rename_index(set1, "SET")], axis=1)
 # Load the plotting configurations
 
 output_file_dirs = f'./trenberth_figures'

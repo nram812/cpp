@@ -11,6 +11,8 @@ from scipy import signal
 from eofs.standard import Eof
 import os
 os.chdir('/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices')
+import os
+os.chdir(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices')
 sys.path.append(r'./lib')
 from soi_funcs import *
 from figure_styles import *
