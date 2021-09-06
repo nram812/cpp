@@ -30,7 +30,7 @@ To access the data please download the following [link](data/mjo_data/phase_hist
 To access the data please download the following [link](indices/data/daily_soi.csv)
 
 # Seven Station Series
-![Monthly_Forecast](seven_station_series_output/figures/NZT7_Apr2021.png)
+![Monthly_Forecast](seven_station_series_output/figures/NZT7_Aug2021.png)
 To access the data please download the following [link](seven_station_series_output/data/AllStationMonthly_Anomalies.csv)
 
 
