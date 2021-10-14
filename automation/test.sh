@@ -17,7 +17,7 @@ echo | git status
 git add ./mjo_series/*
 git add ./indices/figures/*
 git commit -a -m "auto commit"
-git push
+git push origin main
 
 
 echo "logged" > log.log

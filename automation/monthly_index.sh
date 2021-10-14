@@ -28,4 +28,4 @@ git add ./IPO/*
 git add ./IOD/figures/*
 git add ./CEI/*
 git commit -a -m "added new plots"
-git push 
+git push origin main

@@ -52,14 +52,14 @@ if __name__ == "__main__":
 
     # %%
     # Keeping the last three months of code
-    dates, widths, soi_, soim = format_series_for_bar_plot__(ts_soi=soi.iloc[-90:], col1='soirm1', col2='soirm3', weekly='daily')
+    dates, widths, soi_, soim = format_series_for_bar_plot__(ts_soi=soi.iloc[-90:]/10.0, col1='soirm1', col2='soirm3', weekly='daily')
     widths[-1] = widths[-2]
     fig, ax, output_directory,new_fig_created,textBm, textBs= plot_data(dates, soi_, widths,
                                                              soim, months,
                                          output_path=f'{output_dirs}',
                                          cei=True, var_name=f'NIWA SOI (last 3 months)', var_2='SOI 3-month', title=False, label_bool = None,
-                                                                        ylim=(-20,20), period2 =30, period1 = 1, periodicity ='D')
-    text = "%s to %s = %+3.1f" % (soi.index[-90].strftime("%b %d %Y"), soi.index[-1].strftime("%b %d %Y"), soi.iloc[-1, 1])
+                                                                        ylim=(-2,2), period2 =30, period1 = 1, periodicity ='D')
+    text = "%s to %s = %+3.1f" % (soi.index[-90].strftime("%b %d %Y"), soi.index[-1].strftime("%b %d %Y"), soi.iloc[-1, 1]/10.0)
 
     add_reference(ax, 12, [textBm, textBs, text], top_corner=0.97, separation=0.03,
                   data_source="http://www.niwa.co.nz/CPPdata",
