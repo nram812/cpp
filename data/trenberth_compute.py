@@ -188,7 +188,7 @@ for index in merged_index.columns:
                   ref="Ref: Trenberth, Kevin E, 1976; DOI: 10.1002/qj.49710243106")
     ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
     ax.grid(False)
-    fig.show()
+    #fig.show()
     fig.savefig(f'{output_file_dirs}/figures/{index}_index.png')
 
 
