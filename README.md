@@ -23,6 +23,7 @@ To update TOC, please run:
 
 ## Live MJO:
 ![Forecast](mjo_series/data/MJO_realtime_plot.png)
+<a href="data/mjo_data/phase_historical.csv" download>Click to Download</a>
 To access the data please download the following [link](data/mjo_data/phase_historical.csv)
 
 ## Live SOI:
