@@ -1,5 +1,4 @@
-computing the mjo
-running plotting script
+computing thedownlrunning plotting script
  
 saving file
 None
@@ -9,6 +8,10 @@ code execute succesfully
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
+#	modified:   IOD/figures/IOD_series_plot.png
+#	modified:   IOD/figures/IOD_series_plot_recent1.png
+#	modified:   IOD/figures/IOD_spatial_plot_recent1.png
+#	modified:   IOD/figures/Monthly_IOD.csv
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi.csv
