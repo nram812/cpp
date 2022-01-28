@@ -22,9 +22,12 @@ code execute succesfully
 #	.g
 #	.gitconfig
 #	.gitignore
+#	CEI/data/.ipynb_checkpoints/
+#	data/.ipynb_checkpoints/get_single_levels_reanal-checkpoint.py
 #	data/logs/2021-10-15.log
 #	data/logs/2021-10-25.log
 #	data/logs/2021-11-25.log
 #	data/logs/2021-12-25.log
 #	data/logs/2022-01-03.log
+#	trenberth_figures/data/.ipynb_checkpoints/
 no changes added to commit (use "git add" and/or "git commit -a")
