@@ -29,5 +29,10 @@ code execute succesfully
 #	data/logs/2021-11-25.log
 #	data/logs/2021-12-25.log
 #	data/logs/2022-01-03.log
-#	trenberth_figures/data/.ipynb_checkpoints/
+#	trenberth_figures/data/.ipynb_checkpoints/merged_index-checkpoint.csv
+#	trenberth_figures/data/.ipynb_checkpoints/tindex_1981-2010_to_Dec2019-checkpoint.txt
+#	trenberth_figures/data/.ipynb_checkpoints/validation_figure_M1-checkpoint.png
+#	trenberth_figures/data/.ipynb_checkpoints/validation_figure_M2-checkpoint.png
+#	trenberth_figures/data/.ipynb_checkpoints/validation_figure_M3-checkpoint.png
+#	trenberth_figures/figures/.ipynb_checkpoints/
 no changes added to commit (use "git add" and/or "git commit -a")
