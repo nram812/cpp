@@ -35,3 +35,7 @@ code execute succesfully
 #	trenberth_figures/homogenized_M1_Z1_annual.csv
 #	trenberth_figures/t_index.csv
 no changes added to commit (use "git add" and/or "git commit -a")
+[main 345ce02] auto commit
+ 6 files changed, 9 insertions(+)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (70%)
+ rewrite mjo_series/data/MJO_realtime_plot.png (89%)
