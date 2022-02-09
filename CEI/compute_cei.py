@@ -73,6 +73,7 @@ if __name__ == "__main__":
     fig.tight_layout()
     #fig.show()
     datas.to_csv(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/CEI/data/new_CEI.csv')
+    datas.to_excel(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/CEI/data/new_CEI.xlsx')
 
     fig.savefig(output_file_dirs,dpi =300)
 
