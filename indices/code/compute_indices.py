@@ -43,6 +43,7 @@ if __name__ == "__main__":
     soi.index = index
     # Save the SOI
     soi.to_csv(f'{output_dirs}/data/daily_soi.csv')
+    soi.to_excel(f'{output_dirs}/data/daily_soi.xlsx')
     mslp = soi.copy()
     soi = soi.loc[:, ['SOI']]
     soi['soirm1'] = soi[['SOI']].rolling(window=30).mean()

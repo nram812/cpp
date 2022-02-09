@@ -118,6 +118,7 @@ if __name__ == "__main__":
     f.savefig(f'{output_f_dirs}/IOD_series_plot.png', dpi=300)
     #f.show()
     IOD.to_csv(f'{output_f_dirs}/Monthly_IOD.csv')
+    IOD.to_excel(f'{output_f_dirs}/Monthly_IOD.xlsx')
     dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=IOD1.iloc[-48:], col1='IOD', col2='IOD', weekly=False)
     # fig, ax, output_dirs, new_fig_created,textBm, textBs = plot_data(dates, soi, widths,
     #                                                   soim, months, years,

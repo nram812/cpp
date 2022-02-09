@@ -46,3 +46,5 @@ output_dirs = '/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/mjo_series/d
 data, data_pol = read_url(month_before_s = month_before_s)
 data.to_csv('./data/mjo_data/phase_historical.csv')
 data_pol.to_csv('./data/mjo_data/phase_recent.csv')
+data.to_excel('./data/mjo_data/phase_historical.xlsx')
+data_pol.to_excel('./data/mjo_data/phase_recent.xlsx')

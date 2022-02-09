@@ -170,6 +170,7 @@ merged_index = pd.concat([rename_index(z1, "Z1"),
 
 output_file_dirs = f'./trenberth_figures'
 merged_index.to_csv(f'./trenberth_figures/data/updated_trenberth_index.csv')
+merged_index.to_excel(f'./trenberth_figures/data/updated_trenberth_index.xlsx')
 # saving the index
 
 for index in merged_index.columns:
