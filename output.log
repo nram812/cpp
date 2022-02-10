@@ -28,14 +28,8 @@ code execute succesfully
 #	data/logs/2021-11-25.log
 #	data/logs/2021-12-25.log
 #	data/logs/2022-01-03.log
-#	trenberth_figures/annual_index.csv
-#	trenberth_figures/data/.ipynb_checkpoints/Untitled-checkpoint.ipynb
-#	trenberth_figures/data/Untitled.ipynb
-#	trenberth_figures/homogenized_M1_Z1.csv
-#	trenberth_figures/homogenized_M1_Z1_annual.csv
-#	trenberth_figures/t_index.csv
+#	data/logs/2022-02-09.log
+#	data/mjo_data/phase_historical.xlsx
+#	data/mjo_data/phase_recent.xlsx
+#	indices/data/daily_soi.xlsx
 no changes added to commit (use "git add" and/or "git commit -a")
-[main 345ce02] auto commit
- 6 files changed, 9 insertions(+)
- rewrite indices/figures/SOI_LP_realtime_plot.png (70%)
- rewrite mjo_series/data/MJO_realtime_plot.png (89%)
