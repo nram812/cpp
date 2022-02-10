@@ -56,14 +56,16 @@ f2,ax2 = plot_mjo_cycle(month_before =month_before, current_month = current_mont
                     start_month=month_before_s, middle_month=previous_month_s,
                    end_month=current_month_s, data_pol=data_pol,
                    most_recent_month=False)
-label = f"MJO located at Longitude: {data_pol.iloc[-1].lon} in Phase: {'%.0f' % data_pol.iloc[-1].phase}"
-ax21= add_reference(ax2, 8, [], top_corner=0.97, separation=0.03,
-              data_source="http://www.niwa.co.nz/CPPdata",
-              ref="Ref: Madden R. and P. Julian, 1971, N; DOI: 10.1175/1520-0469(1971)028")
+ax2.set_title(' ')
+label = f"MJO located at \n Longitude: {data_pol.iloc[-1].lon} in Phase: {'%.0f' % data_pol.iloc[-1].phase}"
+ax21= add_reference(ax2, 8, [], top_corner=0.97, separation=0.05,
+              data_source="\n http://www.niwa.co.nz/CPPdata",
+              ref="Ref: Madden R. and P. Julian, 1971, N; \n  DOI: 10.1175/1520-0469(1971)028")
 ax2 = create_watermark(f2,
                       imagePath='./lib/NIWA_CMYK_Hor.png',
                       label=' ', ax=ax2, alpha=1, loc="lower right")
-ax2.text(0.01, 1.02, f"MJO", fontsize=24, fontweight='bold', transform=ax2.transAxes)
+ax2.text(0.01, 1.02, f"Madden Julian Oscillation (MJO)", fontsize=24, fontweight='bold', transform=ax2.transAxes)
+ax2.text(0.01, 0.2, label, fontsize=10, transform=ax2.transAxes, weight ='bold')
 print("saving file")
 f2.savefig(f'{output_dirs}/MJO_realtime_plot.png', dpi=200)
 #f.savefig(f'{output_dirs}/MJO_realtime_plot_recent.png', dpi=200)

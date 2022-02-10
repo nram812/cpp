@@ -26,6 +26,7 @@ git add ./trenberth_figures/*
 git add ./seven_station_series_output/*
 git add ./niwa_soi/*
 git add ./mjo_series/*
+git add ./SAM/*
 git add ./IPO/*
 git add ./IOD/figures/*
 git add ./CEI/*
