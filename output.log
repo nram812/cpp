@@ -33,3 +33,7 @@ code execute succesfully
 #	data/mjo_data/phase_recent.xlsx
 #	indices/data/daily_soi.xlsx
 no changes added to commit (use "git add" and/or "git commit -a")
+[main ee1f021] auto commit
+ 6 files changed, 7 insertions(+), 10 deletions(-)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (72%)
+ rewrite mjo_series/data/MJO_realtime_plot.png (90%)
