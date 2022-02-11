@@ -9,11 +9,7 @@ code execute succesfully
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   data/mjo_data/phase_historical.csv
-#	modified:   data/mjo_data/phase_recent.csv
-#	modified:   indices/data/daily_soi.csv
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
-#	modified:   mjo_series/data/MJO_realtime_plot.png
 #	modified:   output.log
 #
 # Untracked files:
@@ -33,7 +29,3 @@ code execute succesfully
 #	data/mjo_data/phase_recent.xlsx
 #	indices/data/daily_soi.xlsx
 no changes added to commit (use "git add" and/or "git commit -a")
-[main ee1f021] auto commit
- 6 files changed, 7 insertions(+), 10 deletions(-)
- rewrite indices/figures/SOI_LP_realtime_plot.png (72%)
- rewrite mjo_series/data/MJO_realtime_plot.png (90%)
