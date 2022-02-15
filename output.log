@@ -1,5 +1,5 @@
-computing the mjo
-running plotting script
+getting data
+downlrunning plotting script
  
 saving file
 None
@@ -9,6 +9,8 @@ code execute succesfully
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
+#	modified:   IOD/figures/Monthly_IOD.xlsx
+#	modified:   SAM/sam_eof.py
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi.csv
@@ -33,6 +35,3 @@ code execute succesfully
 #	data/mjo_data/phase_recent.xlsx
 #	indices/data/daily_soi.xlsx
 no changes added to commit (use "git add" and/or "git commit -a")
-[main 8e5c09c] auto commit
- 5 files changed, 7 insertions(+), 4 deletions(-)
- rewrite indices/figures/SOI_LP_realtime_plot.png (71%)
