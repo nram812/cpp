@@ -1,5 +1,4 @@
-computing the mjo
-running plotting script
+computing thedownlrunning plotting script
  
 saving file
 None
@@ -9,10 +8,14 @@ code execute succesfully
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
+#	modified:   IOD/figures/Monthly_IOD.xlsx
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi.csv
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
+#	modified:   kidson_synoptic_types/data_real_time/NCEP_NCAR/6-hourly/hgt.2020.nc
+#	modified:   kidson_synoptic_types/data_real_time/NCEP_NCAR/6-hourly/hgt.2021.nc
+#	modified:   kidson_synoptic_types/lib/__pycache__/download_ncep.cpython-38.pyc
 #	modified:   mjo_series/data/MJO_realtime_plot_2022-Feb.png
 #	modified:   output.log
 #
@@ -33,4 +36,7 @@ code execute succesfully
 #	data/mjo_data/phase_historical.xlsx
 #	data/mjo_data/phase_recent.xlsx
 #	indices/data/daily_soi.xlsx
+#	kidson_synoptic_types/cluster_dates.dat
+#	kidson_synoptic_types/cluster_freq.dat
+#	kidson_synoptic_types/create_kindson_renwick.py
 no changes added to commit (use "git add" and/or "git commit -a")
