@@ -13,7 +13,6 @@ code execute succesfully
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi.csv
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
-#	modified:   mjo_series/data/MJO_realtime_plot_2022-Feb.png
 #	modified:   output.log
 #
 # Untracked files:
@@ -37,4 +36,5 @@ code execute succesfully
 #	kidson_synoptic_types/cluster_dates.dat
 #	kidson_synoptic_types/cluster_freq.dat
 #	kidson_synoptic_types/create_kindson_renwick.py
+#	mjo_series/data/MJO_realtime_plot_2022-Mar.png
 no changes added to commit (use "git add" and/or "git commit -a")
