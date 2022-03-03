@@ -1,14 +1,19 @@
-computing the mjo
-running plotting script
+getting data
+downlrunning plotting script
  
 saving file
 None
 code execute succesfully
 # On branch main
+# Your branch is ahead of 'origin/main' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
+#	modified:   CEI/data/new_CEI.xlsx
+#	modified:   IOD/code/update_create_plots.py
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi.csv

@@ -103,7 +103,7 @@ if __name__ == "__main__":
     fig.savefig(f'{output_f_dirs}/IOD_spatial_plot_recent1.png')
 
     f, ax = plt.subplots(figsize=(12, 6))
-    IOD = IOD1.loc["2000":]
+    IOD = IOD1.loc[:]
     ax.fill_between(IOD.index, IOD.IOD.values, 0, (IOD.IOD.values >= 0), color='steelblue', alpha=.9, interpolate=True)
     create_watermark(f,
                      label=None, ax=ax, alpha=1, loc="lower right")
@@ -116,6 +116,21 @@ if __name__ == "__main__":
     f.suptitle(f'Indian Ocean Dipole (IOD) \n'
                f'{IOD.index[-1].strftime("%Y-%B")} value: {"%.2f" % IOD["IOD"].values[-1]}', fontsize=14);
     f.savefig(f'{output_f_dirs}/IOD_series_plot.png', dpi=300)
+
+    f, ax = plt.subplots(figsize=(12, 6))
+    IOD = IOD1.loc["2000":]
+    ax.fill_between(IOD.index, IOD.IOD.values, 0, (IOD.IOD.values >= 0), color='steelblue', alpha=.9, interpolate=True)
+    create_watermark(f,
+                     label=None, ax=ax, alpha=1, loc="lower right")
+    ax.fill_between(IOD.index, IOD.IOD.values, 0, (IOD.IOD.values < 0), color='coral', alpha=.9, interpolate=True)
+    ax.plot(IOD.index, IOD.IOD.values, c='k', lw=0.2)
+    ax.grid('on')
+    ax.axhline(0, c='0.4', lw=0.5)
+    ax.set_xlabel('Year')
+    ax.set_ylabel('IOD')
+    f.suptitle(f'Indian Ocean Dipole (IOD) \n'
+               f'{IOD.index[-1].strftime("%Y-%B")} value: {"%.2f" % IOD["IOD"].values[-1]}', fontsize=14);
+    f.savefig(f'{output_f_dirs}/IOD_series_plot_recent.png', dpi=300)
     #f.show()
     IOD.to_csv(f'{output_f_dirs}/Monthly_IOD.csv')
     IOD.to_excel(f'{output_f_dirs}/Monthly_IOD.xlsx')
@@ -144,6 +159,34 @@ if __name__ == "__main__":
     ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
     #fig.show()
     fig.savefig(f'{output_f_dirs}/IOD_series_plot_recent1.png', dpi=300)
+
+
+
+    dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=IOD1.iloc[:].resample('12MS').mean(), col1='IOD', col2='IOD', weekly=False)
+    fig, ax = plt.subplots(figsize = (10,6))
+    ax.bar(dates[soi >= 0], soi[soi >= 0], width=widths[soi >= 0], facecolor='coral', alpha=.5, edgecolor='k',
+           lw=1)
+    ax.bar(dates[soi < 0], soi[soi < 0], width=widths[soi < 0], facecolor='steelblue', alpha=.5, edgecolor='k', lw=1)
+
+    ax.text(0.01, 1.02, f"Indian Ocean Dipole (IOD)", fontsize=20, fontweight='bold', transform=ax.transAxes)
+    fig.subplots_adjust(bottom=0.15)
+    ax = create_watermark(fig,
+                          label="Latest values: {}, {}".format(textBm, textBs), ax=ax, alpha=1, loc=4)
+
+    #
+    ax.set_ylim(-3,3)
+    separation = 0.03
+    top_corner = 0.97
+    ax.grid(False)
+    add_reference(ax, 10, [textBm, textBs], top_corner=0.97, separation=0.03,
+                  data_source="http://www.niwa.co.nz/CPPdata",
+                  ref=f"Ref: Saji et al., 1999; DOI:10.1038/43854")
+    ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
+    #fig.show()
+    ax.set_xlabel('Year', weight ='bold')
+    ax.set_ylabel('Annual Indian Ocean Dipole (IOD)', weight ='bold')
+    fig.savefig(f'{output_f_dirs}/IOD_series_plot_recent1_1862.png', dpi=300)
+
 
     # files_list = glob.glob(f'{output_f_dirs}/IOD*.png')
     # base_string = 'export LC_CTYPE="en_US.UTF-8" && mail'
