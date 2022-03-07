@@ -42,3 +42,7 @@ code execute succesfully
 #	kidson_synoptic_types/cluster_freq.dat
 #	kidson_synoptic_types/create_kindson_renwick.py
 no changes added to commit (use "git add" and/or "git commit -a")
+[main a93ab68] auto commit
+ 8 files changed, 7 insertions(+), 1 deletion(-)
+ rewrite SAM/figures/SAM_index.png (71%)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (70%)

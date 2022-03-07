@@ -69,7 +69,7 @@ config['NCEP2']['start_year'] = 1979
 
 # %%
 
-reanalysis = "NCEP2"
+reanalysis = "NCEP1"
 varname = "Z"
 level = 850  # if not set, and 'Z' is selected instead of 'MSLP', it will default to 1000 hPa
 first_year = None  # can select the first year for analysis here, leave to `None` for all period available

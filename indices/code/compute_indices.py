@@ -19,14 +19,14 @@ from cei_funcs import *
 
 warnings.simplefilter(action="ignore", category=FutureWarning)
 years, months, mFMT, yFMT = load_plotting_config__()
-
+output_dirs = '/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/indices/'
+# import s
+clim_start = 1981
+clim_end = 2010
+nino_start = "2016"
 
 if __name__ == "__main__":
-    # import s
-    clim_start = 1981
-    clim_end = 2010
 
-    output_dirs = '/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/indices/'
 
 
     # %%
@@ -72,46 +72,44 @@ if __name__ == "__main__":
     fig.tight_layout()
     fig.savefig(f'{output_dirs}figures/SOI_LP_realtime_plot.png', dpi=200)
 
-    # for nino in ["3.4", "3", "4", "1", "2"]:
-    #
-    #     print("processing NINO{}".format(nino))
-    #
-    #     url = "http://www.bom.gov.au/climate/enso/nino_%s.txt" % (nino)
-    #     #pd.read_table(url)
-    #     r = requests.get(url)
-    #
-    #     if r.status_code != 200:
-    #         print(f"something went wrong with accessing the URL {url}")
-    #
-    #     else:
-    #
-    #         data = pd.read_table(BytesIO(r.content), sep=',', header=None, index_col=1, parse_dates=True,
-    #                              names=['iDate', 'SST'])
-    #         data.to_csv(f'{output_dirs}/data/NINO_{nino}.csv')
-    #
-    #         data = data.loc['2016':, :]
-    #         lastmonth = data.loc[today.strftime("%Y-%m"), 'SST'].mean()
-    #
-    #         dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=data[-20:], col1='SST', col2='SST', weekly=True)
-    #         widths[-1] = widths[-2]
-    #         fig, ax, output_directory, new_fig_created, textBm, textBs = plot_data(dates, soi, widths,
-    #                                                                                soim, months,
-    #                                                                                output_path=f'{output_dirs}',
-    #                                                                                cei=True,
-    #                                                                                var_name=f'NIWA Nino {nino} Index',
-    #                                                                                var_2='SOI 3-month', title=False,
-    #                                                                                label_bool=None,
-    #                                                                                ylim=(-2, 2), period2=2, period1=1,
-    #                                                                                periodicity='D')
-    #         ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
-    #
-    #         add_reference(ax, 12, ['Week ending {} : {}'.format(data.index[-1].strftime("%B %d %Y"),data.iloc[-1, -1]),
-    #                                f'Month ending {data.index[-1].strftime("%B %d %Y")} : {"%.2f" % lastmonth}'], top_corner=0.97, separation=0.03,
-    #                       data_source="http://www.niwa.co.nz/CPPdata",
-    #                       ref=f"Ref: Troup, 1965; DOI:10.1002/qj.49709139009")
-    #         output_dirs = r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/indices'
-    #         fig.savefig(f'{output_dirs}/figures/NINO{nino}_realtime_plot.png', dpi=200)
-    #         #fig.show()
+    # loading the various nino indices
+
+    url = 'http://www.cpc.ncep.noaa.gov/data/indices/ersst5.nino.mth.91-20.ascii'
+    nino = pd.read_csv(url, sep='\s+', engine='python')
+    nino['year'] = nino['YR']
+    nino['month'] = nino['MON']
+    nino['day'] = 1
+    nino.index = pd.to_datetime(nino[['year', 'month', 'day']])
+    nino1 = nino.filter(regex="NINO").to_xarray()
+    clim = nino1.groupby(nino1.index.dt.month).apply(lambda a: a.sel(index=slice("1991", "2020")).mean("index"))
+    anoms = nino1.groupby(nino1.index.dt.month) - clim
+    anoms = anoms.to_pandas().drop(["month"], axis =1)
+    anoms.to_csv(f'{output_dirs}/data/monthly_nino_index.csv')
+    anoms.to_excel(f'{output_dirs}/data/monthly_nino_index.xlsx')
+    for nino in ['NINO1+2', 'NINO3', 'NINO4', 'NINO3.4']:
+        print(nino)
+
+
+        data = anoms.loc[nino_start:, [nino]]
+        lastmonth = data.loc[today.strftime("%Y-%m")].mean()
+
+        dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=data[-30:], col1=nino, col2=nino, weekly=False)
+        widths[-1] = widths[-2]
+        fig, ax, output_directory, new_fig_created, textBm, textBs = plot_data(dates, soi, widths,
+                                                                               soim, months,
+                                                                               output_path=f'{output_dirs}',
+                                                                               cei=True,
+                                                                               var_name=f'{nino} Index',
+                                                                               var_2='SOI 3-month', title=False,
+                                                                               label_bool=None,
+                                                                               ylim=(-3, 3), period2=3, period1=1,
+                                                                               periodicity='M')
+        ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
+        add_reference(ax, 12, [textBm, textBs], top_corner=0.97, separation=0.03,
+                      data_source="http://www.niwa.co.nz/CPPdata",
+                      ref=f"Ref: Troup, 1965; DOI:10.1002/qj.49709139009")
+        fig.savefig(f'{output_dirs}/figures/NINO{nino}_realtime_plot.png', dpi=200, bbox_inches='tight')
+            #fig.show()
 
 
 
