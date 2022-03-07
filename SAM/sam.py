@@ -60,5 +60,5 @@ ax.grid(False)
     #fig.show()
 fig.savefig(f'./SAM/figures/SAM_index.png',dpi=300)
 sam.to_csv(f'./SAM/data/SAM.csv')
-sam.to_excel(f'./SAM/data/SAM.csv')
+sam.to_excel(f'./SAM/data/SAM.xlsx')
 

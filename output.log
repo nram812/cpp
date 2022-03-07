@@ -9,6 +9,8 @@ code execute succesfully
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
+#	modified:   SAM/figures/SAM_index.png
+#	modified:   SAM/sam.py
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi.csv
@@ -22,6 +24,7 @@ code execute succesfully
 #	.g
 #	.gitconfig
 #	.gitignore
+#	SAM/data/
 #	data/.ipynb_checkpoints/get_single_levels_reanal-checkpoint.py
 #	data/logs/2021-10-15.log
 #	data/logs/2021-10-25.log
