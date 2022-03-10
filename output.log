@@ -20,6 +20,8 @@ code execute succesfully
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
 #	modified:   indices/data/daily_soi.csv
+#	modified:   indices/data/daily_soi.xlsx
+#	modified:   indices/data/monthly_nino_index.xlsx
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
 #	modified:   mjo_series/data/MJO_realtime_plot_2022-Mar.png
 #	modified:   output.log
@@ -42,9 +44,6 @@ code execute succesfully
 #	data/logs/2022-03-03.log
 #	data/mjo_data/phase_historical.xlsx
 #	data/mjo_data/phase_recent.xlsx
-#	indices/data/daily_soi.xlsx
-#	indices/data/monthly_nino_index.csv
-#	indices/data/monthly_nino_index.xlsx
 #	kidson_synoptic_types/cluster_dates.dat
 #	kidson_synoptic_types/cluster_freq.dat
 #	kidson_synoptic_types/create_kindson_renwick.py
