@@ -15,8 +15,11 @@ NINO1+2
 #	modified:   indices/data/daily_soi.xlsx
 #	modified:   indices/data/monthly_nino_index.xlsx
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
+#	modified:   lib/__pycache__/figure_styles.cpython-38.pyc
+#	modified:   lib/figure_styles.py
 #	modified:   mjo_series/data/MJO_realtime_plot_2022-Mar.png
 #	modified:   output.log
+#	modified:   seven_station_series_output/figures/NZT7_Feb2022_updated.png
 #
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)

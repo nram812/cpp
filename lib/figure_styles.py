@@ -46,7 +46,7 @@ def load_plotting_config__():
 def plot_data(dates, soi, widths, soim, months, output_path ="/nesi/project/niwa00004/rampaln/CPP_indices/SOI/figures/",
               cei = True, var_name = 'SOI', var_2 ='3-mth mean', title = True, label_bool = None,
               loc = "lower right", ylim = (-100,100), period1 = -3, period2 =-1, periodicity = 'D',subplot_kwargs = dict(),
-              figsize = (14,10)
+              figsize = (14,10), imagepath = None
               ):
     """
     
@@ -116,10 +116,18 @@ def plot_data(dates, soi, widths, soim, months, output_path ="/nesi/project/niwa
         dates[-period2].strftime("%b %d %Y"), dates[-period1].strftime("%b %d %Y"), soi[-period2:-period1].mean())
 
     if label_bool is None:
-        ax = create_watermark(fig,
-                              label=None, ax=ax, alpha=1, loc=loc)
+        if imagepath is not None:
+            ax = create_watermark(fig,
+                                  label=None, ax=ax, alpha=1, loc=loc, imagePath=imagepath)
+        else:
+            ax = create_watermark(fig,
+                                  label=None, ax=ax, alpha=1, loc=loc)
     else:
-        ax = create_watermark(fig,
+        if imagepath is not None:
+            ax = create_watermark(fig,
+                                  label=None, ax=ax, alpha=1, loc=loc, imagePath=imagepath)
+        else:
+            ax = create_watermark(fig,
                              label="Latest values: {}, {}".format(textBm, textBs), ax=ax, alpha=1, loc = loc)
 
 
