@@ -7,7 +7,15 @@ csv_files = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-s
 
 csv_files1 = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/SevenStationSeries_full*.csv')
 csv_files2 = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/AllStationMonthly_Anomalies_*.csv')
-all_files = csv_files2 + csv_files + csv_files1
+
+# Extraction of xlsx files also 
+
+xlsx_files = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/Total_series_*.xlsx')
+
+xlsx_files1 = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/SevenStationSeries_full*.xlsx')
+xlsx_files2 = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/AllStationMonthly_Anomalies_*.xlsx')
+
+all_files = csv_files2 + csv_files + csv_files1 + xlsx_files + xlsx_files1 + xlsx_files2
 images = sorted(images)
 for file in images:
     fname = file.split('/')[-1] 
