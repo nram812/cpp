@@ -11,6 +11,7 @@ NINO1+2
 #
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_recent.csv
+#	modified:   indices/code/compute_indices.py
 #	modified:   indices/data/daily_soi.csv
 #	modified:   indices/data/daily_soi.xlsx
 #	modified:   indices/data/monthly_nino_index.xlsx
