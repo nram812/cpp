@@ -60,7 +60,8 @@ if __name__ == "__main__":
                                          output_path=f'{output_dirs}',
                                          cei=True, var_name=f'NIWA SOI (last 3 months)', var_2='SOI 3-month', title=False, label_bool = None,
                                                                         ylim=(-2,2), period2 =30, period1 = 1, periodicity ='D')
-    text = "%s to %s = %+3.1f" % (soi.index[-90].strftime("%b %d %Y"), soi.index[-1].strftime("%b %d %Y"), soi.iloc[-1, 1]/10.0)
+    text = "%s to %s = %+3.1f" % (soi.index[-90].strftime("%b %d %Y"),
+                                  soi.index[-1].strftime("%b %d %Y"), soi.iloc[-1, 1]/10.0)
 
     add_reference(ax, 12, [textBm, textBs, text], top_corner=0.97, separation=0.03,
                   data_source="http://www.niwa.co.nz/CPPdata",
@@ -87,11 +88,13 @@ if __name__ == "__main__":
     anoms.to_csv(f'{output_dirs}/data/monthly_nino_index.csv')
     anoms.to_excel(f'{output_dirs}/data/monthly_nino_index.xlsx')
     for nino in ['NINO1+2', 'NINO3', 'NINO4', 'NINO3.4']:
-        print(nino)
-
-
         data = anoms.loc[nino_start:, [nino]]
-        lastmonth = data.loc[today.strftime("%Y-%m")].mean()
+        try:
+            lastmonth = data.loc[today.strftime("%Y-%m")].mean()
+        except KeyError:
+            print("Midmonth Update")
+            today = datetime.utcnow() - timedelta(31)
+            lastmonth = data.loc[today.strftime("%Y-%m")].mean()
 
         dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=data[-30:], col1=nino, col2=nino, weekly=False)
         widths[-1] = widths[-2]
