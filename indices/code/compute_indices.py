@@ -110,7 +110,7 @@ if __name__ == "__main__":
         ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
         add_reference(ax, 12, [textBm, textBs], top_corner=0.97, separation=0.03,
                       data_source="http://www.niwa.co.nz/CPPdata",
-                      ref=f"Ref: Rasmussen and Carpenter (1982); DOI:10.1175/1520-0493(1982)110<0354:VITSST>2.0.CO;2")
+                      ref=f"Ref: Rasmussen and Carpenter (1982); DOI:10.1175/1520-0493")
         fig.savefig(f'{output_dirs}/figures/NINO{nino}_realtime_plot.png', dpi=200, bbox_inches='tight')
             #fig.show()
 
