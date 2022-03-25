@@ -67,17 +67,26 @@ def plot_data(dates, soi, widths, soim, months, output_path ="/nesi/project/niwa
     :param period2: the second period to compute an average over.
     :return: 
     """
+    print('go the warriors')
     fig, ax = plt.subplots(figsize=figsize,subplot_kw=subplot_kwargs)
     fig.subplots_adjust(bottom=0.15)
-    if cei:
+    print(cei, 'cei')
+    if cei is True:
         ax.bar(dates[soi >= 0], soi[soi >= 0], width=widths[soi >= 0], facecolor='coral', alpha=.5, edgecolor='k',
                lw=2)
         ax.bar(dates[soi < 0], soi[soi < 0], width=widths[soi < 0], facecolor='steelblue', alpha=.5, edgecolor='k', lw=2)
         ax.xaxis.set_major_locator(months)
         ax.xaxis.set_major_formatter(DateFormatter('%b %Y'))
         ax.tick_params(axis="x", which="major", pad=12)
+    elif cei == 'annual':
+        print('annual')
+        ax.bar(dates[soi >= 0], soi[soi >= 0], width=widths[soi >= 0], facecolor='coral', alpha=1, edgecolor='k',
+               lw=2)
+        ax.bar(dates[soi < 0], soi[soi < 0], width=widths[soi < 0], facecolor='steelblue', alpha=1, edgecolor='k', lw=2)
+        #a#x.xaxis.set_major_locator(months)
+        #ax.xaxis.set_major_formatter(DateFormatter('%b %Y'))
+        ax.tick_params(axis="x", which="major", pad=12)
     else:
-
         ax.bar(dates[soi >= 0], soi[soi >= 0], width=widths[soi >= 0], facecolor='steelblue', alpha=.8, edgecolor='k', lw=2)
         ax.bar(dates[soi < 0], soi[soi < 0], width=widths[soi < 0], facecolor='coral', alpha=.8, edgecolor='k', lw=2)
         if not cei:
@@ -89,12 +98,12 @@ def plot_data(dates, soi, widths, soim, months, output_path ="/nesi/project/niwa
         ax.xaxis.grid(False)
         ax.yaxis.grid(False)
     ax.axhline(0, color='k')
+    if not cei == 'annual':
+        labels = ax.get_xmajorticklabels()
 
-    labels = ax.get_xmajorticklabels()
-
-    for i, label in enumerate(labels):
-        label.set_rotation(90)
-        label.set_fontsize(12)
+        for i, label in enumerate(labels):
+            label.set_rotation(90)
+            label.set_fontsize(12)
     ax.grid('off')
     # ax.grid(linestyle=':')
     # ax.xaxis.grid(True, which='both', linestyle=':')
@@ -105,10 +114,28 @@ def plot_data(dates, soi, widths, soim, months, output_path ="/nesi/project/niwa
 
     # Definitely the title
     ax.text(0.01, 1.02, f"{var_name}", fontsize=24, fontweight='bold', transform=ax.transAxes)
-    ax.set_xlim(dates[0] - monthdelta(1), dates[-1] + monthdelta(1))
+    if not periodicity =='Y':
+        ax.set_xlim(dates[0] - monthdelta(1), dates[-1] + monthdelta(1))
+    else:
+        ax.set_xlim(dates[0] - monthdelta(12), dates[-1] + monthdelta(12))
     if periodicity == 'M':
         textBm = "{:%b %Y} = {:+3.1f}".format(dates[-period1], soi[-period1])
         textBs = "%s to %s = %+3.1f" % (dates[-period2].strftime("%b %Y"), dates[-period1].strftime("%b %Y"), soi[-period2:-period1].mean())
+
+    elif periodicity == 'Y':
+        if  soi[-period1]>0:
+            sign1 = '+'
+        else:
+            sign1 ='-'
+        if  soi[-period2]>0:
+            sign2 = '+'
+        else:
+            sign2 ='-'
+        rounded = soi[-period1]
+        rounded2 = soi[-period2]
+        textBm = f'{dates[-period1].strftime("%Y")} = {sign1}{"%.1f" % rounded} $\degree$ C'
+        textBs = f'{dates[-period2].strftime("%Y")} = {sign2}{"%.1f" % rounded2} $\degree$ C'
+
     else:
 
         textBm = "{:%b %d %Y } = {:+3.1f}".format(dates[-period1], soi[-period1])
@@ -178,8 +205,10 @@ def add_reference(ax, fontsize,
                   text, top_corner=0.97, separation=0.03,
                   data_source="http://www.niwa.co.nz/CPPdata",
                   ref="Ref: Gergis & Fowler, 2005; DOI: 10.1002/joc.1202"):
-    ax.text(0.01, top_corner, f"{ref}", fontsize=fontsize, fontweight='normal', transform=ax.transAxes)
-    ax.text(0.01, top_corner - separation, f"Data Sources: See {data_source}", fontsize=fontsize, fontweight='normal',
+    if len(ref) >3:
+        ax.text(0.01, top_corner, f"{ref}", fontsize=fontsize, fontweight='normal', transform=ax.transAxes)
+    if len(data_source) >5:
+        ax.text(0.01, top_corner - separation, f"Data Sources: See {data_source}", fontsize=fontsize, fontweight='normal',
             transform=ax.transAxes)
     multiplier = 2.0
     for text_ in text:
