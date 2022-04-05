@@ -5,7 +5,19 @@ saving file
 go the warriors
 True cei
 None
-Midmonth Update
+go the warriors
+True cei
+None
+go the warriors
+True cei
+None
+go the warriors
+True cei
+None
+go the warriors
+True cei
+None
+code execute succesfully
 # On branch main
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
@@ -17,7 +29,12 @@ Midmonth Update
 #	modified:   data/mjo_data/phase_recent.xlsx
 #	modified:   indices/data/daily_soi.csv
 #	modified:   indices/data/daily_soi.xlsx
+#	modified:   indices/data/monthly_nino_index.csv
 #	modified:   indices/data/monthly_nino_index.xlsx
+#	modified:   indices/figures/NINONINO1+2_realtime_plot.png
+#	modified:   indices/figures/NINONINO3.4_realtime_plot.png
+#	modified:   indices/figures/NINONINO3_realtime_plot.png
+#	modified:   indices/figures/NINONINO4_realtime_plot.png
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
 #	modified:   mjo_series/data/MJO_realtime_plot_2022-Apr.png
 #	modified:   output.log
@@ -28,6 +45,7 @@ Midmonth Update
 #	.g
 #	.gitconfig
 #	.gitignore
+#	SPBI/
 #	data/.ipynb_checkpoints/get_single_levels_reanal-checkpoint.py
 #	data/logs/2021-10-15.log
 #	data/logs/2021-10-25.log
