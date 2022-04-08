@@ -11,7 +11,8 @@ download_loc = "/scale_wlg_persistent/filesets/project/niwa00004/rampaln/CAOA210
 
 class DownloadData:
 
-    def __init__(self, base_url = 'ftp.ncdc.noaa.gov', download_loc = download_loc):
+    def __init__(self, base_url = 'ftp.ncdc.noaa.gov',
+                 download_loc = download_loc):
         self.base_url = base_url
         # Creating the patg
         self.local_path = os.path.join(download_loc,'data')
