@@ -1,10 +1,11 @@
-getting data
-downlrunning plotting script
+computing the mjo
+running plotting script
  
 saving file
 go the warriors
 True cei
 None
+Midmonth Update
 go the warriors
 True cei
 None
@@ -21,93 +22,40 @@ code execute succesfully
 # On branch main
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- go the warriors
-True cei
-None
-creating ipi plots
-None
-None
-None
-None
-go the warriors
-True cei
-None
-creating sio plots
-loading file
-go the warriors
-True cei
-None
-computing the sam
-go the warriors
-True cei
-None
-
-we standardize per month
-
-go the warriors
-True cei
-None
-getting trenberth data
-creating trenberth plots
-[                                        ] | 0% Completed |  0.0s[                                        ] | 1% Completed |  0.1s[                                        ] | 1% Completed |  0.2s[                                        ] | 1% Completed |  0.3s[                                        ] | 1% Completed |  0.4s[                                        ] | 1% Completed |  0.5s[#                                       ] | 2% Completed |  0.6s[#                                       ] | 4% Completed |  0.7s[##                                      ] | 5% Completed |  0.8s[##                                      ] | 7% Completed |  0.9s[###                                     ] | 9% Completed |  1.0s[####                                    ] | 10% Completed |  1.1s[#####                                   ] | 12% Completed |  1.2s[#####                                   ] | 13% Completed |  1.3s[######                                  ] | 15% Completed |  1.4s[#######                                 ] | 17% Completed |  1.5s[#######                                 ] | 19% Completed |  1.6s[########                                ] | 21% Completed |  1.7s[#########                               ] | 23% Completed |  1.8s[###########                             ] | 28% Completed |  1.9s[############                            ] | 30% Completed |  2.0s[#############                           ] | 32% Completed |  2.1s[#############                           ] | 33% Completed |  2.2s[#############                           ] | 34% Completed |  2.3s[##############                          ] | 35% Completed |  2.4s[###############                         ] | 37% Completed |  2.5s[###############                         ] | 39% Completed |  2.6s[###############                         ] | 39% Completed |  2.7s[################                        ] | 41% Completed |  2.8s[#################                       ] | 42% Completed |  2.9s[#################                       ] | 43% Completed |  3.0s[#################                       ] | 44% Completed |  3.1s[##################                      ] | 46% Completed |  3.2s[##################                      ] | 47% Completed |  3.3s[###################                     ] | 48% Completed |  3.4s[###################                     ] | 49% Completed |  3.5s[####################                    ] | 50% Completed |  3.6s[####################                    ] | 50% Completed |  3.7s[#####################                   ] | 52% Completed |  3.8s[#####################                   ] | 53% Completed |  3.9s[######################                  ] | 55% Completed |  4.0s[######################                  ] | 57% Completed |  4.1s[#######################                 ] | 58% Completed |  4.2s[#######################                 ] | 58% Completed |  4.3s[########################                ] | 61% Completed |  4.4s[#########################               ] | 63% Completed |  4.5s[#########################               ] | 64% Completed |  4.6s[##########################              ] | 65% Completed |  4.7s[##########################              ] | 67% Completed |  4.8s[##########################              ] | 67% Completed |  4.9s[###########################             ] | 69% Completed |  5.0s[###########################             ] | 69% Completed |  5.1s[############################            ] | 71% Completed |  5.2s[#############################           ] | 72% Completed |  5.3s[#############################           ] | 72% Completed |  5.4s[#############################           ] | 72% Completed |  5.6s[#############################           ] | 72% Completed |  5.7s[#############################           ] | 74% Completed |  5.8s[##############################          ] | 75% Completed |  5.9s[##############################          ] | 75% Completed |  6.0s[##############################          ] | 77% Completed |  6.1s[###############################         ] | 78% Completed |  6.2s[################################        ] | 80% Completed |  6.3s[################################        ] | 80% Completed |  6.4s[#################################       ] | 82% Completed |  6.5s[#################################       ] | 83% Completed |  6.6s[#################################       ] | 83% Completed |  6.7s[##################################      ] | 85% Completed |  6.8s[##################################      ] | 86% Completed |  6.9s[##################################      ] | 86% Completed |  7.0s[##################################      ] | 86% Completed |  7.1s[###################################     ] | 87% Completed |  7.2s[###################################     ] | 89% Completed |  7.3s[###################################     ] | 89% Completed |  7.4s[###################################     ] | 89% Completed |  7.5s[###################################     ] | 89% Completed |  7.6s[###################################     ] | 89% Completed |  7.7s[###################################     ] | 89% Completed |  7.8s[####################################    ] | 91% Completed |  7.9s[####################################    ] | 91% Completed |  8.0s[#####################################   ] | 92% Completed |  8.1s[#####################################   ] | 94% Completed |  8.2s[######################################  ] | 95% Completed |  8.3s[####################################### ] | 98% Completed |  8.4s[####################################### ] | 99% Completed |  8.5s[########################################] | 100% Completed |  8.6s
-[                                        ] | 0% Completed |  0.0s[###########                             ] | 28% Completed |  0.1s[###########                             ] | 28% Completed |  0.2s[###########                             ] | 28% Completed |  0.3s[#################                       ] | 42% Completed |  0.4s[#################                       ] | 42% Completed |  0.5s[######################                  ] | 57% Completed |  0.6s[######################                  ] | 57% Completed |  0.7s[######################                  ] | 57% Completed |  0.8s[############################            ] | 71% Completed |  0.9s[############################            ] | 71% Completed |  1.0s[############################            ] | 71% Completed |  1.1s[############################            ] | 71% Completed |  1.2s[##################################      ] | 85% Completed |  1.3s[##################################      ] | 85% Completed |  1.4s[##################################      ] | 85% Completed |  1.5s[########################################] | 100% Completed |  1.6s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[                                        ] | 1% Completed |  1.4s[##########################              ] | 66% Completed |  1.5s[########################################] | 100% Completed |  1.6s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[#########                               ] | 24% Completed |  1.4s[####################################### ] | 99% Completed |  1.5s[########################################] | 100% Completed |  1.6s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.4s[########                                ] | 21% Completed |  1.5s[###################################     ] | 89% Completed |  1.6s[########################################] | 100% Completed |  1.7s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[                                        ] | 0% Completed |  1.4s[####################                    ] | 50% Completed |  1.5s[########################################] | 100% Completed |  1.6s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[#                                       ] | 3% Completed |  1.4s[##############################          ] | 75% Completed |  1.5s[########################################] | 100% Completed |  1.6s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[                                        ] | 0% Completed |  1.4s[############                            ] | 31% Completed |  1.5s[######################################  ] | 95% Completed |  1.6s[########################################] | 100% Completed |  1.7s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[                                        ] | 2% Completed |  1.4s[#########################               ] | 63% Completed |  1.5s[########################################] | 100% Completed |  1.6s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[                                        ] | 0% Completed |  1.4s[                                        ] | 0% Completed |  1.5s[#############                           ] | 34% Completed |  1.6s[########################################] | 100% Completed |  1.8s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[                                        ] | 0% Completed |  1.4s[                                        ] | 1% Completed |  1.5s[##########################              ] | 65% Completed |  1.6s[########################################] | 100% Completed |  1.7s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[                                        ] | 0% Completed |  1.4s[###################                     ] | 49% Completed |  1.5s[########################################] | 100% Completed |  1.6s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[                                        ] | 0% Completed |  1.4s[#################                       ] | 42% Completed |  1.5s[########################################] | 100% Completed |  1.6s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[#                                       ] | 3% Completed |  1.4s[############################            ] | 72% Completed |  1.5s[########################################] | 100% Completed |  1.6s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[                                        ] | 1% Completed |  1.4s[############################            ] | 72% Completed |  1.5s[########################################] | 100% Completed |  1.6s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[                                        ] | 0% Completed |  1.4s[#####################                   ] | 53% Completed |  1.6s[########################################] | 100% Completed |  1.8s
-[                                        ] | 0% Completed |  0.0s[                                        ] | 0% Completed |  0.1s[                                        ] | 0% Completed |  0.2s[                                        ] | 0% Completed |  0.3s[                                        ] | 0% Completed |  0.4s[                                        ] | 0% Completed |  0.5s[                                        ] | 0% Completed |  0.6s[                                        ] | 0% Completed |  0.7s[                                        ] | 0% Completed |  0.8s[                                        ] | 0% Completed |  0.9s[                                        ] | 0% Completed |  1.0s[                                        ] | 0% Completed |  1.1s[                                        ] | 0% Completed |  1.2s[                                        ] | 0% Completed |  1.3s[                                        ] | 0% Completed |  1.4s[####################                    ] | 50% Completed |  1.5s[########################################] | 100% Completed |  1.6s
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   data/mjo_data/phase_historical.csv
+#	modified:   data/mjo_data/phase_historical.xlsx
+#	modified:   data/mjo_data/phase_recent.csv
+#	modified:   data/mjo_data/phase_recent.xlsx
+#	modified:   indices/data/daily_soi.csv
+#	modified:   indices/data/daily_soi.xlsx
+#	modified:   indices/data/monthly_nino_index.xlsx
+#	modified:   indices/figures/SOI_LP_realtime_plot.png
+#	modified:   mjo_series/data/MJO_realtime_plot_2022-Apr.png
+#	modified:   output.log
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	.g
+#	.gitconfig
+#	.gitignore
+#	SPBI/
+#	config.json
+#	data/.ipynb_checkpoints/get_ncep_hgt/
+#	data/.ipynb_checkpoints/get_single_levels_reanal-checkpoint.py
+#	data/.ipynb_checkpoints/ncep_geopotential/
+#	data/logs/2021-10-15.log
+#	data/logs/2021-10-25.log
+#	data/logs/2021-11-25.log
+#	data/logs/2021-12-25.log
+#	data/logs/2022-01-03.log
+#	data/logs/2022-02-09.log
+#	data/logs/2022-02-15.log
+#	data/logs/2022-02-25.log
+#	data/logs/2022-03-03.log
+#	kidson_synoptic_types/cluster_dates.dat
+#	kidson_synoptic_types/cluster_freq.dat
+#	kidson_synoptic_types/create_kindson_renwick.py
+no changes added to commit (use "git add" and/or "git commit -a")
