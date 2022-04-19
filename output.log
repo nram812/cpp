@@ -41,7 +41,9 @@ code execute succesfully
 #	.g
 #	.gitconfig
 #	.gitignore
-#	SPBI/
+#	SPBI/EOF_1_3_climharmonic_True_varimaxFalse_1958_2021.png
+#	SPBI/__pycache__/
+#	SPBI/outputs/
 #	config.json
 #	data/.ipynb_checkpoints/get_ncep_hgt/
 #	data/.ipynb_checkpoints/get_single_levels_reanal-checkpoint.py
