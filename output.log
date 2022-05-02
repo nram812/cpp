@@ -6,19 +6,6 @@ go the warriors
 True cei
 None
 Midmonth Update
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-code execute succesfully
 # On branch main
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
@@ -32,6 +19,7 @@ code execute succesfully
 #	modified:   indices/data/daily_soi.xlsx
 #	modified:   indices/data/monthly_nino_index.xlsx
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
+#	modified:   mjo_series/data/MJO_realtime_plot_2022-May.png
 #	modified:   output.log
 #
 # Untracked files:
@@ -60,5 +48,4 @@ code execute succesfully
 #	kidson_synoptic_types/cluster_dates.dat
 #	kidson_synoptic_types/cluster_freq.dat
 #	kidson_synoptic_types/create_kindson_renwick.py
-#	mjo_series/data/MJO_realtime_plot_2022-May.png
 no changes added to commit (use "git add" and/or "git commit -a")
