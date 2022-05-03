@@ -1,5 +1,5 @@
-computing the mjo
-running plotting script
+getting data
+downlrunning plotting script
  
 saving file
 go the warriors
@@ -11,6 +11,7 @@ Midmonth Update
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
+#	modified:   IOD/figures/Monthly_IOD.xlsx
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_historical.xlsx
 #	modified:   data/mjo_data/phase_recent.csv
