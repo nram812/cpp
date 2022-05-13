@@ -63,7 +63,7 @@ season = np.apply_along_axis(harmo, 0, data, **{'nbharm': 2})
 # climatology based on harmonics
 clim[f"{config_spbi['var_name']}_harmonics"] = (('dayofyear', config_spbi['lat_name'], config_spbi['lon_name']), season)
 dset[f'{config_spbi["var_name"]}_deseason'] = dset[config_spbi["var_name"]].groupby(dset.time.dt.dayofyear) - clim[f"{config_spbi['var_name']}_harmonics"]
-clim.to_netcdf(f'./SPBI/params/climatology_{varname}_{level}_1_2_harmonics.nc')
+clim.to_netcdf(f'./SPBI/params/climatology_{config_spbi["var_name"]}_{config_spbi["level"]}_1_2_harmonics.nc')
 # anomalies are computed lreative to these harmonics
 
 dset[f'{config_spbi["var_name"]}_deseason_filtered'] =\
@@ -76,8 +76,14 @@ dset[f'{config_spbi["var_name"]}_deseason_filtered_detrend'] = \
 
 trend = (dset[f'{config_spbi["var_name"]}_deseason_filtered'] - dset[f'{config_spbi["var_name"]}_deseason_filtered_detrend'])
 
-
-area_weights = area_grid(dset['lat'], dset['lon'], return_dataarray=True)
+# clip the area weights
+# area_weights = area_grid(dset['lat'], dset['lon'], return_dataarray=True)
+# fig, ax = plt.subplots()
+# area_weights.plot(ax = ax)
+# fig.show()
+# Clipping the area weights as zero.
+# Normalize the area the weights.
+# Cosine of the angle 
 dset['area_weights'] = area_weights
 dset_to_eof = dset[f'{config_spbi["var_name"]}_deseason_filtered_detrend'] *\
               dset['area_weights']
@@ -116,9 +122,15 @@ eof1 = eofs_dset.sel(EOF=1)
 eof2 = eofs_dset.sel(EOF=2)
 eof1 = eof1.stack(z=('lat', 'lon'))[config_spbi["var_name"]]
 eof2 = eof2.stack(z=('lat', 'lon'))[config_spbi["var_name"]]
+
+
 pc1 = arr_deseason.dot(eof1)
 pc2 = arr_deseason.dot(eof2)
 
+import seaborn as sns
+fig, ax = plt.subplots()
+sns.histplot(pc1.values, ax = ax)
+fig.show()
 projected_EOF1_ave = pc1.sel(time=slice(*list(map(str, config_spbi["clim_period"])))).mean()
 projected_EOF2_ave = pc2.sel(time=slice(*list(map(str, config_spbi["clim_period"])))).mean()
 projected_EOF1_std = pc1.sel(time=slice(*list(map(str, config_spbi["clim_period"])))).std()
