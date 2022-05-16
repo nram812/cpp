@@ -83,7 +83,7 @@ trend = (dset[f'{config_spbi["var_name"]}_deseason_filtered'] - dset[f'{config_s
 # fig.show()
 # Clipping the area weights as zero.
 # Normalize the area the weights.
-# Cosine of the angle 
+# Cosine of the angle
 dset['area_weights'] = area_weights
 dset_to_eof = dset[f'{config_spbi["var_name"]}_deseason_filtered_detrend'] *\
               dset['area_weights']
@@ -172,7 +172,7 @@ for i, row in sequences_pc2_df.iterrows():
 
 sequences_pc1_df.to_csv('./SPBI/params/sequences_PC1_SE_Blocking.csv')
 sequences_pc2_df.to_csv('./SPBI/params/sequences_PC2_SW_Blocking.csv')
-number_of_lagged_times_in_plot =96
+number_of_lagged_times_in_plot = 96
 pc1_data = pc1std.to_dataframe(name = "SPBI")
 dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=pc1_data.iloc[-number_of_lagged_times_in_plot:],
                                                         col1='SPBI', col2='SPBI', weekly = None)
