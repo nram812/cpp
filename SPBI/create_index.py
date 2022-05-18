@@ -40,7 +40,9 @@ from data_processing_funcs import *
 from cei_funcs import *
 # Adding the custom import statements to the code
 years, months, mFMT, yFMT = load_plotting_config__()
-
+"""
+Check that the download sceipt works
+"""
 dpath = pathlib.Path(config['output_daily_ncep_directory'])
 lfiles = sorted(list(dpath.glob("hgt.????.nc")))
 
@@ -77,7 +79,7 @@ dset[f'{config_spbi["var_name"]}_deseason_filtered_detrend'] = \
 trend = (dset[f'{config_spbi["var_name"]}_deseason_filtered'] - dset[f'{config_spbi["var_name"]}_deseason_filtered_detrend'])
 
 # clip the area weights
-# area_weights = area_grid(dset['lat'], dset['lon'], return_dataarray=True)
+area_weights = area_grid(dset['lat'], dset['lon'], return_dataarray=True)
 # fig, ax = plt.subplots()
 # area_weights.plot(ax = ax)
 # fig.show()
@@ -85,6 +87,7 @@ trend = (dset[f'{config_spbi["var_name"]}_deseason_filtered'] - dset[f'{config_s
 # Normalize the area the weights.
 # Cosine of the angle
 dset['area_weights'] = area_weights
+dset['area_weights'] = (dset['area_weights'] / dset['area_weights'].mean(['lat','lon']))
 dset_to_eof = dset[f'{config_spbi["var_name"]}_deseason_filtered_detrend'] *\
               dset['area_weights']
 dset_to_eof = dset_to_eof.stack(z=('lat', 'lon')).sel(time = slice(*tuple(config_spbi['clim_period'])))
@@ -115,7 +118,7 @@ dset.to_zarr('./SPBI/outputs/dset_Z500_SP_Blocking.zarr')
 # there appears to be some issues here
 # (e.g. the multiplication by area weights)
 # differences in the time periods also
-f
+
 arr_deseason = dset[f'{config_spbi["var_name"]}_deseason'] * dset['area_weights']
 arr_deseason = arr_deseason.stack(z=('lat', 'lon'))
 eof1 = eofs_dset.sel(EOF=1)
@@ -127,10 +130,10 @@ eof2 = eof2.stack(z=('lat', 'lon'))[config_spbi["var_name"]]
 pc1 = arr_deseason.dot(eof1)
 pc2 = arr_deseason.dot(eof2)
 
-import seaborn as sns
-fig, ax = plt.subplots()
-sns.histplot(pc1.values, ax = ax)
-fig.show()
+# import seaborn as sns
+# fig, ax = plt.subplots()
+# sns.histplot(pc1.values, ax = ax)
+# fig.show()
 projected_EOF1_ave = pc1.sel(time=slice(*list(map(str, config_spbi["clim_period"])))).mean()
 projected_EOF2_ave = pc2.sel(time=slice(*list(map(str, config_spbi["clim_period"])))).mean()
 projected_EOF1_std = pc1.sel(time=slice(*list(map(str, config_spbi["clim_period"])))).std()
@@ -180,7 +183,7 @@ dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=pc1_data.iloc[-nu
 fig, ax, __, new_fig_created, textBm, textBs = plot_data(dates, soi, widths,
                                                          soim, months,
                                                          output_path=f'./SPBI/figures',
-                                                         cei=True, var_name=f'NIWA South Pacific Blocking Index (SAM)',
+                                                         cei=True, var_name=f'NIWA South Pacific Blocking Index (SBPI)',
                                                          var_2='', title=False, label_bool=None,
                                                          period1=1, period2=14, periodicity='D', ylim=(-3,3),
                                                          figsize=(14, 10))

@@ -25,7 +25,9 @@ echo "finished creating script"
 echo "created the IPO"
 
 /nesi/project/niwa00004/rampaln/bin/python /nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/mjo_series/run_mjo.py
-
+cd /nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/
+/nesi/project/niwa00004/rampaln/bin/python /nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/SPBI/get_ncep_data.py
+/nesi/project/niwa00004/rampaln/bin/python /nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/SPBI/create_index.py
 git add *
 git commit -a -m "Auto updated"
 git push

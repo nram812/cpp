@@ -1,19 +1,12 @@
 import glob
 import shutil
 output_dirs = '/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/seven_station_series_output'
-images = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/NZT7*',recursive = True)
+images = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/figures/NZT7_updated*',recursive = True)
 
-csv_files = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/Total_series_*.csv')
+csv_files = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series_format/*.csv')
 
-csv_files1 = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/SevenStationSeries_full*.csv')
-csv_files2 = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/AllStationMonthly_Anomalies_*.csv')
-
-# Extraction of xlsx files also 
-
-xlsx_files = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/Total_series_*.xlsx')
-
-xlsx_files1 = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/SevenStationSeries_full*.xlsx')
-xlsx_files2 = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series/AllStationMonthly_Anomalies_*.xlsx')
+# Extraction of xlsx files also
+xlsx_files = glob.glob(r'/nesi/project/niwa00004/rampaln/CAOA2101/seven-station-series-python/output/time_series_format/*.xlsx')
 
 all_files = csv_files2 + csv_files + csv_files1 + xlsx_files + xlsx_files1 + xlsx_files2
 images = sorted(images)
