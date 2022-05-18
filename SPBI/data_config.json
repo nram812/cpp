@@ -1,0 +1,13 @@
+{"single_level_reanalysis": {"output_path": "/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices",
+                            "variables":["mean_sea_level_pressure",
+                                "sea_surface_temperature",
+                                "surface_pressure"],
+                            "times":["00:00"],
+                            "domain": {"lat_n": 60, "lon_e": -180, "lat_s":-60, "lon_w":180},
+                            "lagged_days":10},
+ "ncep": {"output_path": "/nesi/project/niwa00004/ML_DATA/NCEP_Reanalysis/ncep geopotential",
+      "var_name": "hgt",
+      "ncep_data": "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis.dailyavgs/pressure/" },
+
+ "ersst":{"output_path":"/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/data/ersst" },
+ "mjo":{"output_data":"/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/data/mjo" }}

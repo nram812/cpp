@@ -1,0 +1,12 @@
+{"repository": "/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices",
+  "ERSSTV5_data" : "/scale_wlg_persistent/filesets/project/niwa00004/rampaln/CAOA2101/cpp-indices/IOD/",
+  "output_daily_ncep_directory": "/nesi/project/niwa00004/ML_DATA/NCEP_Reanalysis/ncep geopotential",
+  "SPBI_metadata": {"level": 500, "first_year":  "1958", "last_year": "2022", "domain": [130, 310, -90, -20],
+                    "clim_period": ["1981", "2010"], "lat_name": "lat", "lon_name": "lon",
+                    "add_cyclic": "False", "clim_harmonic": "True", "varimax":  "False",
+                    "npcs_varimax":  12,
+                    "neofs": 3,
+                    "var_name": "hgt",
+                     "ncep_data": "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis.dailyavgs/pressure/" }
+}
+
