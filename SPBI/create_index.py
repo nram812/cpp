@@ -1,4 +1,3 @@
-
 import os
 import sys
 import shutil
@@ -177,6 +176,14 @@ sequences_pc1_df.to_csv('./SPBI/params/sequences_PC1_SE_Blocking.csv')
 sequences_pc2_df.to_csv('./SPBI/params/sequences_PC2_SW_Blocking.csv')
 number_of_lagged_times_in_plot = 96
 pc1_data = pc1std.to_dataframe(name = "SPBI")
+pc1_data.to_csv('./SPBI/outputs/SPBI_final.csv')
+pc1_data.to_excel('./SPBI/outputs/SPBI_Final.xlsx')
+pc1_data_monthly = pc1_data.resample('1MS').mean()
+pc1_data_monthly.to_excel('./SPBI/outputs/SPBI_Monthly_Final.xlsx')
+fig, ax = plt.subplots()
+pc1_data_monthly.groupby(pc1_data_monthly.index.year).mean()['SPBI'].plot(ax =ax)
+fig.show()
+
 dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=pc1_data.iloc[-number_of_lagged_times_in_plot:],
                                                         col1='SPBI', col2='SPBI', weekly = None)
 
@@ -189,8 +196,27 @@ fig, ax, __, new_fig_created, textBm, textBs = plot_data(dates, soi, widths,
                                                          figsize=(14, 10))
 add_reference(ax, 12, [textBm, textBs], top_corner=0.97, separation=0.03,
               data_source="http://www.niwa.co.nz/CPPdata",
-              ref="Ref: Limpasuvan, V., & Hartmann, D. L. (1999); DOI: 10.1029/1999GL010478")
+              ref="Ref: Renwick and Revell (1999); DOI: 10.1175/1520-0493(1999)127<2233:BOTSPA>2.0.CO;2")
 ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
 ax.grid(False)
 fig.show()
 fig.savefig(f'./SPBI/figures/SPBI_PC_index.png',dpi=300)
+
+pc1_data_monthly = pc1_data.resample('1MS').mean()
+dates, widths, soi, soim = format_series_for_bar_plot__(ts_soi=pc1_data_monthly.iloc[-48:],
+                                                        col1='SPBI', col2='SPBI', weekly = False)
+
+fig, ax, __, new_fig_created, textBm, textBs = plot_data(dates, soi, widths,
+                                                         soim, months,
+                                                         output_path=f'./SPBI/figures',
+                                                         cei=True, var_name=f'NIWA Monthly South Pacific Blocking Index (SBPI)',
+                                                         var_2='', title=False, label_bool=None,
+                                                         period1=1, period2=3, periodicity='M', ylim=(-3,3),
+                                                         figsize=(14, 10))
+add_reference(ax, 12, [textBm, textBs], top_corner=0.97, separation=0.03,
+              data_source="http://www.niwa.co.nz/CPPdata",
+              ref="Ref: Renwick and Revell (1999); DOI: 10.1175/1520-0493(1999)127<2233:BOTSPA>2.0.CO;2")
+ax.set_xlim(dates[0], dates[-1] + pd.Timedelta(days=30))
+ax.grid(False)
+fig.show()
+fig.savefig(f'./SPBI/figures/Monthly_SPBI_PC_index.png',dpi=300)

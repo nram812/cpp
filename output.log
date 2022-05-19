@@ -21,42 +21,12 @@ None
 code execute succesfully
 # On branch main
 # Changes not staged for commit:
-#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	deleted:    Mullan_Validation_Series/Auckland_Adjusted_TMax_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Auckland_Adjusted_TMean_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Auckland_Adjusted_TMin_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Dunedin_Adjusted_TMax_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Dunedin_Adjusted_TMean_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Dunedin_Adjusted_TMin_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Hokitika_Adjusted_TMax_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Hokitika_Adjusted_TMean_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Hokitika_Adjusted_TMin_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Lincoln_Adjusted_TMax_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Lincoln_Adjusted_TMean_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Lincoln_Adjusted_TMin_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Masterton_Adjusted_TMax_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Masterton_Adjusted_TMean_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Masterton_Adjusted_TMin_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/NZT7_Adjusted_TMax_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/NZT7_Adjusted_TMean_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/NZT7_Adjusted_TMin_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/NZT7_Unadjusted_TMax_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/NZT7_Unadjusted_TMean_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/NZT7_Unadjusted_TMin_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Nelson_Adjusted_TMax_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Nelson_Adjusted_TMean_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Nelson_Adjusted_TMin_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Wellington_Adjusted_TMax_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Wellington_Adjusted_TMean_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/Wellington_Adjusted_TMin_Anomalies2019.txt
-#	deleted:    Mullan_Validation_Series/station_list.txt
 #	modified:   SPBI/create_index.py
-#	modified:   SPBI/figures/SPBI_PC_index.png
 #	modified:   SPBI/params/sequences_PC1_SE_Blocking.csv
 #	modified:   SPBI/params/sequences_PC2_SW_Blocking.csv
-#	modified:   automation.sh
 #	modified:   data/mjo_data/phase_historical.csv
 #	modified:   data/mjo_data/phase_historical.xlsx
 #	modified:   data/mjo_data/phase_recent.csv
@@ -67,7 +37,6 @@ code execute succesfully
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
 #	modified:   mjo_series/data/MJO_realtime_plot_2022-May.png
 #	modified:   output.log
-#	modified:   seven_station_series_output/copy_seven_station_series_data.py
 #
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
@@ -78,10 +47,7 @@ code execute succesfully
 #	SPBI/.ipynb_checkpoints/
 #	SPBI/EOF_1_3_climharmonic_True_varimaxFalse_1958_2021.png
 #	SPBI/__pycache__/
-#	SPBI/data_config.json
-#	SPBI/get_ncep_data.py
-#	SPBI/outputs/
-#	config.json
+#	SPBI/outputs/dset_Z500_SP_Blocking.zarr/
 #	data/.ipynb_checkpoints/get_ncep_hgt/
 #	data/.ipynb_checkpoints/get_single_levels_reanal-checkpoint.py
 #	data/.ipynb_checkpoints/ncep_geopotential/
@@ -99,5 +65,6 @@ code execute succesfully
 #	kidson_synoptic_types/cluster_dates.dat
 #	kidson_synoptic_types/cluster_freq.dat
 #	kidson_synoptic_types/create_kindson_renwick.py
+#	ross_sea_WR/
 #	scohub/
 no changes added to commit (use "git add" and/or "git commit -a")
