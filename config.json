@@ -7,6 +7,11 @@
                     "npcs_varimax":  12,
                     "neofs": 3,
                     "var_name": "hgt",
+                     "ncep_data": "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis.dailyavgs/pressure/" },
+  "Ross_Sea_WR": {"level": 1000, "first_year":  "1979", "last_year": "2011", "domain": [150, 270, -90, -50],
+                    "clim_period": ["1981", "2010"], "lat_name": "lat", "lon_name": "lon",
+                    "add_cyclic": "False", "clim_harmonic": "True","standardize": "True","detrend": "False",
+                    "var_name": "hgt",
                      "ncep_data": "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis.dailyavgs/pressure/" }
 }
 

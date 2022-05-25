@@ -39,9 +39,6 @@ from data_processing_funcs import *
 from cei_funcs import *
 # Adding the custom import statements to the code
 years, months, mFMT, yFMT = load_plotting_config__()
-"""
-Check that the download sceipt works
-"""
 dpath = pathlib.Path(config['output_daily_ncep_directory'])
 lfiles = sorted(list(dpath.glob("hgt.????.nc")))
 
