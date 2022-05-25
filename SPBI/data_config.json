@@ -7,7 +7,9 @@
                             "lagged_days":10},
  "ncep": {"output_path": "/nesi/project/niwa00004/ML_DATA/NCEP_Reanalysis/ncep geopotential",
       "var_name": "hgt",
-      "ncep_data": "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis.dailyavgs/pressure/" },
+      "ncep_data": "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis.dailyavgs/pressure/",
+ "ncep_subdaily_data": "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis/pressure/",
+ "output_ncep_subdaily_data": "/nesi/project/niwa00004/ML_DATA/NCEP_Reanalysis/ncep_subdaily"},
 
  "ersst":{"output_path":"/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/data/ersst" },
  "mjo":{"output_data":"/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/data/mjo" }}

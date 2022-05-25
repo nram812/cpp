@@ -18,7 +18,9 @@ from functools import partial
 from matplotlib import pyplot as plt
 import matplotlib
 import seaborn as sns
-from joblib import load
+from joblib import dump, load
+
+
 # output this as an xlsx
 # climatology periods are all consistent and from 1981 to 2010
 # ingest the twice daily data
@@ -60,25 +62,31 @@ with ProgressBar():
     dset = dset.load()
     dset = dset.reindex(time=sorted(dset.time.values))
 
-clim = xr.open_dataset(f'./ross_sea_WR/metadata/params/climatology_'
-                       f'{config_RSWR["var_name"]}_{config_RSWR["level"]}_1_2_harmonics.nc')
-# loading the climatology
-# adding exception when harmonics are not required
+clim = dset.sel(time=slice(str(clim_period[0]), str(clim_period[-1])))
+clim = dset.groupby(dset.time.dt.dayofyear).mean('time')
+with ProgressBar():
+    clim.compute()
+    clim.load()
+
 if config_RSWR["clim_harmonic"] == "True":
     data = clim[config_RSWR["var_name"]].data
+    season = np.apply_along_axis(harmo, 0, data, **{'nbharm': 2})
+    clim[f"{config_RSWR['var_name']}_harmonics"] = (('dayofyear', config_RSWR["lat_name"],
+                                                     config_RSWR["lon_name"]), season)
     dset[f'{config_RSWR["var_name"]}_deseason'] = \
         dset[config_RSWR["var_name"]].groupby(dset.time.dt.dayofyear) \
         - clim[f"{config_RSWR['var_name']}_harmonics"]
-else:
-    data = clim[config_RSWR["var_name"]].data
-    dset[f'{config_RSWR["var_name"]}_deseason'] = \
-        dset[config_RSWR["var_name"]].groupby(dset.time.dt.dayofyear) \
-        - clim[f"{config_RSWR['var_name']}"]
+clim.to_netcdf(
+    f'./ross_sea_WR/metadata/params/climatology_{config_RSWR["var_name"]}_{config_RSWR["level"]}_1_2_harmonics.nc')
+# anomalies are computed lreative to these harmonics
 
 
-dset[f'{config_RSWR["var_name"]}_deseason_detrend'] =\
-    detrend_dim(dset[f'{config_RSWR["var_name"]}_deseason'], 'time')
-trend = (dset[f'{config_RSWR["var_name"]}_deseason'] -\
+dset[f'{config_RSWR["var_name"]}_deseason_detrend'] = \
+    detrend_dim(dset[f'{config_RSWR["var_name"]}_deseason']
+                .sel(time=slice(config_RSWR["first_year"],
+                                config_RSWR["last_year"])), 'time')
+# ensuring that the trends are calculated over the correct period
+trend = (dset[f'{config_RSWR["var_name"]}_deseason'] - \
          dset[f'{config_RSWR["var_name"]}_deseason_detrend'])
 ave = dset[f'{config_RSWR["var_name"]}_deseason'].mean('time')
 std = dset[f'{config_RSWR["var_name"]}_deseason'].std('time')
@@ -88,7 +96,7 @@ std_detrend = dset[f'{config_RSWR["var_name"]}_deseason_detrend'].std('time')
 dset[f'{config_RSWR["var_name"]}_deseason_std'] = (dset[f'{config_RSWR["var_name"]}_deseason'] - ave) / std
 dset[f'{config_RSWR["var_name"]}_deseason_detrend_std'] = \
     (dset[f'{config_RSWR["var_name"]}_deseason_detrend'] - ave_detrend) / std_detrend
-# changed the area weights on the scropt
+
 area_weights = area_grid(dset['lat'], dset['lon'], return_dataarray=True)
 dset['area_weights'] = area_weights
 dset['area_weights'] = (dset['area_weights'] / dset['area_weights'].mean(['lat','lon']))
@@ -119,15 +127,21 @@ mask = mask.where(np.isnan(mask), 1)
 dset_to_eof_masked = dset_to_eof * mask
 dset_to_eof_masked = dset_to_eof_masked.stack(z=('lat', 'lon'))
 dset_to_eof_masked = dset_to_eof_masked.dropna(dim='z')
-pca = load('./ross_sea_WR/metadata/models/pca.joblib')
+
+pca = PCA(n_components=0.90)
+# fit the data on a given period and predict on another
+pca = pca.fit(dset_to_eof_masked.sel(time=slice(config_RSWR["first_year"],
+                                                config_RSWR["last_year"])).data)
 eofs = pca.components_
 pcs = pca.transform(dset_to_eof_masked.data)
 evf = pca.explained_variance_ratio_
+# sacing the model to disk
+dump(pca, './ross_sea_WR/metadata/models/pca.joblib')
 
 eofs_dset = {}
 eofs_dset['z'] = (dset_to_eof_masked.z)
 eofs_dset['EOF'] = (('EOF'), np.arange(eofs.shape[0]) + 1)
-eofs_dset[f'{config_RSWR["var_name"]}'] = (('EOF', 'z'), eofs)
+eofs_dset[varid] = (('EOF', 'z'), eofs)
 eofs_dset = xr.Dataset(eofs_dset)
 eofs_dset = eofs_dset.unstack('z')
 
@@ -135,8 +149,33 @@ eofs_dset = eofs_dset.unstack('z')
 pcs_df = pd.DataFrame(pcs, index=dset_to_eof.time.to_index())
 pcs_df.columns = [f"PC{i}" for i in np.arange(pcs.shape[1]) + 1]
 
-k_means = load('./ross_sea_WR/metadata/models/kmeans.joblib')
+k_means = KMeans(n_clusters=config_RSWR['clusters'],
+                 init='k-means++', n_init=20)
+k_means.fit(pcs_df.loc[config_RSWR["first_year"]:config_RSWR["last_year"]])
 predicted_labels = k_means.predict(pcs_df)
+dump(k_means, './ross_sea_WR/metadata/models/kmeans.joblib')
 clusters = pd.DataFrame(data={'cluster': predicted_labels + 1},
                         index=pcs_df.index)
+dset['cluster'] = clusters.to_xarray()['cluster']
+compos = dset.groupby(dset['cluster']).mean()
+compos.to_netcdf(r'./ross_sea_WR/metadata/params/composites.nc')
+
+# saving the clusers
 clusters.to_excel(r'./ross_sea_WR/data/ross_sea_WR_labels.xlsx')
+cbar_kwargs = {'aspect': 20, 'shrink': 0.7}
+freq = clusters.value_counts() / len(clusters)
+
+p = compos['hgt_deseason'].plot.contourf(
+    levels=25,
+    transform=ccrs.PlateCarree(),
+    col='cluster',
+    col_wrap=3,
+    subplot_kws={"projection": ccrs.SouthPolarStereo(central_longitude=180)},
+    cbar_kwargs=cbar_kwargs,
+)
+
+for i, ax in enumerate(p.axes.flat):
+    ax.coastlines()
+    ax.set_title(f"cluster # {i + 1}, {freq.loc[i + 1].values[0] * 100:4.2f}%")
+
+p.fig.savefig(r'./ross_sea_WR/figures/WRs.png', dpi=300)

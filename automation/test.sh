@@ -9,13 +9,14 @@ echo "running plotting script"
 
 #running the realtime soi
 /nesi/project/niwa00004/rampaln/bin/python "/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/indices/code/compute_indices.py"
-
+/nesi/project/niwa00004/rampaln/bin/python "/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/ross_sea_WR/run_ross_sea.py"
 echo | git status
 #git add *
 #git commit -a -m "Auto updated"
 #git push
 git add ./mjo_series/*
 git add ./indices/figures/*
+git add ./ross_sea_WR/data/*
 git commit -a -m "auto commit"
 git push origin main
 
