@@ -149,7 +149,7 @@ if __name__ == "__main__":
     fig, ax, __, new_fig_created,textBm, textBs = plot_data(dates, soi, widths,
                                                       soim, months,
                                                       output_path=f"./IPO/figures/",
-                                                      cei = True, var_name ='IPO', var_2 = 'SOI 3-month', ylim = (-2,2), periodicity = 'M',
+                                                      cei = True, var_name ='IPO', var_2 = 'SOI 3-month', ylim = (-3,3), periodicity = 'M',
                                                             period1 =1, period2 =3)
     #Mantua, Nathan J., et al. "A Pacific interdecadal climate oscillation with impacts on salmon production." Bulletin of the american Meteorological Society 78.6 (1997): 1069-1080.
     add_reference(ax, 12, [textBm, textBs], top_corner=0.97, separation=0.03,

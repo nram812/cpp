@@ -1,0 +1,5 @@
+IOD/data/*.nc
+./*/*.nc
+*.nc
+kidson_synoptic_types/data_real_time/NCEP_NCAR/6-hourly/*.nc
+SAM/data_ncep/*.nc

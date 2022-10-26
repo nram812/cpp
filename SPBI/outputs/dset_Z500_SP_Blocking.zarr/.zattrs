@@ -1,0 +1,9 @@
+{
+    "Conventions": "COARDS",
+    "References": "http://www.psl.noaa.gov/data/gridded/data.ncep.reanalysis.html",
+    "dataset_title": "NCEP-NCAR Reanalysis 1",
+    "description": "Data is from NMC initialized reanalysis\n(4x/day).  It consists of most variables interpolated to\npressure surfaces from model (sigma) surfaces.",
+    "history": "created 99/05/11 by Hoop (netCDF2.3)\nConverted to chunked, deflated non-packed NetCDF4 2014/09",
+    "platform": "Model",
+    "title": "mean daily NMC Reanalysis (1948)"
+}

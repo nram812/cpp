@@ -17,9 +17,8 @@ To update TOC, please run:
   - [CEI](#cei)
 
 ## Live MJO:
-![Forecast](mjo_series/data/MJO_realtime_plot.png)
-<a id="raw-url" href="https://raw.githubusercontent.com/nram812/cpp/main/data/mjo_data/phase_historical.csv">Download FILE</a>
-<a href= download>Click to Download</a>
+<a id="raw-url" href="mjo_series/data/">MJO Catalogueg</a>
+<a id="raw-url" href="https://raw.githubusercontent.com/nram812/cpp/main/data/mjo_data/phase_historical.csv">Download MJOg</a>
 To access the data please download the following [link](data/mjo_data/phase_historical.csv)
 
 ## Live SOI:

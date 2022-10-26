@@ -1,0 +1,343 @@
+{
+    "metadata": {
+        ".zattrs": {
+            "Conventions": "COARDS",
+            "References": "http://www.psl.noaa.gov/data/gridded/data.ncep.reanalysis.html",
+            "dataset_title": "NCEP-NCAR Reanalysis 1",
+            "description": "Data is from NMC initialized reanalysis\n(4x/day).  It consists of most variables interpolated to\npressure surfaces from model (sigma) surfaces.",
+            "history": "created 99/05/11 by Hoop (netCDF2.3)\nConverted to chunked, deflated non-packed NetCDF4 2014/09",
+            "platform": "Model",
+            "title": "mean daily NMC Reanalysis (1948)"
+        },
+        ".zgroup": {
+            "zarr_format": 2
+        },
+        "area_weights/.zarray": {
+            "chunks": [
+                29,
+                73
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                29,
+                73
+            ],
+            "zarr_format": 2
+        },
+        "area_weights/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "lat",
+                "lon"
+            ],
+            "coordinates": "level"
+        },
+        "dayofyear/.zarray": {
+            "chunks": [
+                22051
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<i8",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                22051
+            ],
+            "zarr_format": 2
+        },
+        "dayofyear/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ]
+        },
+        "hgt/.zarray": {
+            "chunks": [
+                2757,
+                8,
+                19
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f4",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                22051,
+                29,
+                73
+            ],
+            "zarr_format": 2
+        },
+        "hgt/.zattrs": {
+            "GRIB_id": 7,
+            "GRIB_name": "HGT",
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "lat",
+                "lon"
+            ],
+            "actual_range": [
+                -470.0,
+                32092.0
+            ],
+            "coordinates": "level dayofyear",
+            "dataset": "NCEP Reanalysis Daily Averages",
+            "level_desc": "Multiple levels",
+            "long_name": "mean Daily Geopotential height",
+            "missing_value": -9.969209968386869e+36,
+            "parent_stat": "Individual Obs",
+            "precision": 0,
+            "statistic": "Mean",
+            "units": "m",
+            "valid_range": [
+                -700.0,
+                35000.0
+            ],
+            "var_desc": "Geopotential height"
+        },
+        "hgt_deseason/.zarray": {
+            "chunks": [
+                2757,
+                4,
+                19
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                22051,
+                29,
+                73
+            ],
+            "zarr_format": 2
+        },
+        "hgt_deseason/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "lat",
+                "lon"
+            ],
+            "coordinates": "level dayofyear"
+        },
+        "hgt_deseason_filtered/.zarray": {
+            "chunks": [
+                2757,
+                4,
+                19
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                22051,
+                29,
+                73
+            ],
+            "zarr_format": 2
+        },
+        "hgt_deseason_filtered/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "lat",
+                "lon"
+            ],
+            "coordinates": "level dayofyear"
+        },
+        "hgt_deseason_filtered_detrend/.zarray": {
+            "chunks": [
+                2757,
+                4,
+                19
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                22051,
+                29,
+                73
+            ],
+            "zarr_format": 2
+        },
+        "hgt_deseason_filtered_detrend/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "lat",
+                "lon"
+            ],
+            "coordinates": "level dayofyear"
+        },
+        "lat/.zarray": {
+            "chunks": [
+                29
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f4",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                29
+            ],
+            "zarr_format": 2
+        },
+        "lat/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "lat"
+            ],
+            "actual_range": [
+                90.0,
+                -90.0
+            ],
+            "axis": "Y",
+            "long_name": "Latitude",
+            "standard_name": "latitude",
+            "units": "degrees_north"
+        },
+        "level/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f4",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "level/.zattrs": {
+            "GRIB_id": 100,
+            "GRIB_name": "hPa",
+            "_ARRAY_DIMENSIONS": [],
+            "actual_range": [
+                1000.0,
+                10.0
+            ],
+            "axis": "Z",
+            "long_name": "Level",
+            "positive": "down",
+            "units": "millibar"
+        },
+        "lon/.zarray": {
+            "chunks": [
+                73
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f4",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                73
+            ],
+            "zarr_format": 2
+        },
+        "lon/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "lon"
+            ],
+            "actual_range": [
+                0.0,
+                357.5
+            ],
+            "axis": "X",
+            "long_name": "Longitude",
+            "standard_name": "longitude",
+            "units": "degrees_east"
+        },
+        "time/.zarray": {
+            "chunks": [
+                22051
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<i8",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                22051
+            ],
+            "zarr_format": 2
+        },
+        "time/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "actual_range": [
+                1297320.0,
+                1306080.0
+            ],
+            "avg_period": "0000-00-01 00:00:00",
+            "axis": "T",
+            "calendar": "proleptic_gregorian",
+            "delta_t": "0000-00-01 00:00:00",
+            "long_name": "Time",
+            "standard_name": "time",
+            "units": "days since 1948-01-01 00:00:00"
+        }
+    },
+    "zarr_consolidated_format": 1
+}

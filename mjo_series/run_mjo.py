@@ -68,4 +68,5 @@ ax2.text(0.01, 1.02, f"Madden Julian Oscillation (MJO)", fontsize=24, fontweight
 ax2.text(0.01, 0.2, label, fontsize=10, transform=ax2.transAxes, weight ='bold')
 print("saving file")
 f2.savefig(f'{output_dirs}/MJO_realtime_plot_{current_month_s.strftime("%Y-%b")}.png', dpi=200)
+os.remove(f'{output_dirs}/MJO_realtime_plot_recent.png')
 f2.savefig(f'{output_dirs}/MJO_realtime_plot_recent.png', dpi=200)
