@@ -70,3 +70,10 @@ code execute succesfully
 #	kidson_synoptic_types/create_kindson_renwick.py
 #	scohub/
 no changes added to commit (use "git add" and/or "git commit -a")
+[main 949e5d6] auto commit
+ 11 files changed, 79 insertions(+), 172 deletions(-)
+ rewrite data/mjo_data/phase_historical.xlsx (70%)
+ rewrite data/mjo_data/phase_recent.xlsx (68%)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (88%)
+ rewrite mjo_series/data/MJO_realtime_plot_2022-Oct.png (73%)
+ rewrite output.log (95%)
