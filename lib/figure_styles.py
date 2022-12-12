@@ -120,7 +120,7 @@ def plot_data(dates, soi, widths, soim, months, output_path ="/nesi/project/niwa
         ax.set_xlim(dates[0] - monthdelta(12), dates[-1] + monthdelta(12))
     if periodicity == 'M':
         textBm = "{:%b %Y} = {:+3.1f}".format(dates[-period1], soi[-period1])
-        textBs = "%s to %s = %+3.1f" % (dates[-period2].strftime("%b %Y"), dates[-period1].strftime("%b %Y"), soi[-period2:-period1].mean())
+        textBs = "%s to %s = %+3.1f" % (dates[-period2].strftime("%b %Y"), dates[-period1].strftime("%b %Y"), soi[-period2:].mean())
 
     elif periodicity == 'Y':
         if  soi[-period1]>0:
@@ -140,7 +140,7 @@ def plot_data(dates, soi, widths, soim, months, output_path ="/nesi/project/niwa
 
         textBm = "{:%b %d %Y } = {:+3.1f}".format(dates[-period1], soi[-period1])
         textBs = "%s to %s = %+3.1f" % (
-        dates[-period2].strftime("%b %d %Y"), dates[-period1].strftime("%b %d %Y"), soi[-period2:-period1].mean())
+        dates[-period2].strftime("%b %d %Y"), dates[-period1].strftime("%b %d %Y"), soi[-period2:].mean())
 
     if label_bool is None:
         if imagepath is not None:
