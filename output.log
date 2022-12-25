@@ -73,3 +73,9 @@ creating trenberth plots
 #	modified:   ross_sea_WR/data/ross_sea_WR_labels.xlsx
 #
 no changes added to commit (use "git add" and/or "git commit -a")
+[main 7535a80] auto commit
+ 17 files changed, 82 insertions(+), 46 deletions(-)
+ rewrite data/mjo_data/phase_historical.xlsx (70%)
+ rewrite data/mjo_data/phase_recent.xlsx (72%)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (88%)
+ rewrite output.log (95%)
