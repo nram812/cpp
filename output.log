@@ -55,3 +55,13 @@ creating trenberth plots
 #	modified:   ross_sea_WR/data/ross_sea_WR_labels.xlsx
 #
 no changes added to commit (use "git add" and/or "git commit -a")
+[main d46dd94] auto commit
+ 16 files changed, 959 insertions(+), 929 deletions(-)
+ rewrite SAM/data_ncep/SAM_pc.csv (98%)
+ rewrite SAM/data_ncep/SAM_pc.xlsx (89%)
+ rewrite SAM/figures/SAM_PC_index.png (72%)
+ rewrite indices/data/daily_soi.xlsx (95%)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (89%)
+ rewrite niwa_soi/data/niwa-soi-latest.xlsx (67%)
+ rewrite niwa_soi/figures/NIWA_SOI.png (80%)
+ rewrite output.log (93%)
