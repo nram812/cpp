@@ -115,6 +115,8 @@ if __name__ == "__main__":
 
     PCs.to_csv('./IPO/data/IPO.csv')
     PCs_monthly.to_csv('./IPO/data/IPO_monthly.csv')
+    PCs.to_csv('./IPO/data/IPO.xlsx')
+    PCs_monthly.to_csv('./IPO/data/IPO_monthly.xlsx')
     GW = PCs.loc[:,0]
     f, ax = plt.subplots(figsize=(10,6))
     ax.fill_between(GW.index,GW.values, 0, (GW.values>=0), color='coral', alpha=.9, interpolate=True)

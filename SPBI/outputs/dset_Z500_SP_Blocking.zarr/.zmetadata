@@ -43,7 +43,7 @@
         },
         "dayofyear/.zarray": {
             "chunks": [
-                22051
+                27407
             ],
             "compressor": {
                 "blocksize": 0,
@@ -57,7 +57,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                22051
+                27407
             ],
             "zarr_format": 2
         },
@@ -68,8 +68,8 @@
         },
         "hgt/.zarray": {
             "chunks": [
-                2757,
-                8,
+                3426,
+                4,
                 19
             ],
             "compressor": {
@@ -84,7 +84,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                22051,
+                27407,
                 29,
                 73
             ],
@@ -119,7 +119,7 @@
         },
         "hgt_deseason/.zarray": {
             "chunks": [
-                2757,
+                3426,
                 4,
                 19
             ],
@@ -135,7 +135,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                22051,
+                27407,
                 29,
                 73
             ],
@@ -151,7 +151,7 @@
         },
         "hgt_deseason_filtered/.zarray": {
             "chunks": [
-                2757,
+                3426,
                 4,
                 19
             ],
@@ -167,7 +167,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                22051,
+                27407,
                 29,
                 73
             ],
@@ -183,7 +183,7 @@
         },
         "hgt_deseason_filtered_detrend/.zarray": {
             "chunks": [
-                2757,
+                3426,
                 4,
                 19
             ],
@@ -199,7 +199,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                22051,
+                27407,
                 29,
                 73
             ],
@@ -304,7 +304,7 @@
         },
         "time/.zarray": {
             "chunks": [
-                22051
+                27407
             ],
             "compressor": {
                 "blocksize": 0,
@@ -318,7 +318,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                22051
+                27407
             ],
             "zarr_format": 2
         },
