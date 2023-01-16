@@ -1,3 +1,6 @@
+## Author: Neelesh Rampal
+## Last Modified: 16/01/23 - changed the yaxis plots on the SOI
+
 import warnings
 import os, sys
 import glob
@@ -59,7 +62,7 @@ if __name__ == "__main__":
                                                              soim, months,
                                          output_path=f'{output_dirs}',
                                          cei=True, var_name=f'NIWA SOI (last 3 months)', var_2='SOI 3-month', title=False, label_bool = None,
-                                                                        ylim=(-2,2), period2 =30, period1 = 1, periodicity ='D')
+                                                                        ylim=(-4,4), period2 =30, period1 = 1, periodicity ='D')
     text = "%s to %s = %+3.1f" % (soi.index[-90].strftime("%b %d %Y"),
                                   soi.index[-1].strftime("%b %d %Y"), soi.iloc[-1, 1]/10.0)
 

@@ -23,14 +23,17 @@ def identify_missing_files(output_path, download_loc):
     :return:
     """
     current_year = datetime.datetime.utcnow().year
+    previous_year = current_year -1
     ncep_years = np.arange(1948, current_year+1)
     files_names = [f'{download_loc}hgt.{year}.nc'
            for year in ncep_years if not os.path.exists(f'{output_path}/hgt.{year}.nc')]
     # identifies any other missing files if any
     files_names.append(f'{download_loc}hgt.{current_year}.nc')
     # removing the most recent one to avoid over writing
+    files_names.append(f'{download_loc}hgt.{previous_year}.nc')
     try:
         os.remove(f'{output_path}/hgt.{current_year}.nc')
+        os.remove(f'{output_path}/hgt.{previous_year}.nc')
     except FileNotFoundError:
         pass
     # adds the most recent file just incase it is missing
