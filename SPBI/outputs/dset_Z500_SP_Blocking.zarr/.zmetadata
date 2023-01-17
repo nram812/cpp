@@ -43,7 +43,7 @@
         },
         "dayofyear/.zarray": {
             "chunks": [
-                27407
+                27408
             ],
             "compressor": {
                 "blocksize": 0,
@@ -57,7 +57,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27407
+                27408
             ],
             "zarr_format": 2
         },
@@ -84,7 +84,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27407,
+                27408,
                 29,
                 73
             ],
@@ -135,7 +135,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27407,
+                27408,
                 29,
                 73
             ],
@@ -167,7 +167,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27407,
+                27408,
                 29,
                 73
             ],
@@ -199,7 +199,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27407,
+                27408,
                 29,
                 73
             ],
@@ -304,7 +304,7 @@
         },
         "time/.zarray": {
             "chunks": [
-                27407
+                27408
             ],
             "compressor": {
                 "blocksize": 0,
@@ -318,7 +318,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27407
+                27408
             ],
             "zarr_format": 2
         },
