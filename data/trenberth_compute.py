@@ -82,8 +82,12 @@ complete_dset = xr.open_dataset(f'{path}/monthly_mean_mslp.nc', chunks={"time":1
 # complete_dset['longitude'] = complete_dset.longitude.where(complete_dset.longitude < 180.0
 files = glob.glob(f"{path}/single-levels/*/*.nc")
 files = sorted(files)
+# modified in attemp to sort out issues with trenberth indices
+def preprocess(df):
+    times = sorted(df.time.to_index())
+    return df.reindex(time =times)
 with ProgressBar():
-    load_downloaded_dset = xr.open_mfdataset(files, combine ="nested", parallel=True)
+    load_downloaded_dset = xr.open_mfdataset(files, parallel=True, concat_dim="time", preprocess=preprocess)
 
 load_downloaded_dset['longitude'] = load_downloaded_dset.longitude.where(load_downloaded_dset.longitude > 0.0,
                                                                          load_downloaded_dset.longitude  + 360)
