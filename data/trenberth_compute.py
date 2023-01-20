@@ -80,7 +80,10 @@ ylims['MZ4'] = (-20,20)
 # Points are directly on the boundary of the data
 complete_dset = xr.open_dataset(f'{path}/monthly_mean_mslp.nc', chunks={"time":1000})
 # complete_dset['longitude'] = complete_dset.longitude.where(complete_dset.longitude < 180.0
-load_downloaded_dset = xr.open_mfdataset(f"{path}/single-levels/*/*.nc", parallel = True)
+files = glob.glob(f"{path}/single-levels/*/*.nc")
+files = sorted(files)
+with ProgressBar():
+    load_downloaded_dset = xr.open_mfdataset(files, combine ="nested", parallel=True)
 
 load_downloaded_dset['longitude'] = load_downloaded_dset.longitude.where(load_downloaded_dset.longitude > 0.0,
                                                                          load_downloaded_dset.longitude  + 360)
