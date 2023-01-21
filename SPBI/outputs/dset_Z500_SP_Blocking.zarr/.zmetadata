@@ -43,7 +43,7 @@
         },
         "dayofyear/.zarray": {
             "chunks": [
-                27411
+                27412
             ],
             "compressor": {
                 "blocksize": 0,
@@ -57,7 +57,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27411
+                27412
             ],
             "zarr_format": 2
         },
@@ -84,7 +84,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27411,
+                27412,
                 29,
                 73
             ],
@@ -102,7 +102,7 @@
                 -470.0,
                 32092.0
             ],
-            "coordinates": "level dayofyear",
+            "coordinates": "dayofyear level",
             "dataset": "NCEP Reanalysis Daily Averages",
             "level_desc": "Multiple levels",
             "long_name": "mean Daily Geopotential height",
@@ -135,7 +135,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27411,
+                27412,
                 29,
                 73
             ],
@@ -147,7 +147,7 @@
                 "lat",
                 "lon"
             ],
-            "coordinates": "level dayofyear"
+            "coordinates": "dayofyear level"
         },
         "hgt_deseason_filtered/.zarray": {
             "chunks": [
@@ -167,7 +167,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27411,
+                27412,
                 29,
                 73
             ],
@@ -179,7 +179,7 @@
                 "lat",
                 "lon"
             ],
-            "coordinates": "level dayofyear"
+            "coordinates": "dayofyear level"
         },
         "hgt_deseason_filtered_detrend/.zarray": {
             "chunks": [
@@ -199,7 +199,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27411,
+                27412,
                 29,
                 73
             ],
@@ -211,7 +211,7 @@
                 "lat",
                 "lon"
             ],
-            "coordinates": "level dayofyear"
+            "coordinates": "dayofyear level"
         },
         "lat/.zarray": {
             "chunks": [
@@ -304,7 +304,7 @@
         },
         "time/.zarray": {
             "chunks": [
-                27411
+                27412
             ],
             "compressor": {
                 "blocksize": 0,
@@ -318,7 +318,7 @@
             "filters": null,
             "order": "C",
             "shape": [
-                27411
+                27412
             ],
             "zarr_format": 2
         },
