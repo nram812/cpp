@@ -102,7 +102,7 @@
                 -470.0,
                 32092.0
             ],
-            "coordinates": "level dayofyear",
+            "coordinates": "dayofyear level",
             "dataset": "NCEP Reanalysis Daily Averages",
             "level_desc": "Multiple levels",
             "long_name": "mean Daily Geopotential height",
@@ -147,7 +147,7 @@
                 "lat",
                 "lon"
             ],
-            "coordinates": "level dayofyear"
+            "coordinates": "dayofyear level"
         },
         "hgt_deseason_filtered/.zarray": {
             "chunks": [
@@ -179,7 +179,7 @@
                 "lat",
                 "lon"
             ],
-            "coordinates": "level dayofyear"
+            "coordinates": "dayofyear level"
         },
         "hgt_deseason_filtered_detrend/.zarray": {
             "chunks": [
@@ -211,7 +211,7 @@
                 "lat",
                 "lon"
             ],
-            "coordinates": "level dayofyear"
+            "coordinates": "dayofyear level"
         },
         "lat/.zarray": {
             "chunks": [
