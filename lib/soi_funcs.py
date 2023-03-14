@@ -16,6 +16,8 @@ import matplotlib.dates as mdates
 from matplotlib.dates import YearLocator, MonthLocator, DateFormatter
 clim_start =  1981
 clim_end = 2010
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 sys.path.append(r'/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/lib')
 from figure_styles import *
 
