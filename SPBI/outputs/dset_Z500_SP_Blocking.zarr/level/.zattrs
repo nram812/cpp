@@ -1,0 +1,13 @@
+{
+    "GRIB_id": 100,
+    "GRIB_name": "hPa",
+    "_ARRAY_DIMENSIONS": [],
+    "actual_range": [
+        1000.0,
+        10.0
+    ],
+    "axis": "Z",
+    "long_name": "Level",
+    "positive": "down",
+    "units": "millibar"
+}

@@ -1,0 +1,16 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "time"
+    ],
+    "actual_range": [
+        1297320.0,
+        1306080.0
+    ],
+    "avg_period": "0000-00-01 00:00:00",
+    "axis": "T",
+    "calendar": "proleptic_gregorian",
+    "delta_t": "0000-00-01 00:00:00",
+    "long_name": "Time",
+    "standard_name": "time",
+    "units": "days since 1948-01-01 00:00:00"
+}

@@ -1,0 +1,27 @@
+{
+    "GRIB_id": 7,
+    "GRIB_name": "HGT",
+    "_ARRAY_DIMENSIONS": [
+        "time",
+        "lat",
+        "lon"
+    ],
+    "actual_range": [
+        -470.0,
+        32092.0
+    ],
+    "coordinates": "dayofyear level",
+    "dataset": "NCEP Reanalysis Daily Averages",
+    "level_desc": "Multiple levels",
+    "long_name": "mean Daily Geopotential height",
+    "missing_value": -9.969209968386869e+36,
+    "parent_stat": "Individual Obs",
+    "precision": 0,
+    "statistic": "Mean",
+    "units": "m",
+    "valid_range": [
+        -700.0,
+        35000.0
+    ],
+    "var_desc": "Geopotential height"
+}
