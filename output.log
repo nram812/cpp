@@ -1140,3 +1140,16 @@ code execute succesfully
 #	lib/NIWA_CMYK_Hor.png
 #	trenberth_figures/.gitignore
 no changes added to commit (use "git add" and/or "git commit -a")
+[main b0c934e] auto commit
+ 949 files changed, 28097 insertions(+), 27039 deletions(-)
+ rewrite SPBI/outputs/SPBI_Final.xlsx (87%)
+ rewrite SPBI/outputs/SPBI_Monthly_Final.xlsx (91%)
+ rewrite SPBI/outputs/SPBI_final.csv (77%)
+ rewrite SPBI/outputs/dset_Z500_SP_Blocking.zarr/hgt/0.3.2 (60%)
+ rewrite SPBI/outputs/dset_Z500_SP_Blocking.zarr/hgt/0.4.2 (60%)
+ rewrite SPBI/outputs/dset_Z500_SP_Blocking.zarr/hgt/1.5.2 (61%)
+ rewrite SPBI/outputs/dset_Z500_SP_Blocking.zarr/hgt/2.4.1 (60%)
+ rewrite SPBI/outputs/dset_Z500_SP_Blocking.zarr/hgt/2.4.2 (60%)
+ rewrite SPBI/outputs/dset_Z500_SP_Blocking.zarr/hgt/3.5.2 (61%)
+ rewrite SPBI/outputs/dset_Z500_SP_Blocking.zarr/hgt/4.4.2 (60%)
+ rewrite SPBI/outputs/dset_Z500_SP_Blocking.zarr/hgt/4.5.2 (61%)
