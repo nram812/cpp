@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
 
         for i in range(mask.shape[0]):
-            mask[i,int(idx_shift[i])::] = np.nan
+            mask[i,np.int64(idx_shift[i])::] = np.nan
 
         dset['mask'] = (('lat','lon'), mask)
         dset['sst_masked'] = dset['sst'] * dset['mask']
@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
 
     def compute_ipo(sst_anoms, years_pass =11, N =2.0):
-        high = np.int(years_pass * 12.)
+        high = np.int64(years_pass * 12.)
         B, A = signal.butter(N, N/high, btype='lowpass', output='ba')
 
         def filter_SST(x):

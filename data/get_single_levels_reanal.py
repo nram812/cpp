@@ -114,7 +114,7 @@ def check_filenames(fnames, output_log):
     return bool_file
 
 def format_day(day):
-    day = np.int(day)
+    day = int(day)
     if day >=10:
         return str(day)
     else:
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     # Loop through the lagged times of interest
     filenames = []
     lists = []
-    ref_time = current_date -dt.timedelta(days = np.int(min_lagged_offset))
+    ref_time = current_date -dt.timedelta(days = int(min_lagged_offset))
     year = str(ref_time.year)
     month = format_day(ref_time.month)
     day = ref_time.day
