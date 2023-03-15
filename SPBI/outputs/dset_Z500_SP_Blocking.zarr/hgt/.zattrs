@@ -10,7 +10,7 @@
         -470.0,
         32092.0
     ],
-    "coordinates": "dayofyear level",
+    "coordinates": "level dayofyear",
     "dataset": "NCEP Reanalysis Daily Averages",
     "level_desc": "Multiple levels",
     "long_name": "mean Daily Geopotential height",

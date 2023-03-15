@@ -4,5 +4,5 @@
         "lat",
         "lon"
     ],
-    "coordinates": "dayofyear level"
+    "coordinates": "level dayofyear"
 }
