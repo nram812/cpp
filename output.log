@@ -10,7 +10,15 @@ computing the sam
 go the warriors
 True cei
 None
-                           ] | 0% Completed | 533.40 ms[                                        ] | 0% Completed | 636.61 ms[                                        ] | 0% Completed | 740.60 ms
+
+we standardize per month
+
+go the warriors
+True cei
+None
+getting trenberth data
+creating trenberth plots
+ompleted | 636.61 ms[                                        ] | 0% Completed | 740.60 ms
 go the warriors
 True cei
 None
@@ -43,3 +51,14 @@ Midmonth Update
 #	data/logs/
 #	lib/NIWA_CMYK_Hor.png
 no changes added to commit (use "git add" and/or "git commit -a")
+[main d78f135] auto commit
+ 16 files changed, 106 insertions(+), 92 deletions(-)
+ rewrite data/mjo_data/phase_historical.xlsx (88%)
+ rewrite data/mjo_data/phase_recent.xlsx (64%)
+ rewrite indices/data/daily_soi.xlsx (78%)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (80%)
+ rewrite mjo_series/data/MJO_realtime_plot_2023-May.png (76%)
+ rewrite mjo_series/data/MJO_realtime_plot_recent.png (76%)
+ rewrite niwa_soi/data/niwa-soi-latest.xlsx (63%)
+ rewrite niwa_soi/figures/NIWA_SOI.png (98%)
+ rewrite output.log (98%)
