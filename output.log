@@ -17,13 +17,23 @@ go the warriors
 True cei
 None
 creating sio plots
- cei
+loading file
+go the warriors
+True cei
 None
-code execute succesfully
-# On branch main
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
+computing the sam
+go the warriors
+True cei
+None
+
+we standardize per month
+
+go the warriors
+True cei
+None
+getting trenberth data
+creating trenberth plots
+changes in working directory)
 #
 #	modified:   CEI/data/new_CEI.csv
 #	modified:   CEI/data/new_CEI.xlsx
@@ -56,3 +66,26 @@ code execute succesfully
 #	data/logs/
 #	lib/NIWA_CMYK_Hor.png
 no changes added to commit (use "git add" and/or "git commit -a")
+[main a11820f] auto commit
+ 24 files changed, 8484 insertions(+), 8464 deletions(-)
+ rewrite CEI/data/new_CEI.xlsx (94%)
+ rewrite CEI/figures/CEI_series_2018_present.png (93%)
+ rewrite IOD/figures/IOD_series_plot.png (85%)
+ rewrite IOD/figures/IOD_series_plot_recent.png (92%)
+ rewrite IOD/figures/IOD_series_plot_recent1.png (80%)
+ rewrite IOD/figures/IOD_series_plot_recent1_1862.png (82%)
+ rewrite IOD/figures/IOD_spatial_plot_recent1.png (96%)
+ rewrite IOD/figures/Monthly_IOD.csv (99%)
+ rewrite IOD/figures/Monthly_IOD.xlsx (83%)
+ rewrite IPO/data/IPO.csv (96%)
+ rewrite IPO/data/IPO.xlsx (96%)
+ rewrite IPO/data/IPO_monthly.csv (96%)
+ rewrite IPO/data/IPO_monthly.xlsx (96%)
+ rewrite IPO/figures/All_IPO.png (94%)
+ rewrite IPO/figures/IPO_IPO.png (96%)
+ rewrite IPO/figures/IPO_eof0.png (95%)
+ rewrite IPO/figures/IPO_eof1.png (94%)
+ rewrite IPO/figures/global_warming.png (99%)
+ rewrite indices/data/daily_soi.xlsx (75%)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (79%)
+ rewrite output.log (99%)
