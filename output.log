@@ -3,7 +3,7 @@ running plotting script
  
 saving file
 running SPBI
-[                                        ] | 0% Completed | 1.73 ms[                                        ] | 0% Completed | 107.71 ms[                                        ] | 0% Completed | 213.67 ms[                                        ] | 0% Completed | 319.64 ms[                                        ] | 0% Completed | 428.98 ms[                                        ] | 0% Completed | 530.93 ms[                                        ] | 0% Completed | 632.81 ms[                                        ] | 0% Completed | 737.33 ms[                                        ] | 0% Completed | 839.70 ms[                                        ] | 0% Completed | 1.00 s[                                        ] | 0% Completed | 1.10 s[                                        ] | 0% Completed | 1.20 s
+[                                        ] | 0% Completed | 321.44 us[                                        ] | 0% Completed | 105.44 ms[                                        ] | 0% Completed | 208.54 ms[                                        ] | 0% Completed | 311.54 ms[                                        ] | 0% Completed | 416.74 ms[                                        ] | 0% Completed | 522.42 ms[                                        ] | 0% Completed | 628.22 ms[                                        ] | 0% Completed | 733.12 ms[                                        ] | 0% Completed | 835.39 ms[                                        ] | 0% Completed | 935.83 ms
 go the warriors
 True cei
 None
@@ -17,7 +17,6 @@ Midmonth Update
 #	modified:   indices/data/daily_soi.xlsx
 #	modified:   indices/data/monthly_nino_index.xlsx
 #	modified:   indices/figures/SOI_LP_realtime_plot.png
-#	modified:   mjo_series/data/MJO_realtime_plot_recent.png
 #	modified:   output.log
 #
 # Untracked files:
@@ -25,5 +24,4 @@ Midmonth Update
 #
 #	data/logs/
 #	lib/NIWA_CMYK_Hor.png
-#	mjo_series/data/MJO_realtime_plot_2023-Sep.png
 no changes added to commit (use "git add" and/or "git commit -a")
