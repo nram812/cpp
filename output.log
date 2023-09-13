@@ -3,7 +3,7 @@ running plotting script
  
 saving file
 running SPBI
-[                                        ] | 0% Completed | 326.70 us[                                        ] | 0% Completed | 104.48 ms[                                        ] | 0% Completed | 213.52 ms[                                        ] | 0% Completed | 328.26 ms[                                        ] | 0% Completed | 430.62 ms[                                        ] | 0% Completed | 534.79 ms[                                        ] | 0% Completed | 637.06 ms[                                        ] | 0% Completed | 737.32 ms[                                        ] | 0% Completed | 838.05 ms
+[                                        ] | 0% Completed | 256.72 us[                                        ] | 0% Completed | 105.02 ms[                                        ] | 0% Completed | 208.82 ms[                                        ] | 0% Completed | 314.72 ms[                                        ] | 0% Completed | 418.70 ms[                                        ] | 0% Completed | 524.89 ms[                                        ] | 0% Completed | 628.15 ms[                                        ] | 0% Completed | 730.95 ms[                                        ] | 0% Completed | 832.90 ms[                                        ] | 0% Completed | 933.31 ms
 go the warriors
 True cei
 None
@@ -21,17 +21,15 @@ True cei
 None
 code execute succesfully
 # On branch main
-# Your branch is ahead of 'origin/main' by 6 commits.
+# Your branch is ahead of 'origin/main' by 7 commits.
 #   (use "git push" to publish your local commits)
 #
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   indices/data/daily_soi.csv
 #	modified:   indices/data/daily_soi.xlsx
 #	modified:   indices/data/monthly_nino_index.xlsx
-#	modified:   indices/figures/SOI_LP_realtime_plot.png
 #	modified:   output.log
 #
 # Untracked files:
