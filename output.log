@@ -3,7 +3,7 @@ running plotting script
  
 saving file
 running SPBI
-[                                        ] | 0% Completed | 387.69 us[                                        ] | 0% Completed | 103.38 ms[                                        ] | 0% Completed | 205.79 ms[                                        ] | 0% Completed | 306.01 ms[                                        ] | 0% Completed | 413.14 ms[                                        ] | 0% Completed | 516.08 ms[                                        ] | 0% Completed | 616.95 ms[                                        ] | 0% Completed | 718.99 ms[                                        ] | 0% Completed | 822.31 ms[                                        ] | 0% Completed | 924.11 ms[                                        ] | 0% Completed | 1.02 s[                                        ] | 0% Completed | 1.12 s
+[                                        ] | 0% Completed | 246.98 us[                                        ] | 0% Completed | 105.38 ms[                                        ] | 0% Completed | 206.57 ms[                                        ] | 0% Completed | 309.20 ms[                                        ] | 0% Completed | 414.73 ms[                                        ] | 0% Completed | 516.28 ms[                                        ] | 0% Completed | 621.95 ms[                                        ] | 0% Completed | 722.23 ms
 go the warriors
 True cei
 None
@@ -21,7 +21,7 @@ True cei
 None
 code execute succesfully
 # On branch main
-# Your branch is ahead of 'origin/main' by 38 commits.
+# Your branch is ahead of 'origin/main' by 39 commits.
 #   (use "git push" to publish your local commits)
 #
 # Changes not staged for commit:
