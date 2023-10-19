@@ -42,3 +42,7 @@ code execute succesfully
 #	data/logs/
 #	lib/NIWA_CMYK_Hor.png
 no changes added to commit (use "git add" and/or "git commit -a")
+[main bde3ad3] auto commit
+ 5 files changed, 45 insertions(+), 44 deletions(-)
+ rewrite indices/figures/SOI_LP_realtime_plot.png (79%)
+ rewrite output.log (89%)
