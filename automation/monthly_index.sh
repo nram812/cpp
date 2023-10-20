@@ -19,7 +19,7 @@ echo "computing the sam"
 echo "getting trenberth data"
 /home/rampaln/.conda/envs/s7s/bin/python "/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/data/get_single_levels_reanal.py"
 echo "creating trenberth plots"
-/home/rampaln/.conda/envs/s7s/bin/python "/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/data/trenberth_compute.py"
+/nesi/project/niwa00004/rampaln/commercial_requests/commercial-vcsn-requests/bash_test.sh "/nesi/project/niwa00004/rampaln/CAOA2101/cpp-indices/data/trenberth_compute.py"
 
 # adding gitub stuff
 git add ./trenberth_figures/*
