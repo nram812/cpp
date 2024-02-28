@@ -3,7 +3,7 @@ running plotting script
  
 saving file
 running SPBI
-[                                        ] | 0% Completed | 373.47 us[                                        ] | 0% Completed | 104.19 ms[                                        ] | 0% Completed | 208.90 ms[                                        ] | 0% Completed | 312.61 ms[                                        ] | 0% Completed | 416.49 ms[                                        ] | 0% Completed | 520.66 ms[                                        ] | 0% Completed | 624.63 ms[                                        ] | 0% Completed | 732.93 ms[                                        ] | 0% Completed | 863.75 ms
+[                                        ] | 0% Completed | 298.07 us[                                        ] | 0% Completed | 104.86 ms[                                        ] | 0% Completed | 208.25 ms[                                        ] | 0% Completed | 313.02 ms[                                        ] | 0% Completed | 415.62 ms[                                        ] | 0% Completed | 518.74 ms[                                        ] | 0% Completed | 622.44 ms[                                        ] | 0% Completed | 730.30 ms[                                        ] | 0% Completed | 831.26 ms[                                        ] | 0% Completed | 931.56 ms[                                        ] | 0% Completed | 1.03 s
 go the warriors
 True cei
 None
@@ -26,6 +26,7 @@ code execute succesfully
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
+#	modified:   SAM/figures/SAM_PC_index.png
 #	modified:   indices/data/daily_soi.csv
 #	modified:   indices/data/daily_soi.xlsx
 #	modified:   indices/data/monthly_nino_index.xlsx
