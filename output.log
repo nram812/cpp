@@ -1,34 +1,11 @@
 computing the mjo
 running plotting script
- 
-saving file
 running SPBI
-[                                        ] | 0% Completed | 284.97 us[                                        ] | 0% Completed | 103.67 ms[                                        ] | 0% Completed | 209.31 ms[                                        ] | 0% Completed | 311.09 ms[                                        ] | 0% Completed | 412.54 ms[                                        ] | 0% Completed | 521.94 ms[                                        ] | 0% Completed | 633.02 ms[                                        ] | 0% Completed | 737.84 ms[                                        ] | 0% Completed | 1.07 s[                                        ] | 0% Completed | 1.17 s
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-go the warriors
-True cei
-None
-code execute succesfully
 # On branch main
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   indices/data/daily_soi.csv
-#	modified:   indices/data/daily_soi.xlsx
-#	modified:   indices/data/monthly_nino_index.xlsx
-#	modified:   indices/figures/SOI_LP_realtime_plot.png
 #	modified:   output.log
 #
 # Untracked files:
