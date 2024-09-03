@@ -187,7 +187,7 @@ def create_watermark(fig, imagePath ='./lib/NIWA_CMYK_Hor.png',
     wm_width = np.int64(width/4) # make the watermark 1/4 of the figure size
     scaling = (wm_width / np.float64(img.size[0]))
     wm_height = np.int64(float(img.size[1])*float(scaling))
-    img = img.resize((wm_width, wm_height), Image.ANTIALIAS)
+    img = img.resize((wm_width, wm_height), Image.LANCZOS)
     print(label)
     if label is None:
         imagebox = OffsetImage(img, alpha=alpha, zoom=0.4)
