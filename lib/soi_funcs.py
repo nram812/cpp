@@ -4,7 +4,7 @@ import pandas as pd
 import datetime as dt
 import os
 import numpy as np
-from IPython import get_ipython
+#from IPython import get_ipython
 import matplotlib as mpl
 from matplotlib import pyplot as plt
 import pathlib

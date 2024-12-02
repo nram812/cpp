@@ -6,6 +6,8 @@ running SPBI
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
+#	modified:   lib/__pycache__/soi_funcs.cpython-38.pyc
+#	modified:   lib/soi_funcs.py
 #	modified:   output.log
 #
 # Untracked files:
