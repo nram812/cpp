@@ -13,8 +13,4 @@ running SPBI
 #
 #	data/logs/
 #	lib/NIWA_CMYK_Hor.png
-#
-# It took 9.50 seconds to enumerate untracked files. 'status -uno'
-# may speed it up, but you have to be careful not to forget to add
-# new files yourself (see 'git help status').
 no changes added to commit (use "git add" and/or "git commit -a")
